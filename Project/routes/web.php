@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -27,5 +28,27 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+/* função inserção imgs do carrousel  */
+Route::get('/carrousel-image-1', function () {
+    return response()->file(public_path('images/img_hotel_1.jpg'));
+});
+Route::get('/carrousel-image-2', function () {
+    return response()->file(public_path('images/img_hotel_2.jpg'));
+});
+Route::get('/carrousel-image-3', function () {
+    return response()->file(public_path('images/img_hotel_3.jpg'));
+});
+Route::get('/carrousel-image-4', function (){
+    return response()->file(public_path('images/img_hotel_4.jpg'));
+});
+
+// Função iserção de img logo
+
+Route::get('/logo-pinguem', function(){
+    return response()->file(public_path('images/logo_test.png'));
+});
+
+
 
 require __DIR__.'/auth.php';

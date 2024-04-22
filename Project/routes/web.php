@@ -18,7 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -28,6 +27,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+require __DIR__.'/auth.php';
 
 /* função inserção imgs do carrousel  */
 Route::get('/carrousel-image-1', function () {
@@ -46,9 +47,11 @@ Route::get('/carrousel-image-4', function (){
 // Função iserção de img logo
 
 Route::get('/logo-pinguem', function(){
-    return response()->file(public_path('images/logo_test.png'));
+    return response()->file(public_path('images/logo.png'));
 });
 
+// Função inserção de img icon
 
-
-require __DIR__.'/auth.php';
+Route::get('/icon-pinguem', function (){
+    return response()->file(public_path('images/icon.png'));
+});

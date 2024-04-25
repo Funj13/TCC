@@ -55,3 +55,6 @@ Route::get('/logo-pinguem', function(){
 Route::get('/icon-pinguem', function (){
     return response()->file(public_path('images/icon.png'));
 });
+
+// Função inserção img quartos index
+Route::get('/img-quartos', 'ImgQuartosController@show');

@@ -30,10 +30,9 @@
          
         </div>
     </div>
-      <!-- mudar abaixo -->
-        <!-- <img src="logo-pinguim.png"> -->
+     
     </header>
-    
+    <!-- Carrossel quartos -->
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -58,8 +57,31 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+
+      <br>
+
+      <!--  -->
+
+      <div id="div_outros" class="div-outros">
+        <h2>Quartos:</h2>
+
+        <div id="div_img" class="img_quartos">
+
+          <a href=""><img src="/img-quartos?image=image1" alt="img"></a>
+          <a href=""><img src="/img-quartos?image=image2" alt="img"></a>
+          <a href=""><img src="/img-quartos?image=image3" alt="img"></a>
+          <a href=""><img src="/img-quartos?image=image4" alt="img"></a>
+          <a href=""><img src="/img-quartos?image=image5" alt="img"></a>
+          <br>
+          <a href=""><img src="/img-quartos?image=image6" alt="img"></a>
+          <a href=""><img src="/img-quartos?image=image7" alt="img"></a>
+          <a href=""><img src="/img-quartos?image=image8" alt="img"></a>
+          <a href=""><img src="/img-quartos?image=image9" alt="img"></a>
+          <a href=""><img src="/img-quartos?image=image10" alt="img"></a>
+
+        </div>
+      </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
 </body>
 </html>

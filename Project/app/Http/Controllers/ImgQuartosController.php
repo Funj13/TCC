@@ -9,7 +9,7 @@ class ImgQuartosController extends Controller
     public function show(Request $request)
     {
         $images = [
-            'image1' => 'images/img_quarto_1.jpeg',
+            'image1' => 'images/img_hotel_1.jpg',
             'image2' => 'images/img_quarto_2.jpeg',
             'image3' => 'images/img_quarto_3.jpeg',
             'image4' => 'images/img_quarto_4.jpeg',
@@ -33,7 +33,9 @@ class ImgQuartosController extends Controller
                 if (file_exists($imagePath)) {
                     $image = file_get_contents($imagePath);
                     $mimeType = mime_content_type($imagePath);
-    
+
+                    Log::info($imagePath);
+                    
                     return response($image, 200)
                         ->header('Content-Type', $mimeType);
                 }

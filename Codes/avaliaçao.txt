@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação com Estrelas</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .review-box {
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            width: 90%;
+        }
+
+        .rating>label {
+            display: inline-block;
+            padding: 5px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .rating>input[type="radio"] {
+            display: none;
+        }
+
+        .rating>label:before {
+            content: "\2605";
+        }
+
+        .rating>input[type="radio"]:checked~label:before {
+            content: "\2605";
+            color: orange;
+        }
+
+        .comments {
+            margin-top: 20px;
+        }
+
+        textarea,
+        button {
+            background-color: #333;
+            color: white;
+            border: 1px solid white;
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        element.style {
+            position: relative;
+            bottom: 16px;
+            margin-left: 11px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="review-box">
+
+        <div class="rating">
+
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+        </div>
+        <div class="comments">
+            <textarea id="comments" placeholder="Adicione seu comentário aqui"></textarea>
+
+            <button onclick="submitRating()" style="
+      position: relative;
+      bottom: 16px;
+      margin-left: 11px;
+    ">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        function submitRating() {
+            const rating = document.querySelector('input[name="rating"]:checked').value;
+            const comment = document.getElementById('comments').value;
+
+            // Aqui você pode fazer o que quiser com a avaliação e o comentário, como enviar para um servidor, armazenar localmente, etc.
+            console.log("Avaliação: " + rating);
+            console.log("Comentário: " + comment);
+
+            // Limpar a entrada após o envio (opcional)
+            document.querySelector('input[name="rating"]:checked').checked = false;
+            document.getElementById('comments').value = '';
+        }
+    </script>
+</body>
+
+</html>

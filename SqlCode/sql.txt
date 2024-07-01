@@ -1,0 +1,114 @@
+CREATE DATABASE bd_tcc;
+
+CREATE TABLE hotel(
+hotel_id INT NOT NULL PRIMARY KEY,
+nome VARCHAR(50) NOT NULL,
+endereco INT NOT NULL,
+classificacao INT NOT NULL,
+numero_de_quartos INT NOT NULL);
+
+CREATE TABLE usuario(
+usuario_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL,
+sexo VARCHAR(1) NOT NULL,
+dt_nasc DATE NOT NULL,
+email VARCHAR(100) NOT NULL,
+senha VARCHAR(20) NOT NULL,
+telefone INT NOT NULL);
+
+CREATE TABLE quartos(
+quartos_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+hotel_id INT NOT NULL,
+tipagem VARCHAR(50) NOT NULL,
+preco_por_noite INT NOT NULL,
+disponibilidade INT NOT NULL);
+
+CREATE TABLE reserva(
+reserva_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+usuario_id INT NOT NULL,
+hotel_id INT NOT NULL,
+quartos_id INT NOT NULL,
+dt_check_in DATE NOT NULL,
+dt_check_out DATE NOT NULL);
+
+CREATE TABLE avl_servico(
+avl_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+reserva_id INT NOT NULL,
+classificacao INT NOT NULL,
+comentario varchar(100) NOT NULL
+);
+
+CREATE TABLE servico_de_hotel(
+servicos_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+hotel_id INT NOT NULL,
+nome varchar(50) NOT NULL,
+detalhamento varchar(50) NOT NULL,
+taxa_adicional float NOT NULL);
+
+CREATE TABLE comentario(
+comentarios_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+user_id INT NOT NULL,
+hotel_id INT NOT NULL,
+classificacao INT NOT NULL,
+comentario varchar(100) NOT NULL
+);
+
+CREATE TABLE pagamento(
+pagamento_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+reserva_id INT NOT NULL,
+metodo_de_pagamento varchar(50) NOT NULL,
+valor INT NOT NULL
+);
+
+CREATE TABLE promocao(
+promocao_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+hotel_id INT NOT NULL,
+desconto float NOT NULL,
+descricao varchar(100) NOT NULL,
+dt_inicio DATE NOT NULL,
+dt_fim DATE NOT NULL);
+
+CREATE TABLE categoria_do_quarto(
+categoria_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+quartos_id INT NOT NULL,
+tipo_de_quarto varchar(50) NOT NULL,
+descricao varchar(100) NOT NULL);
+
+CREATE TABLE alimentacao(
+alimentacao_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+preco INT NOT NULL,
+disponibilidade VARCHAR(12) NOT NULL,
+escricao VARCHAR(100) NOT NULL,
+tipo VARCHAR(50) NOT NULL);
+
+CREATE TABLE evento(
+categoria_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(50),
+data_ev DATE NOT NULL);
+
+ALTER TABLE quartos ADD CONSTRAINT hotel_id FOREIGN KEY (hotel_id) REFERENCES Pessoa (hotel_id);
+ALTER TABLE reserva ADD CONSTRAINT  FOREIGN KEY (hotel_id) REFERENCES hotel (hotel_id);
+ALTER TABLE reserva ADD CONSTRAINT usuario_id FOREIGN KEY (usuario_id) REFERENCES usuario (hotel_id);
+ALTER TABLE reserva ADD CONSTRAINT quarto_id FOREIGN KEY (quarto_id) REFERENCES quarto (quarto_id);
+ALTER TABLE comentario ADD CONSTRAINT usuario_id FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id);
+ALTER TABLE comentario ADD CONSTRAINT hotel_id FOREIGN KEY (hotel_id) REFERENCES hotel (hotel_id);
+ALTER TABLE avl_servico ADD CONSTRAINT reserva_id FOREIGN KEY (reserva_id) REFERENCES reserva (reserva_id);
+ALTER TABLE servico_hotel ADD CONSTRAINT hotel_id FOREIGN KEY (hotel_id) REFERENCES hotel (hotel_id);
+ALTER TABLE pagamento ADD CONSTRAINT reserva_id FOREIGN KEY (resereva_id) REFERENCES reserva (reserva_id);
+ALTER TABLE promocao ADD CONSTRAINT hotel_id FOREIGN KEY (hotel_id) REFERENCES hotel (hotel_id);
+ALTER TABLE categoria_de_quarto ADD CONSTRAINT quarto_id FOREIGN KEY (quarto_id) REFERENCES quarto (quarto_id);
+ALTER TABLE evento ADD CONSTRAINT hotel_id FOREIGN KEY (hotel_id) REFERENCES hotel (hotel_id);
+ALTER TABLE alimentacao ADD CONSTRAINT servico_id FOREIGN KEY (servico_id) REFERENCES servico (servico_id);
+
+
+
+/*
+	INSERT INTO hotel(hotel_id,nome,endereco,classificacao,numero_de_quartos) VALUES  (1,"hotel_Pinguim","polo_norte",10,10);
+    INSERT INTO quartos(quartos_id,hotel_id,tipagem,preco_da_noite,disponibilidade) VALUES  (1,1,"comum",40,"disponivel");
+    UPDATE hotel SET nome="hotel_pinguim" WHERE hotel_id=1;
+    UPDATE quartos SET disponibilidade="indisponivel" WHERE quartos_id=1;
+    SELECT * FROM hotel WHERE nome = "hotel_pinguim";
+	SELECT * FROM quartos WHERE disponibilidade = "disponivel";
+	DELETE hotel WHERE hotel_id=1;
+    DELETE quartos WHERE quartos_id=1;
+*/

@@ -16,9 +16,12 @@
        <!--Top-Nav-->
     <div id="top-nav">
         <div class="topnav" style="height: 50px; width: 100%;">
+
+          <!-- Img Logo -->
           <div class="img-logo" id="logo-id">
             <img src="{{ url('/logo-pinguem') }}"  alt="icon-logo">
           </div>
+
             <!-- <a class="active" href="">Inicio</a> -->
             <div class="topnav-right">
                 @if (Route::has('login'))
@@ -28,12 +31,14 @@
                 @if (Route::has('register'))
                 <a href="{{ route('register') }}">Cadastra-se</a>
                 @endif
+                
             </div>
         </div>
     </div>
+
     <!--Título-->
     <div>
-        <h1 style="text-align: center; font-size: 400%; font-style: oblique; ">Pinguem</h1>
+        <h1 style="text-align: center; font-size: 400%; font-style: oblique; "> Pinguim</h1>
     </div>
 
     <!--  -->
@@ -66,26 +71,161 @@
 
       <br>
 
-      <!--  -->
+      <!-- album quartos -->
 
-      <div id="div_outros" class="div-outros">
+      <div id="div_outros" class="div-album">
         <h2>Quartos:</h2>
 
-        <div id="div_img" class="img_quartos">
+      
+        <div class="container">
 
-          <a href=""><img src="/img-quartos?image=image1" alt="img"></a>
-          <a href=""><img src="/img-quartos?image=image2" alt="img"></a>
-          <a href=""><img src="/img-quartos?image=image3" alt="img"></a>
-          <a href=""><img src="/img-quartos?image=image4" alt="img"></a>
-          <a href=""><img src="/img-quartos?image=image5" alt="img"></a>
-          <br>
-          <a href=""><img src="/img-quartos?image=image6" alt="img"></a>
-          <a href=""><img src="/img-quartos?image=image7" alt="img"></a>
-          <a href=""><img src="/img-quartos?image=image8" alt="img"></a>
-          <a href=""><img src="/img-quartos?image=image9" alt="img"></a>
-          <a href=""><img src="/img-quartos?image=image10" alt="img"></a>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm" id="card_album" style="background-color: 'rgba(var(--color3)) ;'">
+                <img class="card-img-top" src="/images/img_quarto_1.jpeg" alt="Card image Quarto">
+                <div class="card-body">
+                  <p class="card-text">Quarto 1 Teste</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    </div>
+                    <small class="text-muted">Valor: R$x,00</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="/images/img_quarto_2.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <p class="card-text">Quarto 2 Teste</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    </div>
+                    <small class="text-muted">Valor: R$x,00</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="/images/img_quarto_3.jpeg" alt="Card image cap">
+                <div class="card-body">
+                <p class="card-text">Quarto 3 Teste</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    </div>
+                    <small class="text-muted">Valor: R$x,00</small>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="/images/img_quarto_4.jpeg" alt="Card image cap">
+                <div class="card-body">
+                <p class="card-text">Quarto 4 Teste</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    </div>
+                    <small class="text-muted">Valor: R$x,00</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="/images/img_quarto_5.jpeg" alt="Card image cap">
+                <div class="card-body">
+                <p class="card-text">Quarto 5 Teste</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    </div>
+                    <small class="text-muted">Valor: R$x,00</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="/images/img_quarto_6.jpeg" alt="Card image cap">
+                <div class="card-body">
+                <p class="card-text">Quarto 6 Teste</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    </div>
+                    <small class="text-muted">Valor: R$x,00</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="/images/img_quarto_7.jpeg" alt="Card image cap">
+                <div class="card-body">
+                <p class="card-text">Quarto 7 Teste</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    </div>
+                    <small class="text-muted">Valor: R$x,00</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="/images/img_quarto_8.jpeg" alt="Card image cap">
+                <div class="card-body">
+                <p class="card-text">Quarto 8 Teste</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    </div>
+                    <small class="text-muted">Valor: R$x,00</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="/images/img_quarto_9.jpeg" alt="Card image cap">
+                <div class="card-body">
+                <p class="card-text">Quarto 9 Teste</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    </div>
+                    <small class="text-muted">Valor: R$x,00</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="class_more_itens">
+        <a href="">Ver Mais.</a>
+      </div>
+   
+      
+        
       </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

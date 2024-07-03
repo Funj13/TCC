@@ -4,6 +4,9 @@
     --color3: #2a7776 ;
     --color4: #154d4c ;
     --color5: #002322 ;
+    --white: #fff;
+    --black: #000;
+    --gray-light: #f3f3f379;
 }
 
 
@@ -19,8 +22,8 @@ body {
 }
 
 header {
-    background-color: #1145b6;
-    color: #fff;
+    background-color: var(--color4);
+    color: var(--white);
     padding: 20px;
     text-align: center;
 }
@@ -84,3 +87,24 @@ header {
 .next-btn {
     right: 10px;
 } 
+
+
+/* Album Quartos Index */
+.div-album{
+    background-color: var(--gray-light);
+
+}
+.div-album h2{
+    text-align: center;
+    font-size: 230%; font-style: Helvetica;
+}
+
+.class_more_itens {
+background-color: var(--white);
+padding: 20px 100px;
+
+}
+.class_more_itens a {
+    color: var(--black);
+    float: right;
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImgQuartosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,5 +46,7 @@ Route::get('/icon-pinguem', function (){
     return response()->file(public_path('images/icon.png'));
 });
 
+
 // Função inserção img quartos index
-Route::get('/img-quartos', 'ImgQuartosController@show');
+// Route::get('/img-quartos', 'ImgQuartosController@show');
+Route::get('/img-quartos', [ImgQuartosController::class, 'show']);

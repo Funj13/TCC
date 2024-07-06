@@ -11,12 +11,16 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
+// Profile User
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Route::get('/user_name', function (){
+//     ProfileController::class;
+// });
 
 require __DIR__.'/auth.php';
 
@@ -50,3 +54,7 @@ Route::get('/icon-pinguem', function (){
 // Função inserção img quartos index
 // Route::get('/img-quartos', 'ImgQuartosController@show');
 Route::get('/img-quartos', [ImgQuartosController::class, 'show']);
+
+Route::get('/quarto', function () {
+    return view('room');
+});

@@ -1,48 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel</title>
-    <link rel="icon" href="{{ url('/icon-pinguem') }}">
-    <link rel="stylesheet" href="{{ asset('css/style_css_index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style_topnav.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
 
-<body>
+  @extends('layouts.main')
+
+  @section('title', 'Hotel')
+
+
+  @section('content')
+  @section('topnav')
+  @endsection
   
-    <header>
-       <!--Top-Nav-->
-    <div id="top-nav">
-        <div class="topnav" style="height: 50px; width: 100%;">
 
-          <!-- Img Logo -->
-          <div class="img-logo" id="logo-id">
-            <img src="{{ url('/logo-pinguem') }}"  alt="icon-logo">
-          </div>
-
-            <!-- <a class="active" href="">Inicio</a> -->
-            <div class="topnav-right">
-                @if (Route::has('login'))
-                <a href="{{ route('login') }}">Login</a>
-                @endif
-
-                @if (Route::has('register'))
-                <a href="{{ route('register') }}">Cadastra-se</a>
-                @endif
-                
-            </div>
-        </div>
-    </div>
-
-    <!--Título-->
-    <div>
-        <h1 style="text-align: center; font-size: 400%; font-style: oblique; "> Pinguim</h1>
-    </div>
-
-    <!--  -->
-    </header>
+    
     <!-- Carrossel quartos -->
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
@@ -87,8 +54,8 @@
                   <p class="card-text">Quarto 1 Teste</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                      <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button> -->
+                      <a href="/quarto" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                     </div>
                     <small class="text-muted">Valor: R$x,00</small>
                   </div>
@@ -229,5 +196,4 @@
       </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+    @endsection

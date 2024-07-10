@@ -58,3 +58,7 @@ Route::get('/img-quartos', [ImgQuartosController::class, 'show']);
 Route::get('/quarto', function () {
     return view('room');
 });
+
+Route::get('/cadarpio', function () {
+    return view('menu');
+});

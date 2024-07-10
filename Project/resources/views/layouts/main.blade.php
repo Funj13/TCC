@@ -71,7 +71,10 @@
 @yield('content')
     <footer>
 
-    <div class="footer"> <p> Pinguin Hotel &copy; 2024</p></div>
+    <div class="footer"> 
+      
+      <br>
+    <p> Pinguin Hotel &copy; 2024</p></div>
 
     </footer>
    </body>

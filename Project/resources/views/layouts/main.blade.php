@@ -1,11 +1,15 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
 
     <link rel="icon" href="{{ url('/icon-pinguem') }}">
+    <!-- Theme Mode PHP-->
+    <!-- <link rel="stylesheet" href="{{ asset('php/ThemeMode.php') }}"> -->
+
     <!-- css Local -->
     <link rel="stylesheet" href="{{ asset('css/style_css_index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style_topnav.css') }}">
@@ -32,6 +36,7 @@
           </div>
 
             <div class="topnav-right">
+            <button type="submit" name="theme-toggle">Alterar Tema</button>
               <!-- Opcões Autenticado -->
               @auth
               

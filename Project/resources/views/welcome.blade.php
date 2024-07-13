@@ -1,4 +1,3 @@
-
   @extends('layouts.main')
 
   @section('title', 'Hotel')
@@ -184,10 +183,10 @@
                   </div>
                 </div>
               </div>
-            </div>  
-            <div class="class_more_itens">
-        <a href="">Ver Mais.</a>
+            </div> <a href="" style="color='black'; text-decoration='none'">Ver Mais.</a> 
+        
         </div>
+            
           </div>
         </div>
       
@@ -199,7 +198,7 @@
             <h2>Cardápio:</h2>
         </div>
         
-    <main class="container">
+    <main class="container" >
         <div class="image-container-menu">
             <img src="/images/prato-menu.jpg" alt="Imagem 1" class="img-prato-principal">
             <div class="text-menu"> Prato Principal do Dia</div>

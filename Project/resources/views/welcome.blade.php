@@ -49,13 +49,13 @@
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm" id="card_album" style="background-color: 'rgba(var(--color3)) ;'">
-                <img class="card-img-top" src="/images/img_quarto_1.jpeg" alt="Card image Quarto">
+                <img class="card-img-top" src="/images/img_quart_ang_2.jpeg" alt="Card image Quarto">
                 <div class="card-body">
-                  <p class="card-text">Quarto 1 Teste</p>
+                  <p class="card-text">Suite Elegância Moderna</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button> -->
-                      <a href="/quarto" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
+                      <a href="/Quarto-Suite-Elegancia-Moderna" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                     </div>
                     <small class="text-muted">Valor: R$x,00</small>
                   </div>
@@ -184,16 +184,42 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>  
+            <div class="class_more_itens">
+        <a href="">Ver Mais.</a>
+        </div>
           </div>
         </div>
-        <div class="class_more_itens">
-        <a href="">Ver Mais.</a>
-      </div>
-   
       
-        
       </div>
+      <!-- Cadarpio menu -->
+       <div class="menu-food">
+ 
+        <div>
+            <h2>Cardápio:</h2>
+        </div>
+        
+    <main class="container">
+        <div class="image-container-menu">
+            <img src="/images/prato-menu.jpg" alt="Imagem 1" class="img-prato-principal">
+            <div class="text-menu"> Prato Principal do Dia</div>
+        </div>
+
+        <div class="image-container-pequeno">
+            <img src="/images/img_prato_cafe.avif" alt="Imagem 2" class="img-prato-secundario">
+            <div class="text-menu">Café da Manhã</div>
+        </div>
+
+        <div class="image-container-pequeno">
+            <img src="/images/img_menu_sobremesa.jpeg" alt="Imagem 3" class="img-prato-secundario">
+            <div class="text-menu">Sobremesa</div>
+        </div>
+        
+    </main>
+        <div class="btn-cadarpio">
+            <a href="/cadarpio">Ver Mais</a>
+        </div>
+       </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     @endsection

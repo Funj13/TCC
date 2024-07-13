@@ -28,7 +28,7 @@
         </div>
 
         <div class="informacoes-produto">
-            <h2>Nome do Produto</h2>
+            <h2>Suite Elegância Moderna</h2>
             <p>Descrição detalhada do produto, incluindo suas características, funcionalidades e benefícios.</p>
             <p>Preço: R$ 100,00</p>
             <button id="btnContent" onclick="window.location.href='/'">RESERVAR</button><br>

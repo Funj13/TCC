@@ -7,6 +7,12 @@
     --white: #fff;
     --black: #000;
     --gray-light: #f3f3f379;
+    --bs-gray-100: #f5f5f5;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
 }
 
 
@@ -95,19 +101,20 @@ header {
     background-color: var(--gray-light);
 
 }
-.div-album h2{
+h2{
     text-align: center;
     font-size: 230%; font-style: Helvetica;
 }
 
 .class_more_itens {
-background-color: var(--white);
+background-color: var(--gray-light);
 padding: 20px 100px;
 
 }
 .class_more_itens a {
     color: var(--black);
     float: right;
+    text-decoration: none;
 }
 
 
@@ -275,37 +282,64 @@ padding: 20px 100px;
     text-align: center;
 }
 
-  /* .img-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .img-container img {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  .food-items {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-  }
-  
-  .food-item {
-    text-align: center;
-  }
-  
-  .food-item img {
 
-    width: 70%;
-    height: 70%;
-    border-radius: 5px;
-  }
-  
-  .food-item h3 {
-    margin-top: 10px;
-    font-size: 1.2rem;
-  } */
+
+/* Menu Index Cadarpio */
+
+.image-container-menu {
+    position: relative;
+    cursor: pointer;
+    width: 75%;
+    height: 40%;
+    border-radius: 3%;
+    /*zoom*/
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.image-container-menu:hover {
+    transform: scale(1.1);
+}
+
+.image-container-menu img {
+    width: 100%;
+    height: auto;
+}
+.image-container-pequeno{
+    position: relative;
+    width: 45%;
+    height: 200px;
+    display: flex;
+    border-radius: 3%;
+
+    /*zoom*/
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.image-container-pequeno:hover{
+    transform: scale(1.1);
+}
+.image-container-pequeno img {
+    width: 100%;
+    height: auto;
+}
+
+.text-menu {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.btn-cadarpio{
+    display: flex;
+    justify-content: right;
+}
+.btn-cadarpio a{
+    color: var(--black);
+    text-decoration: none;
+}
+
+.menu-food{
+    background-color: var(--bs-gray-100);
+}

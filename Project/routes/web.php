@@ -55,10 +55,28 @@ Route::get('/icon-pinguem', function (){
 // Route::get('/img-quartos', 'ImgQuartosController@show');
 Route::get('/img-quartos', [ImgQuartosController::class, 'show']);
 
-Route::get('/quarto', function () {
-    return view('room');
+
+// Routes get Rooms
+
+Route::get('/Quarto-Suite-Elegancia-Moderna', function () {
+    return view('\rooms\room_suite_elegant');
 });
 
+Route::get('/quarto', function () {
+    return view('\rooms\room');
+});
+
+Route::get('/quarto', function () {
+    return view('\rooms\room');
+});
+
+Route::get('/quarto', function () {
+    return view('\rooms\room');
+});
+
+
+
+// TelaCadarpio
 Route::get('/cadarpio', function () {
     return view('menu');
 });

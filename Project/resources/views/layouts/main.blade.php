@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="pt-br" data-bs-theme="dark">
+<html lang="pt-br" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,7 @@
           </div>
 
             <div class="topnav-right">
-            <button type="submit" name="theme-toggle">Alterar Tema</button>
+            
               <!-- Opcões Autenticado -->
               @auth
               

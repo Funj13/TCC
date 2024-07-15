@@ -63,14 +63,13 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="/images/img_quarto_2.jpeg" alt="Card image cap">
+                <img class="card-img-top" src="/images/Quarto_simples_2.jpg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text"></p>
-                  <p class="card-text">Quarto 2 Teste</p>
+                  <p class="card-text">Quarto da Paz</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    <a href="/Quarto-da-Paz" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                     </div>
                     <small class="text-muted">Valor: R$x,00</small>
                   </div>
@@ -183,7 +182,7 @@
                   </div>
                 </div>
               </div>
-            </div> <a href="" style="color='black'; text-decoration='none'">Ver Mais.</a> 
+            </div> <a href="" style="color='black'; text-decoration='none'; ">Ver Mais.</a> 
         
         </div>
             
@@ -192,7 +191,7 @@
       
       </div>
       <!-- Cadarpio menu -->
-       <div class="menu-food">
+       <div class="menu-food" data-bs-theme="dark">
  
         <div>
             <h2>Cardápio:</h2>

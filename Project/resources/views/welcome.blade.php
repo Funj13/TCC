@@ -78,13 +78,12 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="/images/img_quarto_3.jpeg" alt="Card image cap">
+                <img class="card-img-top" src="/images/Quarto_imperial_2.jpeg" alt="Card image cap">
                 <div class="card-body">
-                <p class="card-text">Quarto 3 Teste</p>
+                <p class="card-text">Quarto Imperial Moderno</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    <a href="/Quarto-Imperial" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                     </div>
                     <small class="text-muted">Valor: R$x,00</small>
                   </div>
@@ -94,13 +93,12 @@
 
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="/images/img_quarto_4.jpeg" alt="Card image cap">
+                <img class="card-img-top" src="/images/Quarto_Serenidade_1.jpeg" alt="Card image cap">
                 <div class="card-body">
-                <p class="card-text">Quarto 4 Teste</p>
+                <p class="card-text">Quarto Serenidade</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    <a href="/Quarto-Imperial" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                     </div>
                     <small class="text-muted">Valor: R$x,00</small>
                   </div>

@@ -66,12 +66,12 @@ Route::get('/Quarto-da-Paz', function () {
     return view('\rooms\romm_Quarto_da_Paz');
 });
 
-Route::get('/quarto', function () {
-    return view('\rooms\room');
+Route::get('/Quarto-Imperial', function () {
+    return view('\rooms\romm_Quarto_imperial');
 });
 
-Route::get('/quarto', function () {
-    return view('\rooms\room');
+Route::get('/Quarto-Serenidade', function () {
+    return view('\rooms\room_Quarto_Serenidade');
 });
 
 

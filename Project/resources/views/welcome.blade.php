@@ -107,13 +107,12 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="/images/img_quarto_5.jpeg" alt="Card image cap">
+                <img class="card-img-top" src="/images/suite_modern_1.webp" alt="Card image cap">
                 <div class="card-body">
-                <p class="card-text">Quarto 5 Teste</p>
+                <p class="card-text">Suíte do Éden</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    <a href="/Suite-Eden" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                     </div>
                     <small class="text-muted">Valor: R$x,00</small>
                   </div>

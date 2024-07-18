@@ -74,9 +74,14 @@ Route::get('/Quarto-Serenidade', function () {
     return view('\rooms\room_Quarto_Serenidade');
 });
 
+Route::get('/Suite-Eden', function () {
+    return view('\rooms\room_suite_eden');
+});
+
 
 
 // TelaCadarpio
+
 Route::get('/cadarpio', function () {
     return view('menu');
 });

@@ -98,7 +98,7 @@
                 <p class="card-text">Quarto Serenidade</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <a href="/Quarto-Imperial" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
+                    <a href="/Quarto-Serenidade" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                     </div>
                     <small class="text-muted">Valor: R$x,00</small>
                   </div>
@@ -107,7 +107,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="/images/suite_modern_1.webp" alt="Card image cap">
+                <img class="card-img-top" src="/images/suite_eden_1.jpg" alt="Card image cap">
                 <div class="card-body">
                 <p class="card-text">Suíte do Éden</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -121,13 +121,12 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="/images/img_quarto_6.jpeg" alt="Card image cap">
+                <img class="card-img-top" src="/images/suite_marfin_1.jpg" alt="Card image cap">
                 <div class="card-body">
-                <p class="card-text">Quarto 6 Teste</p>
+                <p class="card-text">Suíte Marfim</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    <a href="/Suite-Marfim" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                     </div>
                     <small class="text-muted">Valor: R$x,00</small>
                   </div>
@@ -137,13 +136,12 @@
 
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="/images/img_quarto_7.jpeg" alt="Card image cap">
+                <img class="card-img-top" src="/images/suite_lua_cheia_1.webp" alt="Card image cap">
                 <div class="card-body">
-                <p class="card-text">Quarto 7 Teste</p>
+                <p class="card-text">Suíte da Lua Cheia</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    <a href="/Suite-Lua-Cheia" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                     </div>
                     <small class="text-muted">Valor: R$x,00</small>
                   </div>
@@ -152,13 +150,12 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="/images/img_quarto_8.jpeg" alt="Card image cap">
+                <img class="card-img-top" src="/images/suite_tropical_1.jpg" alt="Card image cap">
                 <div class="card-body">
-                <p class="card-text">Quarto 8 Teste</p>
+                <p class="card-text">Suite Tropical</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    <a href="/Suite-Tropical" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                     </div>
                     <small class="text-muted">Valor: R$x,00</small>
                   </div>
@@ -167,13 +164,12 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="/images/img_quarto_9.jpeg" alt="Card image cap">
+                <img class="card-img-top" src="/images/suite_luxo_1.jpg" alt="Card image cap">
                 <div class="card-body">
-                <p class="card-text">Quarto 9 Teste</p>
+                <p class="card-text">Suite Luxo</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                    <a href="/Suite-Luxo" style="text-decoration: none;" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                     </div>
                     <small class="text-muted">Valor: R$x,00</small>
                   </div>

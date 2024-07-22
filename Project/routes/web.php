@@ -78,8 +78,21 @@ Route::get('/Suite-Eden', function () {
     return view('\rooms\room_suite_eden');
 });
 
+Route::get('/Suite-Marfim', function () {
+    return view('\rooms\room_suite_marfim');
+});
 
+Route::get('/Suite-Lua-Cheia', function () {
+    return view('\rooms\room_suite_lua_cheia');
+});
 
+Route::get('/Suite-Tropical', function () {
+    return view('\rooms\room_suite_tropical');
+});
+
+Route::get('/Suite-Luxo', function () {
+    return view('\rooms\room_suite_luxo');
+});
 // TelaCadarpio
 
 Route::get('/cadarpio', function () {

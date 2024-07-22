@@ -12,17 +12,17 @@
 
     <div class="container">
         <div class="imagem-principal">
-            <img src="/images/Quarto_simples_1.jpg" alt="Imagem principal do produto">
+            <img src="/images/suite_eden_1.jpg" alt="Imagem principal do produto">
         </div>
         <div class="imagens-pequenas">
             <div class="imagem-pequena">
-                <img src="/images/Quarto_simples_2.jpg" alt="Outro ângulo do produto">
+                <img src="/images/suite_eden_2.jpg" alt="Outro ângulo do produto">
             </div>
             <div class="imagem-pequena">
-                <img src="/images/Quarto_simples_3.jpg" alt="Detalhe do produto">
+                <img src="/images/suite_eden_3.jpg" alt="Detalhe do produto">
             </div>
             <div class="imagem-pequena">
-                <img src="/images/" alt="Produto relacionado">
+                <img src="/images/suite_eden_4.jpg" alt="Produto relacionado">
             </div>
             
         </div>

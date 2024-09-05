@@ -3,15 +3,16 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateRoomsTable extends Migration
+class CreateQuartosTable extends Migration
 {
     public function up()
     {
-        Schema::create('quartos', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->integer('capacity');
+            $table->string('tipo');
+            $table->string('preco');
+            $table->int('disponibilidade');
+            $table->string('nome');
             $table->timestamps();
         });
     }

@@ -9,7 +9,7 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $rooms = Room::all();
+        $room = Room::all();
         return view('roomCadastro.index', compact('roomCadastro'));
     }
 
@@ -32,14 +32,14 @@ class RoomController extends Controller
 
 
         $room = new Room();
-        $room->id = $request->input('');
+        $room->quartos_id = $request->input('');
         $room->tipagem = $request->input('tipo');
-        $room->preco = $request->input('preco');
+        $room->preco_por_noite = $request->input('preco');
         $room->disponibilidade = $request->input('dispo');
         $room->nome = $request->input('nome');
 
         $room->save();
-        return redirect()->route('roomCadastro.index');
+        return redirect()->route('home');
 
     }catch (\Exception $e) {
         dd($e->getMessage());

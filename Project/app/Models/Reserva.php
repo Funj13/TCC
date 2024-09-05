@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Form extends Model
+class Reserva extends Model
 {
     protected $fillable = [
-        'nome', 'email'
-    
+        'nome',
+        'cpf',
+        'dt-checkin',
+        'dt-checkout',
     ];
 }

@@ -104,8 +104,16 @@ Route::get('/pagamento', function(){
     return view('payment');
 });
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\FormController;
+use App\Http\Controllers\ReservaController;
+Route::post('/reserva/enviar', [ReservaController::class, 'enviar'])->name('reserva.enviar');
 
-Route::get('/formulario', [FormController::class, 'showForm']);
-Route::post('/formulario', [FormController::class, 'storeData']);
+Route::get('/cadastroQuarto', function(){
+    return view('roomCadastro/create');
+});
+
+// Route::get('/roomCadastro', 'RoomController@index');
+// Route::get('/roomCadastro/create', 'RoomController@create');
+// Route::post('/roomCadastro', 'RoomController@store');
+
+use App\Http\Controllers\RoomController;
+Route::post('/roomCadastro/enviar', [RoomController::class, 'enviar'])->name('rooms.store');

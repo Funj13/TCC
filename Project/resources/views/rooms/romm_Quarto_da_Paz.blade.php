@@ -3,11 +3,11 @@
 @section('title', 'Quarto')
 
 
-@section('content')
+
 
 @section('topnav')
 @endsection
-
+@section('content')
 
 <div class="container">
     <div class="imagem-principal">
@@ -29,7 +29,7 @@
     <div class="informacoes-produto">
         <h2>Quarto da Paz</h2>
         <p>Descrição detalhada do produto, incluindo suas características, funcionalidades e benefícios.</p>
-        <p>Preço: R$ 400,00</p>
+        <p>Preço: R$ 400,00 Diaria</p>
         <button id="btnContent" data-bs-target="#meuModal">RESERVAR</button><br>
     </div>
 
@@ -38,64 +38,65 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Título do Modal</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Quarto da Paz</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p >Quarto da Paz.</p>
+                    <p>Quarto da Paz.</p>
                     <p>Detalhes: <br>
                         2 suites <br>
                         total 400 reais diaria.
                     </p>
                     <div class="reserva">
-                        <form action="" method="POST">
+
+                        <form action="{{ route('reserva.enviar') }}" method="POST">
                             @csrf
                             <label for="">Nome:</label>
                             <input type="text" class="form-control" name="nome" />
 
                             <label for="">CPF:</label>
-                            <input type="number" class="form-control" name="cpf" data-inputmask="'mask': '999.999.999-99'" />
+                            <input type="number" class="form-control" name="cpf"
+                                data-inputmask="'mask': '999.999.999-99'" />
                             <label for="">Adicione o Dia em que deseja reservar o quarto:</label>
                             <input type="date" class="form-control meu-input-data" id="data-evento"
-                                placeholder="DD/MM/AAAA" name="date">
+                                placeholder="DD/MM/AAAA" name="dt-checkin">
+                                <label for="">Adicione o Dia em que deseja fazer check-out do quarto:</label>
+                            <input type="date" class="form-control meu-input-data" id="data-evento"
+                                placeholder="DD/MM/AAAA" name="dt-checkout">
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" name="enviar">
+                            Reservar</button>
+                        <button type="button" class="btn btn-primary">Pagar</button>
                         </form>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <?php
-                        if (isset($_POST['nome']) && isset($_POST['cpf']) && isset($_POST['date'])) {
-                            include('php/ReservaModel.php');
-                            addUser($_POST['nome'], $_POST['cpf'], $_POST['date'], "Quarto da Paz" ) ;
-                        }
-                   ?>
-                    <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" name="enviar"> Reservar</button>
-                    <button type="button" class="btn btn-primary">Pagar</button>
-                </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Obtém o elemento do botão que aciona o modal
+            const btnContent = document.getElementById('btnContent');
+
+            // Adiciona um evento de clique ao botão
+            btnContent.addEventListener('click', () => {
+                // Obtém o modal e mostra ele
+                const meuModal = new bootstrap.Modal(document.getElementById('meuModal'));
+                meuModal.show();
+            });
+
+            // Em JavaScript
+            btnContent.addEventListener('click', () => {
+                const meuModal = new bootstrap.Modal(document.getElementById('meuModal'));
+                const id = btnContent.dataset.id;
+                // Atualize o conteúdo do modal com o valor de id
+                document.getElementById('modal-conteudo').textContent = `O ID é: ${id}`;
+                meuModal.show();
+            });
+        </script>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Obtém o elemento do botão que aciona o modal
-        const btnContent = document.getElementById('btnContent');
-
-        // Adiciona um evento de clique ao botão
-        btnContent.addEventListener('click', () => {
-            // Obtém o modal e mostra ele
-            const meuModal = new bootstrap.Modal(document.getElementById('meuModal'));
-            meuModal.show();
-        });
-
-        // Em JavaScript
-        btnContent.addEventListener('click', () => {
-            const meuModal = new bootstrap.Modal(document.getElementById('meuModal'));
-            const id = btnContent.dataset.id;
-            // Atualize o conteúdo do modal com o valor de id
-            document.getElementById('modal-conteudo').textContent = `O ID é: ${id}`;
-            meuModal.show();
-        });
-    </script>
-</div>
 
 
-@endsection
+    @endsection

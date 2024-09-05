@@ -98,22 +98,3 @@ Route::get('/Suite-Luxo', function () {
 Route::get('/cadarpio', function () {
     return view('menu');
 });
-
-
-Route::get('/pagamento', function(){
-    return view('payment');
-});
-
-use App\Http\Controllers\ReservaController;
-Route::post('/reserva/enviar', [ReservaController::class, 'enviar'])->name('reserva.enviar');
-
-Route::get('/cadastroQuarto', function(){
-    return view('roomCadastro/create');
-});
-
-// Route::get('/roomCadastro', 'RoomController@index');
-// Route::get('/roomCadastro/create', 'RoomController@create');
-// Route::post('/roomCadastro', 'RoomController@store');
-
-use App\Http\Controllers\RoomController;
-Route::post('/roomCadastro/enviar', [RoomController::class, 'enviar'])->name('rooms.store');

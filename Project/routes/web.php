@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('/');
+    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 // Profile User
 Route::middleware('auth')->group(function () {

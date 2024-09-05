@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('/');
 })->middleware(['auth', 'verified'])->name('dashboard');
 // Profile User
 Route::middleware('auth')->group(function () {
@@ -98,3 +98,14 @@ Route::get('/Suite-Luxo', function () {
 Route::get('/cadarpio', function () {
     return view('menu');
 });
+
+
+Route::get('/pagamento', function(){
+    return view('payment');
+});
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\FormController;
+
+Route::get('/formulario', [FormController::class, 'showForm']);
+Route::post('/formulario', [FormController::class, 'storeData']);

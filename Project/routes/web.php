@@ -10,7 +10,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 // Profile User
 Route::middleware('auth')->group(function () {
@@ -124,6 +123,8 @@ Route::get('/editar', function(){
     return view('roomCadastro/edit');
 });
 Route::post('/roomCadastro/store', [RoomController::class, 'store'])->name('rooms.store');
+
+// Route::delete('rooms/{id}', 'RoomController@destroy')->name('rooms.destroy');
 
 Route::delete('/roomCadastro/{id}', [RoomController::class, 'destroy'])->name('rooms.destroy');
 

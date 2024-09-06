@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('/');
+    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 // Profile User
 Route::middleware('auth')->group(function () {
@@ -105,10 +105,31 @@ Route::get('/pagamento', function(){
 });
 
 use App\Http\Controllers\ReservaController;
+
 Route::post('/reserva/enviar', [ReservaController::class, 'enviar'])->name('reserva.enviar');
 
-// use Illuminate\Http\Request;
-// use App\Http\Controllers\FormController;
+Route::get('/cadastroQuarto', function(){
+    return view('roomCadastro/create');
+});
 
-// Route::get('/formulario', [FormController::class, 'showForm']);
-// Route::post('/formulario', [FormController::class, 'storeData']);
+
+use App\Http\Controllers\RoomController;
+
+Route::post('/roomCadastro/update', [RoomController::class, 'update'])->name('rooms.update');
+
+Route::get('/editar', [\App\Http\Controllers\RoomController::class, 'update']) ->name('edit');
+
+Route::get('/editar', function(){
+    return view('roomCadastro/edit');
+});
+Route::post('/roomCadastro/store', [RoomController::class, 'store'])->name('rooms.store');
+
+Route::delete('/roomCadastro/{id}', [RoomController::class, 'destroy'])->name('rooms.destroy');
+
+Route::get('/cadastroIndex',[\App\Http\Controllers\RoomController::class, 'index']) ->name('home');
+
+
+use App\Http\Controllers\listaquartosController;
+Route::get('/posts', [listaquartosController::class, 'index']);
+
+

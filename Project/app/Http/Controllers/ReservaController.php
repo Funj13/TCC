@@ -25,9 +25,10 @@ class ReservaController extends Controller
         // Criar um novo registro no banco de dados
         $formulario = new Reserva();
         $formulario->nome = $request->input('nome');
-        $formulario->email = $request->input('cpf');
-        $formulario->mensagem = $request->input('dt-checkin');
-        $formulario->mensagem = $request->input('dt-checkout');
+        $formulario->cpf = $request->input('cpf');
+        $formulario->dt_checkin = $request->input('dt-checkin');
+        $formulario->dt_checkout = $request->input('dt-checkout');
+
         $formulario->save();
 
         return redirect()->back()->with('success', 'Formulário enviado com sucesso!');

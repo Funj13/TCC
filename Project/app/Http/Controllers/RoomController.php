@@ -38,8 +38,8 @@ class RoomController extends Controller
             $room->disponibilidade = $request->input('dispo');
             $room->nome = $request->input('nome');
 
-        $room->save();
-        return redirect()->route('home');
+            $room->save();
+            return redirect()->route('home');
 
         } catch (\Exception $e) {
             dd($e->getMessage());

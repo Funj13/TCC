@@ -6,6 +6,8 @@
   @section('content')
   @section('topnav')
   @endsection
+
+    
     <!-- Carrossel quartos -->
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">

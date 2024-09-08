@@ -105,24 +105,33 @@ Route::get('/pagamento', function(){
 });
 
 use App\Http\Controllers\ReservaController;
-Route::post('/reserva/enviar', [ReservaController::class, 'enviar'])->name('reserva.enviar');
 
+Route::post('/reserva/enviar', [ReservaController::class, 'enviar'])->name('reserva.enviar');
 
 Route::get('/cadastroQuarto', function(){
     return view('roomCadastro/create');
 });
 
+
 use App\Http\Controllers\RoomController;
+
+Route::post('/roomCadastro/update', [RoomController::class, 'update'])->name('rooms.update');
+
+Route::get('/editar', [\App\Http\Controllers\RoomController::class, 'update']) ->name('edit');
+
+Route::get('/editar', function(){
+    return view('roomCadastro/edit');
+});
 Route::post('/roomCadastro/store', [RoomController::class, 'store'])->name('rooms.store');
 
-// Route::get('/cadastroIndex', function(){
-//     return view('roomCadastro/index');
-// });
+// Route::delete('rooms/{id}', 'RoomController@destroy')->name('rooms.destroy');
 
-Route::get('/cadastroIndex', function(){
-    return view('roomCadastro/index');
-})->name('home') ;
+Route::delete('/roomCadastro/{id}', [RoomController::class, 'destroy'])->name('rooms.destroy');
+
+Route::get('/cadastroIndex',[\App\Http\Controllers\RoomController::class, 'index']) ->name('home');
 
 
+use App\Http\Controllers\listaquartosController;
+Route::get('/posts', [listaquartosController::class, 'index']);
 
 

@@ -57,10 +57,10 @@ body {
 /*Img Logo*/
 
 .topnav img {
-    width: 200px;
+    width: 100px;
     position: absolute;
     left: 0%;
-    top: 5;
+    top: 0;
 }
 .topnav_dashboard img{
     width: 200px;

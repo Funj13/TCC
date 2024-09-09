@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 
 @section('title', 'Hotel')
 
@@ -6,6 +6,9 @@
 @section('content')
 @section('topnav')
 @endsection
+
+
+<
 
 <div class="editQuarto">
 

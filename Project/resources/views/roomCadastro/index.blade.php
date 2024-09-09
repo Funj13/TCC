@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 
 @section('title', 'Hotel')
 
@@ -7,9 +7,9 @@
 @section('topnav')
 @endsection
 
-<div>
+
+
     <br>
-    <a class="btn btn-dark" href='/cadastroQuarto'>Cadastrar Quarto</a>
 </div>
 
 <div class="Tabela_Quartos">
@@ -50,4 +50,6 @@
 
     </table>
 </div>
+
+
 @endsection

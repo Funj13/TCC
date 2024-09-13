@@ -34,7 +34,11 @@
                 <th> {{ $room->preco_por_noite }} </th>
                 <th> {{ $room->disponibilidade }} </th>
 
-                <th> <a href="{{ url('/editar') }}" class="btn btn-primary">Editar</a> </th>
+                <th> <form method="POST" action = "{{ url('/roomCadastro/update/?id=' . $room->id . '&nome=' . urlencode($room->nome) . '&tipagem=' . urlencode($room->tipagem) . '&preco_por_noite=' . $room->preco_por_noite . '&disponibilidade=' . $room->disponibilidade) }}">
+                @csrf
+                <a href class="btn btn-primary">Editar</a>
+                    </form>
+                </th>
                 <th>
                     <form action="{{ route('rooms.destroy', $room->id) }}" method="POST" style="display: inline;">
                         @csrf

@@ -1,0 +1,8 @@
+<?php
+    function addUser($nome, $cpf, $data, $nomeRoom){
+
+        $sql_code = "INSERT INTO reservas VALUES ('$nome', '$cpf', '$data', '$nomeRoom');";
+        
+        
+    }
+?>

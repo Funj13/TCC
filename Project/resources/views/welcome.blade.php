@@ -6,7 +6,6 @@
   @section('content')
   @section('topnav')
   @endsection
-  
 
     
     <!-- Carrossel quartos -->

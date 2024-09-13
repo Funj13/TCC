@@ -185,7 +185,7 @@ padding: 20px 100px;
     text-align: center;
 
     background-color: var(--gray-light);
-    position: absolute;
+    display: flex;
     width: 100%;
     height: 10%;
     margin-top: 5%;
@@ -343,3 +343,35 @@ padding: 20px 100px;
 .menu-food{
     background-color: var(--bs-gray-100);
 }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .border{
+    margin: 1% ;
+    border-style: none;
+  }
+
+  .btn-position{
+    position: relative;
+    left: 10px;
+    bottom: 10px;
+
+  }
+
+  .click{
+    cursor: pointer;
+  }

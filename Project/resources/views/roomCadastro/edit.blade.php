@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@extends('layouts.admin')
 
 @section('title', 'Hotel')
 
@@ -23,7 +24,11 @@
             <label for="">Preço:</label>
             <input type="number" class="form-control" name="preco" value="" />
             <label for="">Disponibilidade:</label>
-            <input type="number" min="0" max="1" class="form-control " name="dispo" value="" />
+            <br>
+            <INPUT TYPE="RADIO" class="form-check-input border" NAME="dispo" VALUE="1"> sim
+            <br>
+            <INPUT TYPE="RADIO" class="form-check-input border" NAME="dispo" VALUE="0"> não
+            <br>
             <label for="">Nome:</label>
             <input type="name" class="form-control " id="nome" name="nome" value="">
 <br>

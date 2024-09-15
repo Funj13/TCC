@@ -1,11 +1,11 @@
 <?php
-
+/*
 use MercadoPago\SDK;
 
 SDK::setAccessToken(env('MERCADOPAGO_ACCESS_TOKEN'));
 
 // Controlador
-public function store(Request $request)
+function store(Request $request)
 {
     // ... validação dos dados do formulário ...
 
@@ -36,7 +36,7 @@ $payment_url = $preference->sandbox_init_point;
 return redirect($payment_url);
 
 // Controlador
-public function createPayment()
+function createPayment()
 {
     // ... código para criar o objeto de preferência ...
 
@@ -47,4 +47,4 @@ public function createPayment()
 // Rota para tratar o retorno do pagamento
 Route::get('/success', function () {
     // Lógica para tratar o pagamento com sucesso
-});
+});*/

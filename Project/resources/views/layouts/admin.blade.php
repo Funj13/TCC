@@ -34,7 +34,6 @@
         <div class="img-logo" id="logo-id">
           <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
             aria-controls="offcanvasWithBothOptions"><img src="images/pinguem_logo.png" alt="icon-logo" class="click"></a>
-
         </div>
 
         <div class="topnav-right">
@@ -98,6 +97,8 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
     @yield('content')
+
+    
     <footer>
 
       <div class="footer">

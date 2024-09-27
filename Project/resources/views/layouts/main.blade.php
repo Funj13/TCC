@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
 
-    <link rel="icon" href="{{ url('/icon-pinguem') }}">
+    <link rel="icon" href="{{ asset('images/pinguem_logo.png') }}">
     <!-- Theme Mode PHP-->
     <!-- <link rel="stylesheet" href="{{ asset('php/ThemeMode.php') }}"> -->
 
@@ -31,7 +31,7 @@
 
           <!-- Img Logo -->
           <div class="img-logo" id="logo-id">
-            <a href="/"><img src="{{ url('/logo-pinguem') }}"  alt="icon-logo" ></a>
+            <a href="/" ><img src="images/pinguem_logo.png"  alt="icon-logo" ></a>
             
           </div>
 
@@ -46,7 +46,9 @@
                            <a class="btn" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
                                                 this.closest('form').submit();">Log Out</a>
                                                 
-                            <a class="btn" href="/profile">Profile</a>
+                            <a class="btn" href="/profile"><div>{{ Auth::user()->name }}</div></a>
+
+                            <a class="btn" href="/dashboard">Dashboard</a>
                         </form>
               @endauth
               <!-- Login e registro -->
@@ -71,9 +73,16 @@
 @endguest
     <!--  -->
     </header>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+   
     
 @yield('content')
+
+
+
+@yield('footer')
     <footer>
 
     <div class="footer"> 

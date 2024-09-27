@@ -1,0 +1,16 @@
+/*Div Modal*/
+.modal-payment div {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    padding: 15px 20px;
+    background-color: #282936;
+}
+
+.meu-input-data {
+    border-color: #f00; /* Altera a cor da borda */
+    border-radius: 5px; /* Arredonda as bordas */
+    padding: 10px;
+  }

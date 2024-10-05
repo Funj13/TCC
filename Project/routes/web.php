@@ -26,16 +26,16 @@ require __DIR__.'/auth.php';
 
 /* função inserção imgs do carrousel  */
 Route::get('/carrousel-image-1', function () {
-    return response()->file(public_path('images/img_hotel_1.jpg'));
+    return response()->file(public_path('images/img_suite_wood.webp'));
 });
 Route::get('/carrousel-image-2', function () {
-    return response()->file(public_path('images/img_hotel_2.jpg'));
+    return response()->file(public_path('images/img_suite_moderna_1.jpg'));
 });
 Route::get('/carrousel-image-3', function () {
-    return response()->file(public_path('images/img_hotel_3.jpg'));
+    return response()->file(public_path('images/Quarto_Serenidade_4.jpg'));
 });
 Route::get('/carrousel-image-4', function (){
-    return response()->file(public_path('images/img_hotel_4.jpg'));
+    return response()->file(public_path('images/suite_eden_1.jpg'));
 });
 
 // Função iserção de img logo

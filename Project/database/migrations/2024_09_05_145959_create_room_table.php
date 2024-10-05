@@ -2,16 +2,17 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateQuartosTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
         Schema::create('rooms', function (Blueprint $table) {
-            $table->quartos_id();
+            $table->id();
             $table->string('tipo');
             $table->string('preco');
-            $table->int('disponibilidade');
+            $table->integer('disponibilidade');
             $table->string('nome');
             $table->timestamps();
         });
@@ -19,6 +20,6 @@ class CreateQuartosTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('quartos');
+        Schema::dropIfExists('rooms');
     }
-}
+};

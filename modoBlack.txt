@@ -1,0 +1,71 @@
+@extends('layouts.admin')
+
+@section('title', 'Hotel')
+
+@section('content')
+    <div class="Tabela_Quartos">
+        <body id="body" data-bs-theme="white">
+            <h2>Quartos Registrados</h2>
+
+            <table>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Tipagem</th>
+                    <th>Preço</th>
+                    <th>Disponibilidade</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+
+                @foreach($rooms as $room)
+                    <tr>
+                        <th> {{ $room->id }} </th>
+                        <th> {{ $room->nome }} </th>
+                        <th> {{ $room->tipagem }} </th>
+                        <th> {{ $room->preco_por_noite }} </th>
+                        <th> {{ $room->disponibilidade }} </th>
+
+                        <th> 
+                            <form method="POST" action = "{{ url('/roomCadastro/update/?id=' . $room->id . '&nome=' . urlencode($room->nome) . '&tipagem=' . urlencode($room->tipagem) . '&preco_por_noite=' . $room->preco_por_noite . '&disponibilidade=' . $room->disponibilidade) }}">
+                                @csrf
+                                <a href class="btn btn-primary">Editar</a>
+                            </form>
+                        </th>
+                        <th>
+                            <form action="{{ route('rooms.destroy', $room->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+                        </th>
+
+                    </tr>
+                @endforeach
+            </table>
+
+            <button id="toggle-theme">Mudar cor</button>
+
+            <script>
+                const toggleThemeButton = document.getElementById('toggle-theme');
+                const bodyElement = document.getElementById('body');
+
+                // Adicionar evento de clique ao botão
+                toggleThemeButton.addEventListener('click', () => {
+                    // Verificar se o tema atual é light ou dark
+                    if (bodyElement.getAttribute('data-bs-theme') === 'white') {
+                        // Alterar para tema dark
+                        bodyElement.setAttribute('data-bs-theme', 'dark');
+                        bodyElement.style.backgroundColor = 'black';
+                        bodyElement.style.color = 'white';
+                    } else {
+                        // Alterar para tema light
+                        bodyElement.setAttribute('data-bs-theme', 'white');
+                        bodyElement.style.backgroundColor = 'white';
+                        bodyElement.style.color = 'black';
+                    }
+                });
+            </script>
+        </body>
+    </div>
+@endsection

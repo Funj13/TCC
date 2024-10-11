@@ -1,0 +1,33 @@
+HTML
+<!-- Botão para alternar entre o modo branco e preto -->
+<button id="toggle-theme" class="btn btn-primary">Alternar tema</button>
+
+<!-- Elemento que você deseja alterar o tema -->
+<body id="body" data-bs-theme="light">
+  <!-- seu conteúdo aqui -->
+  <p id="text">Este é um exemplo de texto</p>
+</body>
+
+
+JS
+//código js para deixar o fundo preto, e o texto branco e vice-versa
+<script>
+      const toggleThemeButton = document.getElementById('toggle-theme');
+const bodyElement = document.getElementById('body');
+
+// Adicionar evento de clique ao botão
+toggleThemeButton.addEventListener('click', () => {
+  // Verificar se o tema atual é light ou dark
+  if (bodyElement.getAttribute('data-bs-theme') === 'light') {
+    // Alterar para tema dark
+    bodyElement.setAttribute('data-bs-theme', 'dark');
+    bodyElement.classList.add('bg-dark');
+    bodyElement.classList.add('text-white');
+  } else {
+    // Alterar para tema light
+    bodyElement.setAttribute('data-bs-theme', 'light');
+    bodyElement.classList.remove('bg-dark');
+    bodyElement.classList.remove('text-white');
+  }
+});
+      </script>

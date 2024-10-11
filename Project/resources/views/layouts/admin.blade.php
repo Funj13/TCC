@@ -22,7 +22,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body>
+<body  id="body" data-bs-theme="white">
 
   @yield('topnav')
   <header>
@@ -34,7 +34,6 @@
         <div class="img-logo" id="logo-id">
           <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
             aria-controls="offcanvasWithBothOptions"><img src="images/pinguem_logo.png" alt="icon-logo" class="click"></a>
-
         </div>
 
         <div class="topnav-right">
@@ -52,9 +51,11 @@
         <a class="btn btn-outline-light" href="/dashboard">Dashboard</a>
 
         <!-- Nome usuario -->
-        <a class="btn btn-outline-light" href="/profile">
+        <a class="btn" href="/profile">
           <div>{{ Auth::user()->name }}</div>
         </a>
+        <input type="checkbox" class="theme-checkbox" id="toggle-theme">
+        <script src="js/themeMode.js"></script>
 
 
         </form>
@@ -88,8 +89,8 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <p><a class="btn btn-dark" href='/cadastroQuarto'>Cadastrar Quarto</a></p>
-      <p><a class="btn btn-dark" href='/cadastroIndex'>Gerenciar Quartos</a></p>
+      <p><a class="brutalist-card__button brutalist-card__button--mark" href='/cadastroQuarto'>Cadastrar Quarto</a></p>
+      <p><a class="brutalist-card__button brutalist-card__button--mark" href='/cadastroIndex'>Gerenciar Quartos</a></p>
     </div>
   </div>
   <div>
@@ -98,6 +99,8 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
     @yield('content')
+
+    
     <footer>
 
       <div class="footer">

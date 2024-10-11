@@ -1,9 +1,9 @@
 :root {
-    --color1: #54ccca ;
-    --color2: #3fa2a0 ;
-    --color3: #2a7776 ;
-    --color4: #154d4c ;
-    --color5: #002322 ;
+    --color1: #54ccca;
+    --color2: #3fa2a0;
+    --color3: #2a7776;
+    --color4: #154d4c;
+    --color5: #002322;
     --white: #fff;
     --black: #000;
     --gray-light: #f3f3f379;
@@ -16,8 +16,7 @@
 }
 
 
-* 
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -58,16 +57,19 @@ header {
 .carousel-slide img {
     width: 100%;
     height: auto;
-    
+
 }
-.carousel-inner{
+
+.carousel-inner {
     text-align: center;
 }
-.carousel-inner  img {
+
+.carousel-inner img {
     position: relative;
     text-align: center;
     max-width: 100%;
-    height: 500px; /* Altura da imagem dentro do carrossel */
+    height: 500px;
+    /* Altura da imagem dentro do carrossel */
 }
 
 
@@ -93,24 +95,27 @@ header {
 
 .next-btn {
     right: 10px;
-} 
+}
 
 
 /* Album Quartos Index */
-.div-album{
+.div-album {
     background-color: var(--gray-light);
 
 }
-h2{
+
+h2 {
     text-align: center;
-    font-size: 230%; font-style: Helvetica;
+    font-size: 230%;
+    font-style: Helvetica;
 }
 
 .class_more_itens {
-background-color: var(--gray-light);
-padding: 20px 100px;
+    background-color: var(--gray-light);
+    padding: 20px 100px;
 
 }
+
 .class_more_itens a {
     color: var(--black);
     float: right;
@@ -124,6 +129,13 @@ padding: 20px 100px;
     display: flex;
     gap: 20px;
     padding: 60px;
+}
+
+.container-dashboard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .imagem-principal {
@@ -180,15 +192,13 @@ padding: 20px 100px;
 
 /*Rodapé Pág*/
 .footer {
-    justify-content: center;
-    justify-items: center;
-    text-align: center;
-
-    background-color: var(--gray-light);
-    display: flex;
+    bottom: 0;
     width: 100%;
     height: 10%;
-    margin-top: 5%;
+    background-color: var(--gray-light);
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 /*Button*/
@@ -200,28 +210,30 @@ padding: 20px 100px;
     font-weight: 500;
     border: none;
     border-radius: 45px;
-    box-shadow: 0px 8px 15px var(--color1);
+    box-shadow: 0px 8px 15px var(--bs-gray-100);
     cursor: pointer;
     outline: none;
     font-weight: bold;
     text-decoration: none;
 
-    color: var(--color3);
-    border: 1px solid var(--color1);
-    background: var(--color1);
+    color: var(--white);
+    border: 1px solid var(--bs-gray-100);
+    background: #ffffff00;
     transition: all 0.2s ease-in-out;
     text-transform: capitalize;
 }
+
 /*Button inicio*/
 #btnContent:hover {
-    background-color: var(--color2);
+    background-color: var(--bs-gray-100);
     box-shadow: 0px 15px 20px var(--color2);
-    border: 1px solid var(--color2);
-    color: var(--white);
+    border: 1px solid var(--bs-gray-100);
+    color: var(--black);
     transform: translateY(-7px);
     transition: all 0.2s ease-in-out;
     text-transform: capitalize;
 }
+
 #btnContent:active {
     transform: translateY(-1px);
 }
@@ -231,36 +243,36 @@ padding: 20px 100px;
 /* teste pagina Cadarpio */
 
 
-  
-  .container-menu {
+
+.container-menu {
     width: 100%;
     margin: 0 auto;
     padding: 20px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+}
 
 .nav {
     display: flex;
     justify-content: left;
     margin-bottom: 20px;
-  }
-  
-  .nav button {
+}
+
+.nav button {
     margin: 0 5px;
     padding: 8px 15px;
     border: none;
     border-radius: 3px;
     background-color: var(--white);
     cursor: pointer;
-  }
-  
-  .nav button.active {
+}
+
+.nav button.active {
     background-color: var(--black);
     color: var(--white);
-  }
-  
+}
+
 
 /*Img Pratos*/
 .persons-icon {
@@ -270,12 +282,14 @@ padding: 20px 100px;
     padding: 20px;
     display: flex;
 }
+
 .persons-icon img {
     border-radius: 10%;
     padding: 1%;
     width: 300px;
     height: 300px;
 }
+
 /*Nome Pratos*/
 .person h1 {
     font-size: 40px;
@@ -296,6 +310,7 @@ padding: 20px 100px;
     overflow: hidden;
     transition: all 0.3s;
 }
+
 .image-container-menu:hover {
     transform: scale(1.1);
 }
@@ -304,7 +319,8 @@ padding: 20px 100px;
     width: 100%;
     height: auto;
 }
-.image-container-pequeno{
+
+.image-container-pequeno {
     position: relative;
     width: 45%;
     height: 200px;
@@ -315,9 +331,11 @@ padding: 20px 100px;
     overflow: hidden;
     transition: all 0.3s;
 }
-.image-container-pequeno:hover{
+
+.image-container-pequeno:hover {
     transform: scale(1.1);
 }
+
 .image-container-pequeno img {
     width: 100%;
     height: auto;
@@ -331,16 +349,17 @@ padding: 20px 100px;
     font-weight: bold;
 }
 
-.btn-cadarpio{
+.btn-cadarpio {
     display: flex;
     justify-content: right;
 }
-.btn-cadarpio a{
+
+.btn-cadarpio a {
     color: var(--black);
     text-decoration: none;
 }
 
-.menu-food{
+.menu-food {
     background-color: var(--bs-gray-100);
 }
 
@@ -348,30 +367,276 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-  }
-  
-  td, th {
+}
+
+td,
+th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-  }
-  
-  tr:nth-child(even) {
+}
+
+tr:nth-child(even) {
     background-color: #dddddd;
-  }
+}
 
-  .border{
-    margin: 1% ;
+.border {
+    margin: 1%;
     border-style: none;
-  }
+}
 
-  .btn-position{
+.btn-position {
     position: relative;
     left: 10px;
     bottom: 10px;
 
+}
+
+.click {
+    cursor: pointer;
+}
+
+.menu-adm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Content*/
+#a {
+    font-style: none;
+    padding: 20px;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+
+}
+
+/*adm*/
+.content_donate {
+    position: absolute;
+    left: 15%;
+    text-align: center;
+    background-color: var(--color4);
+    width: 30%;
+    height: 70%;
+    border-radius: 10%;
+    margin-bottom: 5%;
+}
+
+/* Administracao*/
+.content-text textarea {
+
+    color: rgb(255, 255, 255);
+    width: 90%;
+    padding: 10px;
+    margin: 5px 5px 5px 5px;
+    border: solid 1.5px #ffffffd1;
+    resize: none;
+    border-radius: 10px;
+    background: #ffffff86;
+    transition: 00.2s;
+    text-decoration: none;
+}
+
+.content-text textarea:hover {
+    background-color: #0c0c0c;
+    box-shadow: 0px 15px 20px #282936bb;
+    color: rgb(255, 255, 255);
+    transform: translateY(-7px);
+}
+
+/*Contato*/
+.content_contact {
+    right: 15%;
+    position: absolute;
+    text-align: center;
+    background-color: var(--color4);
+    width: 30%;
+    height: 70%;
+    border-radius: 10%;
+    margin-bottom: 5%;
+}
+
+.content_contact h1 {
+    text-align: center;
+    color: white;
+}
+
+.content_donate h1 {
+    color: white;
+}
+
+/* From Uiverse.io by cuzpq */ 
+.theme-checkbox {
+    --toggle-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 6.25em;
+    height: 3.125em;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+    background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background-size: 205%;
+    background-position: 0;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 99em;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--toggle-size);
+  }
+  
+  .theme-checkbox::before {
+    content: "";
+    width: 2.25em;
+    height: 2.25em;
+    position: absolute;
+    top: 0.438em;
+    left: 0.438em;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+    background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background-size: 205%;
+    background-position: 100%;
+    border-radius: 50%;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .theme-checkbox:checked::before {
+    left: calc(100% - 2.25em - 0.438em);
+    background-position: 0;
+  }
+  
+  .theme-checkbox:checked {
+    background-position: 100%;
   }
 
-  .click{
-    cursor: pointer;
+
+/* From Uiverse.io by 0xnihilism */ 
+.brutalist-card {
+    width: 320px;
+    border: 4px solid #000;
+    background-color: #fff;
+    padding: 1.5rem;
+    box-shadow: 10px 10px 0 #000;
+    font-family: "Arial", sans-serif;
   }
+  
+  .brutalist-card__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #000;
+    padding-bottom: 1rem;
+  }
+  
+  .brutalist-card__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    padding: 0.5rem;
+  }
+  
+  .brutalist-card__icon svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: #fff;
+  }
+  
+  .brutalist-card__alert {
+    font-weight: 900;
+    color: #000;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  
+  .brutalist-card__message {
+    margin-top: 1rem;
+    color: #000;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    border-bottom: 2px solid #000;
+    padding-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .brutalist-card__actions {
+    margin-top: 1rem;
+  }
+  
+  .brutalist-card__button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 3px solid #000;
+    background-color: #fff;
+    color: #000;
+    position: relative;
+    transition: all 0.2s ease;
+    box-shadow: 5px 5px 0 #000;
+    overflow: hidden;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+  
+  .brutalist-card__button--read {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .brutalist-card__button::before {
+    content: "";
+    position: flex;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: all 0.6s;
+  }
+  
+  .brutalist-card__button:hover::before {
+    left: 100%;
+  }
+  
+  .brutalist-card__button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #000;
+  }
+  
+  .brutalist-card__button--mark:hover {
+    background-color: #296fbb;
+    border-color: #296fbb;
+    color: #fff;
+    box-shadow: 7px 7px 0 #004280;
+  }
+  
+  .brutalist-card__button--read:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: #fff;
+    box-shadow: 7px 7px 0 #800000;
+  }
+  
+  .brutalist-card__button:active {
+    transform: translate(5px, 5px);
+    box-shadow: none;
+  }
+  

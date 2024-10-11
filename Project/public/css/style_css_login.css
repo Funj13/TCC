@@ -1,0 +1,135 @@
+ body{
+    background-image: url('/images/back.gif') ;
+ }
+ 
+ .form {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     padding-left: 2em;
+     padding-right: 2em;
+     padding-bottom: 0.4em;
+     background-color: #171717;
+     border-radius: 25px;
+     transition: .4s ease-in-out;
+ }
+
+ .card {
+     background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+     border-radius: 22px;
+     transition: all 0.3s;
+ }
+
+ .card2 {
+     border-radius: 0;
+     transition: all 0.2s;
+ }
+
+ .card2:hover {
+     transform: scale(0.98);
+     border-radius: 20px;
+ }
+
+ .card:hover {
+     box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
+ }
+
+
+ /* .form:hover {
+    transform: scale(1.05);
+    border: 1px solid black;
+  }
+   */
+ #heading {
+     text-align: center;
+     margin: 2em;
+     color: rgb(255, 255, 255);
+     font-size: 1.2em;
+ }
+
+ .field {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 0.5em;
+     border-radius: 25px;
+     padding: 0.6em;
+     border: none;
+     outline: none;
+     color: white;
+     background-color: #171717;
+     box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+ }
+
+ .input-icon {
+     height: 1.3em;
+     width: 1.3em;
+     fill: white;
+ }
+
+ .input-field {
+     background: none;
+     border: none;
+     outline: none;
+     width: 100%;
+     color: #d3d3d3;
+ }
+
+ .form .btn {
+     display: flex;
+     justify-content: center;
+     flex-direction: row;
+     margin-top: 2.5em;
+ }
+
+
+ .button {
+     width: 10em;
+     position: relative;
+     height: 3.5em;
+     border: 3px ridge #149CEA;
+     outline: none;
+     background-color: transparent;
+     color: white;
+     transition: 1s;
+     border-radius: 0.3em;
+     font-size: 16px;
+     font-weight: bold;
+     cursor: pointer;
+ }
+
+ .button::after {
+     content: "";
+     position: absolute;
+     top: -10px;
+     left: 3%;
+     width: 95%;
+     height: 40%;
+     background-color: #171717;
+     transition: 0.5s;
+     transform-origin: center;
+ }
+
+ .button::before {
+     content: "";
+     transform-origin: center;
+     position: absolute;
+     top: 80%;
+     left: 3%;
+     width: 95%;
+     height: 40%;
+     background-color: #171717;
+     transition: 0.5s;
+ }
+
+ .button:hover::before,
+ button:hover::after {
+     transform: scale(0)
+ }
+
+ .button:hover {
+     border: 2px solid transparent;/* Faz com que a borda seja transparente para o gradiente se sobrepor */
+     background-image:  linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+     background-clip: padding-box;/* Confina o gradiente ao interior da caixa */
+     /* box-shadow: inset 0px 0px 25px #1479EA; */
+ }

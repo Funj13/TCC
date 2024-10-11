@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@extends('layouts.admin')
 
 @section('title', 'Hotel')
 
@@ -8,15 +9,17 @@
 @endsection
 
 
+<
+
 <div class="editQuarto">
 
     <form method="POST" action="{{ route('rooms.update') }}">
         @csrf
        
         <div>
-            <label for="">ID:</label>
+            <label for="" class="form-label">ID:</label>
             <input type="number" class="form-control" name="quartos_id" value="" />
-            <label for="">Tipagem:</label>
+            <label for="" class="form-label">Tipagem:</label>
             <input type="text" class="form-control" name="tipo" value="" />
             <label for="">Preço:</label>
             <input type="number" class="form-control" name="preco" value="" />

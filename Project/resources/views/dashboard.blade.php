@@ -6,6 +6,14 @@
 @section('content')
 @section('topnav')
 @endsection
+@extends('layouts.main')
+
+@section('title', 'Hotel')
+
+
+@section('content')
+@section('topnav')
+@endsection
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
     aria-labelledby="offcanvasWithBothOptionsLabel">

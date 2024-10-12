@@ -35,7 +35,6 @@
 </div>
 
 
-
 <!-- album quartos -->
 
 <div id="div_outros" class="div-album">
@@ -141,7 +140,7 @@
 
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="/images/suite_lua_cheia_1.webp" alt="Card image cap">
+          <img class="card-img-top" src="/images/suite_lua_cheia_1.jpg" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Suíte da Lua Cheia</p>
             <div class="d-flex justify-content-between align-items-center">
@@ -189,30 +188,30 @@
 
   </div>
   <!-- Cadarpio menu -->
-  <div class="menu-food" data-bs-theme="dark">
+  <div class="menu_food" >
 
     <div>
       <h2>Cardápio:</h2>
     </div>
 
-    <main class="container" data-bs-theme="dark">
-      <div class="image-container-menu">
+    <main class="container" >
+      <div class="image-container-menu" >
         <img src="/images/prato-menu.jpg" alt="Imagem 1" class="img-prato-principal">
         <div class="text-menu"> Prato Principal do Dia</div>
       </div>
 
-      <div class="image-container-pequeno">
+      <div class="image-container-pequeno" >
         <img src="/images/img_prato_cafe.avif" alt="Imagem 2" class="img-prato-secundario">
         <div class="text-menu">Café da Manhã</div>
       </div>
 
-      <div class="image-container-pequeno">
+      <div class="image-container-pequeno" >
         <img src="/images/img_menu_sobremesa.jpeg" alt="Imagem 3" class="img-prato-secundario">
         <div class="text-menu">Sobremesa</div>
       </div>
 
     </main>
-    <div class="btn-cadarpio">
+    <div class="btn-cadarpio" >
       <a href="/cadarpio">Ver Mais</a>
     </div>
   </div>

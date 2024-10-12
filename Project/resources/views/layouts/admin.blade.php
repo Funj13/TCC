@@ -22,7 +22,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body>
+<body  id="body" data-bs-theme="white">
 
   @yield('topnav')
   <header>
@@ -51,9 +51,11 @@
         <a class="btn btn-outline-light" href="/dashboard">Dashboard</a>
 
         <!-- Nome usuario -->
-        <a class="btn btn-outline-light" href="/profile">
+        <a class="btn" href="/profile">
           <div>{{ Auth::user()->name }}</div>
         </a>
+        <input type="checkbox" class="theme-checkbox" id="toggle-theme">
+        <script src="js/themeMode.js"></script>
 
 
         </form>
@@ -87,8 +89,8 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <p><a class="btn btn-dark" href='/cadastroQuarto'>Cadastrar Quarto</a></p>
-      <p><a class="btn btn-dark" href='/cadastroIndex'>Gerenciar Quartos</a></p>
+      <p><a class="brutalist-card__button brutalist-card__button--mark" href='/cadastroQuarto'>Cadastrar Quarto</a></p>
+      <p><a class="brutalist-card__button brutalist-card__button--mark" href='/cadastroIndex'>Gerenciar Quartos</a></p>
     </div>
   </div>
   <div>
@@ -98,16 +100,16 @@
     crossorigin="anonymous"></script>
     @yield('content')
 
-    
+    <div class="footer"></div>
     <footer>
 
-      <div class="footer">
+      
 
         <br>
         <p> Pinguin Hotel &copy; 2024</p>
-      </div>
+      
 
-    </footer>
+    </footer></div>
 </body>
 
 </html>

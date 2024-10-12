@@ -10,10 +10,14 @@ toggleThemeButton.addEventListener('click', () => {
     bodyElement.setAttribute('data-bs-theme', 'dark');
     bodyElement.style.backgroundColor = 'black';
     bodyElement.style.color = 'white';
+    bodyElement.style.menu_food = 'black';
+    bodyElement.style.theme = 'black';
   } else {
     // Alterar para tema light
     bodyElement.setAttribute('data-bs-theme', 'white');
     bodyElement.style.backgroundColor = 'white';
-    bodyElement.style.color = 'black';
+    bodyElement.style.color = 'black'; 
+    bodyElement.style.menu_food = 'white';
+    bodyElement.style.theme = 'white';
   }
 });

@@ -22,7 +22,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body  id="body" data-bs-theme="white">
+<body id="body" data-bs-theme="white">
 
   @yield('topnav')
   <header>
@@ -38,8 +38,8 @@
 
 
         <div class="topnav-right">
-      
-        
+
+
           <!-- Opcões Autenticado -->
           @auth
 
@@ -47,13 +47,14 @@
         <form method="POST" action="http://127.0.0.1:8000/logout">
         @csrf
         <a class="btn" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
-                          this.closest('form').submit();">Log Out</a>
+                this.closest('form').submit();">Log Out</a>
 
         <a class="btn" href="/profile">
           <div>{{ Auth::user()->name }}</div>
         </a>
-        <input type="checkbox" class="theme-checkbox" id="toggle-theme">
-        <script src="js/themeMode.js"></script>
+        <!-- layout black and white -->
+          <input type="checkbox" class="theme-checkbox" id="toggle-theme" style="width: 60px;height: 30px;">
+          <script src="js/themeMode.js"></script>
         <a class="btn" href="/dashboard">Dashboard</a>
         </form>
 
@@ -67,8 +68,8 @@
           @if (Route::has('register'))
         <a class="btn" href="{{ route('register') }}">Cadastra-se</a>
       @endif
-      <input type="checkbox" class="theme-checkbox" id="toggle-theme">
-        <script src="js/themeMode.js"></script>
+          <input type="checkbox" class="theme-checkbox" id="toggle-theme">
+          <script src="js/themeMode.js"></script>
 
 
         </div>
@@ -91,16 +92,17 @@
 
 
 
-  @yield('footer')
-  <footer>
+  @yield('footer')<div class="footer">
+    <footer>
 
-    <div class="footer">
+
 
       <br>
       <p> Pinguin Hotel &copy; 2024</p>
-    </div>
 
-  </footer>
+
+    </footer>
+  </div>
 </body>
 
 </html>

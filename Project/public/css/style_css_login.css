@@ -1,3 +1,7 @@
+ body{
+    background-image: url('/images/back.gif') ;
+ }
+ 
  .form {
      display: flex;
      flex-direction: column;

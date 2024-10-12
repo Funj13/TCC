@@ -17,8 +17,6 @@
     <div class="offcanvas-body">
         <p><a class="brutalist-card__button brutalist-card__button--mark" href='/cadastroQuarto'>Cadastrar Quarto</a></p>
         <p><a class="brutalist-card__button brutalist-card__button--mark" href='/cadastroIndex'>gerenciar</a></p>
-        <p><a class="brutalist-card__button brutalist-card__button--mark" href='/cadastroQuarto'>Cadastrar Quarto</a></p>
-        <p><a class="brutalist-card__button brutalist-card__button--mark" href='/cadastroIndex'>gerenciar</a></p>
     </div>
 </div>
 

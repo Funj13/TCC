@@ -1,13 +1,8 @@
 @extends('layouts.main')
-@extends('layouts.main')
 
 @section('title', 'Hotel')
-@section('title', 'Hotel')
 
 
-@section('content')
-@section('topnav')
-@endsection
 @section('content')
 @section('topnav')
 @endsection
@@ -44,11 +39,7 @@
 
 <div id="div_outros" class="div-album">
   <h2>Quartos:</h2>
-<div id="div_outros" class="div-album">
-  <h2>Quartos:</h2>
 
-
-  <div class="container">
 
   <div class="container">
 
@@ -100,100 +91,7 @@
           </div>
         </div>
       </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm" id="card_album" style="background-color: 'rgba(var(--color3)) ;'">
-          <img class="card-img-top" src="/images/img_quart_ang_2.jpeg" alt="Card image Quarto">
-          <div class="card-body">
-            <p class="card-text">Suite Elegância Moderna</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button> -->
-                <a href="/Quarto-Suite-Elegancia-Moderna" style="text-decoration: none;"
-                  class="btn btn-sm btn-outline-secondary">Detalhes</a>
-              </div>
-              <small class="text-muted">Valor: R$x,00</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="/images/Quarto_simples_2.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text"></p>
-            <p class="card-text">Quarto da Paz</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <a href="/Quarto-da-Paz" style="text-decoration: none;"
-                  class="btn btn-sm btn-outline-secondary">Detalhes</a>
-              </div>
-              <small class="text-muted">Valor: R$x,00</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="/images/Quarto_imperial_2.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Quarto Imperial Moderno</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <a href="/Quarto-Imperial" style="text-decoration: none;"
-                  class="btn btn-sm btn-outline-secondary">Detalhes</a>
-              </div>
-              <small class="text-muted">Valor: R$x,00</small>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="/images/Quarto_Serenidade_1.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Quarto Serenidade</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <a href="/Quarto-Serenidade" style="text-decoration: none;"
-                  class="btn btn-sm btn-outline-secondary">Detalhes</a>
-              </div>
-              <small class="text-muted">Valor: R$x,00</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="/images/suite_eden_1.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Suíte do Éden</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <a href="/Suite-Eden" style="text-decoration: none;"
-                  class="btn btn-sm btn-outline-secondary">Detalhes</a>
-              </div>
-              <small class="text-muted">Valor: R$x,00</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="/images/suite_marfin_1.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Suíte Marfim</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <a href="/Suite-Marfim" style="text-decoration: none;"
-                  class="btn btn-sm btn-outline-secondary">Detalhes</a>
-              </div>
-              <small class="text-muted">Valor: R$x,00</small>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm">
           <img class="card-img-top" src="/images/Quarto_Serenidade_1.jpeg" alt="Card image cap">
@@ -290,7 +188,6 @@
 
   </div>
   <!-- Cadarpio menu -->
-  <div class="menu_food" >
   <div class="menu_food" >
 
     <div>

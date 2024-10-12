@@ -4,6 +4,11 @@
     --color3: #2a7776;
     --color4: #154d4c;
     --color5: #002322;
+    --color1: #54ccca;
+    --color2: #3fa2a0;
+    --color3: #2a7776;
+    --color4: #154d4c;
+    --color5: #002322;
     --white: #fff;
     --black: #000;
     --gray-light: #f3f3f379;
@@ -16,6 +21,7 @@
 }
 
 
+* {
 * {
     margin: 0;
     padding: 0;
@@ -58,16 +64,23 @@ header {
     width: 100%;
     height: auto;
 
+
 }
+
+.carousel-inner {
 
 .carousel-inner {
     text-align: center;
 }
 
 .carousel-inner img {
+
+.carousel-inner img {
     position: relative;
     text-align: center;
     max-width: 100%;
+    height: 500px;
+    /* Altura da imagem dentro do carrossel */
     height: 500px;
     /* Altura da imagem dentro do carrossel */
 }
@@ -96,16 +109,22 @@ header {
 .next-btn {
     right: 10px;
 }
+}
 
 
 /* Album Quartos Index */
+.div-album {
 .div-album {
     background-color: var(--gray-light);
 
 }
 
 h2 {
+
+h2 {
     text-align: center;
+    font-size: 230%;
+    font-style: Helvetica;
     font-size: 230%;
     font-style: Helvetica;
 }
@@ -113,8 +132,11 @@ h2 {
 .class_more_itens {
     background-color: var(--gray-light);
     padding: 20px 100px;
+    background-color: var(--gray-light);
+    padding: 20px 100px;
 
 }
+
 
 .class_more_itens a {
     color: var(--black);
@@ -129,6 +151,13 @@ h2 {
     display: flex;
     gap: 20px;
     padding: 60px;
+}
+
+.container-dashboard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .imagem-principal {
@@ -188,6 +217,9 @@ h2 {
     bottom: 0;
     width: 100%;
     height: 10%;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
     background-color: var(--gray-light);
     display: flex;
     justify-content: center;
@@ -204,6 +236,7 @@ h2 {
     border: none;
     border-radius: 45px;
     box-shadow: 0px 8px 15px var(--bs-gray-100);
+    box-shadow: 0px 8px 15px var(--bs-gray-100);
     cursor: pointer;
     outline: none;
     font-weight: bold;
@@ -212,20 +245,28 @@ h2 {
     color: var(--white);
     border: 1px solid var(--bs-gray-100);
     background: #ffffff00;
+    color: var(--white);
+    border: 1px solid var(--bs-gray-100);
+    background: #ffffff00;
     transition: all 0.2s ease-in-out;
     text-transform: capitalize;
 }
 
+
 /*Button inicio*/
 #btnContent:hover {
     background-color: var(--bs-gray-100);
+    background-color: var(--bs-gray-100);
     box-shadow: 0px 15px 20px var(--color2);
+    border: 1px solid var(--bs-gray-100);
+    color: var(--black);
     border: 1px solid var(--bs-gray-100);
     color: var(--black);
     transform: translateY(-7px);
     transition: all 0.2s ease-in-out;
     text-transform: capitalize;
 }
+
 
 #btnContent:active {
     transform: translateY(-1px);
@@ -238,6 +279,8 @@ h2 {
 
 
 .container-menu {
+
+.container-menu {
     width: 100%;
     margin: 0 auto;
     padding: 20px;
@@ -245,11 +288,15 @@ h2 {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+}
 
 .nav {
     display: flex;
     justify-content: left;
     margin-bottom: 20px;
+}
+
+.nav button {
 }
 
 .nav button {
@@ -262,8 +309,13 @@ h2 {
 }
 
 .nav button.active {
+}
+
+.nav button.active {
     background-color: var(--black);
     color: var(--white);
+}
+
 }
 
 
@@ -276,12 +328,14 @@ h2 {
     display: flex;
 }
 
+
 .persons-icon img {
     border-radius: 10%;
     padding: 1%;
     width: 300px;
     height: 300px;
 }
+
 
 /*Nome Pratos*/
 .person h1 {
@@ -304,6 +358,7 @@ h2 {
     transition: all 0.3s;
 }
 
+
 .image-container-menu:hover {
     transform: scale(1.1);
 }
@@ -312,6 +367,8 @@ h2 {
     width: 100%;
     height: auto;
 }
+
+.image-container-pequeno {
 
 .image-container-pequeno {
     position: relative;
@@ -326,8 +383,11 @@ h2 {
 }
 
 .image-container-pequeno:hover {
+
+.image-container-pequeno:hover {
     transform: scale(1.1);
 }
+
 
 .image-container-pequeno img {
     width: 100%;
@@ -343,15 +403,19 @@ h2 {
 }
 
 .btn-cadarpio {
+.btn-cadarpio {
     display: flex;
     justify-content: right;
 }
+
+.btn-cadarpio a {
 
 .btn-cadarpio a {
     color: var(--black);
     text-decoration: none;
 }
 
+.menu-food {
 .menu-food {
     background-color: var(--bs-gray-100);
 }
@@ -364,27 +428,133 @@ table {
 
 td,
 th {
+}
+
+td,
+th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
 
 tr:nth-child(even) {
+}
+
+tr:nth-child(even) {
     background-color: #dddddd;
+}
 }
 
 .border {
     margin: 1%;
+.border {
+    margin: 1%;
     border-style: none;
 }
+}
 
+.btn-position {
 .btn-position {
     position: relative;
     left: 10px;
     bottom: 10px;
 
 }
+}
 
+.click {
+    cursor: pointer;
+}
+
+.menu-adm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Content*/
+#a {
+    font-style: none;
+    padding: 20px;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+
+}
+
+/*adm*/
+.content_donate {
+    position: absolute;
+    left: 15%;
+    text-align: center;
+    background-color: var(--color4);
+    width: 30%;
+    height: 70%;
+    border-radius: 10%;
+    margin-bottom: 5%;
+}
+
+/* Administracao*/
+.content-text textarea {
+
+    color: rgb(255, 255, 255);
+    width: 90%;
+    padding: 10px;
+    margin: 5px 5px 5px 5px;
+    border: solid 1.5px #ffffffd1;
+    resize: none;
+    border-radius: 10px;
+    background: #ffffff86;
+    transition: 00.2s;
+    text-decoration: none;
+}
+
+.content-text textarea:hover {
+    background-color: #0c0c0c;
+    box-shadow: 0px 15px 20px #282936bb;
+    color: rgb(255, 255, 255);
+    transform: translateY(-7px);
+}
+
+/*Contato*/
+.content_contact {
+    right: 15%;
+    position: absolute;
+    text-align: center;
+    background-color: var(--color4);
+    width: 30%;
+    height: 70%;
+    border-radius: 10%;
+    margin-bottom: 5%;
+}
+
+.content_contact h1 {
+    text-align: center;
+    color: white;
+}
+
+.content_donate h1 {
+    color: white;
+}
+
+/* From Uiverse.io by cuzpq */ 
+.theme-checkbox {
+    --toggle-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 6.25em;
+    height: 3.125em;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+    background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background-size: 205%;
+    background-position: 0;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 99em;
+    position: relative;
 .click {
     cursor: pointer;
 }

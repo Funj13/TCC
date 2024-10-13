@@ -639,3 +639,86 @@ tr:nth-child(even) {
     box-shadow: none;
   }
   
+
+.div-cadarpio{
+    display: grid;
+    place-items: center;
+}
+  /* From Uiverse.io by arshshaikh06 */ 
+.container-cadarpio {
+    height: 500px;
+    width: 1100px;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0 10px 20px #dbdbdb;
+    font-family: sans-serif;
+  }
+  
+  .palette {
+    display: flex;
+    height: 86%;
+    width: 100%;
+  }
+  
+  .color {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: flex 0.1s linear;
+  }
+  
+  .color span {
+    opacity: 0;
+    transition: opacity 0.1s linear;
+  }
+  
+  .color:nth-child(1) {
+    background-image: url("/images/prato-menu.jpg");
+}
+
+.color:nth-child(2) {
+    background-image: url("/images/img_prato_cafe.avif");
+}
+
+.color:nth-child(3) {
+    background-image: url("/images/img_menu_sobremesa.jpeg");
+}
+
+.color:nth-child(4) {
+    background-image: url("/images/img_food.jpeg");
+}
+
+.color:nth-child(5) {
+    background-image: url("/images/img_food.jpeg");
+}
+  
+  .color:hover {
+    flex: 2;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  
+  .color:hover span {
+    opacity: 1;
+  }
+  
+  .stats {
+    height: 14%;
+    width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5em;
+    box-sizing: border-box;
+    color: #bebebe;
+  }
+  
+  .stats svg {
+    fill: #bebebe;
+    transform: scale(1.2);
+  }

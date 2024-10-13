@@ -188,32 +188,32 @@
 
   </div>
   <!-- Cadarpio menu -->
-  <div class="menu_food" >
+  <div class="menu_food">
 
     <div>
       <h2>Cardápio:</h2>
     </div>
 
-    <main class="container" >
-      <div class="image-container-menu" >
-        <img src="/images/prato-menu.jpg" alt="Imagem 1" class="img-prato-principal">
-        <div class="text-menu"> Prato Principal do Dia</div>
-      </div>
+    <div class="div-cadarpio">
+      <div class="container-cadarpio">
+        <div class="palette">
+          <div class="color"><span>Prato Principal</span></div>
+          <div class="color"><span>Café da Manha</span></div>
+          <div class="color"><span>Sobremesa</span></div>
+          <!-- <div class="color"><span>F4A261</span></div>
+          <div class="color"><span>E76F51</span></div> -->
+        </div>
+        <div class=" stats card">
+<br><br>
+          <span></span>
 
-      <div class="image-container-pequeno" >
-        <img src="/images/img_prato_cafe.avif" alt="Imagem 2" class="img-prato-secundario">
-        <div class="text-menu">Café da Manhã</div>
-      </div>
+          <a href="/cadarpio">Ver Mais</a>
 
-      <div class="image-container-pequeno" >
-        <img src="/images/img_menu_sobremesa.jpeg" alt="Imagem 3" class="img-prato-secundario">
-        <div class="text-menu">Sobremesa</div>
+        </div>
       </div>
-
-    </main>
-    <div class="btn-cadarpio" >
-      <a href="/cadarpio">Ver Mais</a>
     </div>
+
+
   </div>
 </div>
 

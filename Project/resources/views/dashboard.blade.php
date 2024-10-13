@@ -32,7 +32,7 @@
         ></path>
       </svg>
     </div>
-    <div class="brutalist-card__alert color">Administração</div>
+    <div class="brutalist-card__alert ">Administração</div>
   </div>
   <div class="brutalist-card__actions">
   <button class="brutalist-card__button brutalist-card__button--mark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"

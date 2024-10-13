@@ -650,7 +650,7 @@ tr:nth-child(even) {
     width: 1100px;
     border-radius: 1em;
     overflow: hidden;
-    box-shadow: 0 10px 20px #dbdbdb;
+   
     font-family: sans-serif;
   }
   
@@ -718,7 +718,7 @@ tr:nth-child(even) {
     color: #bebebe;
   }
   
-  .stats svg {
+   .stats svg {
     fill: #bebebe;
     transform: scale(1.2);
-  }
+  } 

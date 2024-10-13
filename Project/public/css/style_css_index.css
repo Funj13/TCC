@@ -27,12 +27,12 @@ body {
     font-family: Arial, sans-serif;
 }
 
-header {
+/* header {
     background-color: var(--color4);
     color: var(--white);
     padding: 20px;
     text-align: center;
-}
+} */
 
 .carousel-container {
     position: relative;
@@ -462,7 +462,7 @@ tr:nth-child(even) {
 
 /* From Uiverse.io by cuzpq */ 
 .theme-checkbox {
-    --toggle-size: 16px;
+    --toggle-size: 10px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -508,9 +508,6 @@ tr:nth-child(even) {
   .theme-checkbox:checked {
     background-position: 100%;
   }
-
- 
-
 
 /* From Uiverse.io by 0xnihilism */ 
 .container_dashboard{

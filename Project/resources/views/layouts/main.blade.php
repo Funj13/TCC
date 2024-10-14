@@ -34,7 +34,7 @@
 
     <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
       <div class="bg-dark p-4">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-dark">
           <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
           <div class="container-fluid">
             @auth
@@ -52,7 +52,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/dashboard">Dashboard</a>
-            </li>  
+            </li>
             </ul>
           </form>
 
@@ -73,11 +73,13 @@
         </ul>
 
       @endguest
-
-            <!-- layout black and white -->
-            <input type="checkbox" class="theme-checkbox" id="toggle-theme" style="width: 60px;height: 30px;">
-            <script src="js/themeMode.js"></script>
-
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li>
+                <!-- layout black and white -->
+                <input type="checkbox" class="theme-checkbox" id="toggle-theme" style="width: 60px;height: 30px;">
+                <script src="js/themeMode.js"></script>
+              </li>
+            </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>

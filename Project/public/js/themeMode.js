@@ -14,6 +14,7 @@ toggleThemeButton.addEventListener('click', () => {
     bodyElement.style.theme = 'black';
     bodyElement.style.menu_food = 'black';
     bodyElement.style.theme = 'black';
+    bodyElement.style.collapse = 'black';
   } else {
     // Alterar para tema light
     bodyElement.setAttribute('data-bs-theme', 'white');
@@ -21,5 +22,6 @@ toggleThemeButton.addEventListener('click', () => {
     bodyElement.style.color = 'black'; 
     bodyElement.style.menu_food = 'white';
     bodyElement.style.theme = 'white';
+    bodyElement.style.collapse = 'white';
   }
 });

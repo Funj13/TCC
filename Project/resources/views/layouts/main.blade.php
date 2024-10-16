@@ -12,7 +12,7 @@
 
   <!-- css Local -->
   <link rel="stylesheet" href="{{ asset('css/style_css_index.css') }}">
-  <!-- <link rel="stylesheet" href="{{ asset('css/style_topnav.css') }}"> -->
+  <link rel="stylesheet" href="{{ asset('css/style_topnav.css') }}">
 
   <!-- Google Fonts -->
   <link rel="stylesheet" href="">
@@ -59,6 +59,13 @@
       @endauth
             <!-- Login e registro -->
             @guest
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+          <a href="/">
+                <img  src="images/pinguem_logo_2.png" alt="icon-logo" class="w-20 h-20 click">
+                </a>
+          </li>
+        </ul>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
           @if (Route::has('login'))

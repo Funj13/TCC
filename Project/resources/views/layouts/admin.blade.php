@@ -26,6 +26,7 @@
 
   @yield('topnav')
   <header>
+
     <!--Top-Nav-->
     <div id="top-nav">
       <div class="topnav" style="height: 50px; width: 100%;">
@@ -82,6 +83,9 @@
     @endguest
     <!--  -->
   </header>
+
+
+  
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
     aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">

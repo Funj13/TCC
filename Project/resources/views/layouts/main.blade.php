@@ -26,109 +26,110 @@
     crossorigin="anonymous"></script>
 </head>
 
-<body id="body" data-bs-theme="white">
+
 
   @yield('topnav')
-  <header>
+  <di>
 
+   
+        <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+          <div class="bg-dark ">
+            <nav class="navbar navbar-expand-lg bg-dark">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+              <div class="container-fluid" style="
+    padding-left: 0px;>
 
-    <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
-      <div class="bg-dark p-4">
-        <nav class="navbar navbar-expand-lg bg-dark">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
-          <div class="container-fluid">
-            @auth
-          <form method="POST" action="http://127.0.0.1:8000/logout">
-            @csrf
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav  mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
-        this.closest('form').submit();">Log Out</a>
+            <a href="/">
+              <img src="images/pinguem_logo_2.png" alt="icon-logo" class="w-20 h-20 click" style="width:70px;">
+            </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link " href="/profile">
-              <div>{{ Auth::user()->name }}</div>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/dashboard">Dashboard</a>
-            </li>
-            </ul>
-          </form>
+          </ul>
 
-      @endauth
-            <!-- Login e registro -->
-            @guest
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-          <a href="/">
-                <img  src="images/pinguem_logo_2.png" alt="icon-logo" class="w-20 h-20 click">
-                </a>
-          </li>
-        </ul>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-          @if (Route::has('login'))
+                @auth
+              <form method="POST" action="http://127.0.0.1:8000/logout">
+                @csrf
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
+          this.closest('form').submit();">Log Out</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="/profile">
+                  <div>{{ Auth::user()->name }}</div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/dashboard">Dashboard</a>
+                </li>
+                </ul>
+              </form>
+
+        @endauth
+                <!-- Login e registro -->
+                @guest
+          
+          <ul class="navbar-nav  mb-2 mb-lg-0">
+            <li class="nav-item">
+            @if (Route::has('login'))
         <a class="nav-link" href="{{ route('login') }}"> Login</a>
       @endif
-          </li>
-          @if (Route::has('register'))
+            </li>
+            @if (Route::has('register'))
         <li class="nav-item">
         <a class="nav-link" href="{{ route('register') }}">Cadastra-se</a>
         </li>
       @endif
-        </ul>
+          </ul>
 
-      @endguest
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li>
-                <!-- layout black and white -->
-                <input type="checkbox" class="theme-checkbox" id="toggle-theme" style="width: 60px;height: 30px;">
-                <script src="js/themeMode.js"></script>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+        @endguest
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li>
+                    <!-- layout black and white -->
+                    <input type="checkbox" class="theme-checkbox" id="toggle-theme" style="width: 60px;height: 30px;">
+                    <script src="js/themeMode.js"></script>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
           </div>
+          </nav>
+
+        </div>
       </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
       </nav>
+   
+    </header>
 
+
+
+    @yield('content')
+
+
+
+    @yield('footer')<div class="footer">
+      <footer>
+
+
+
+        <br>
+        <p> Pinguin Hotel &copy; 2024</p>
+
+
+      </footer>
     </div>
-    </div>
-
-
-
-
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-
-
-  @yield('content')
-
-
-
-  @yield('footer')<div class="footer">
-    <footer>
-
-
-
-      <br>
-      <p> Pinguin Hotel &copy; 2024</p>
-
-
-    </footer>
-  </div>
-</body>
+    </body>
 
 </html>

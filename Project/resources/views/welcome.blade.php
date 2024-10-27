@@ -197,8 +197,8 @@
     <div class="div-cadarpio">
       <div class="container-cadarpio">
         <div class="palette">
-          <div class="color"><span>Prato Principal</span></div>
           <div class="color"><span>Café da Manha</span></div>
+          <div class="color"><span>Prato Principal</span></div>
           <div class="color"><span>Sobremesa</span></div>
           <!-- <div class="color"><span>F4A261</span></div>
           <div class="color"><span>E76F51</span></div> -->

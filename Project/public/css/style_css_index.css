@@ -674,11 +674,11 @@ tr:nth-child(even) {
     transition: opacity 0.1s linear;
   }
   
-  .color:nth-child(1) {
+  .color:nth-child(2) {
     background-image: url("/images/prato-menu.jpg");
 }
 
-.color:nth-child(2) {
+.color:nth-child(1) {
     background-image: url("/images/img_prato_cafe.avif");
 }
 

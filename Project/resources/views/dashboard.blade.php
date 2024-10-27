@@ -7,7 +7,8 @@
 @section('content')
 @section('topnav')
 @endsection
-
+@if (auth()->user()->hasRole('admin'))
+    @endif
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
     aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">

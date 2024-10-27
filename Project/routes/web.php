@@ -8,9 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 // Profile User
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -135,3 +133,12 @@ use App\Http\Controllers\listaquartosController;
 Route::get('/posts', [listaquartosController::class, 'index']);
 
 
+Route::group(['middleware' => ['auth', 'isAdmin']], function () {
+    // Rotas que somente administradores podem acessar
+    Route::get('/admin', function () {
+        // ...
+    });
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(middleware: ['auth', 'verified'])->name('dashboard');
+});

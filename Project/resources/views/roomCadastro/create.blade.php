@@ -6,7 +6,17 @@
 @section('content')
 @section('topnav')
 @endsection
-
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Pinguem Hotel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p><a class="brutalist-card__button brutalist-card__button--mark" href='/cadastroQuarto'>Cadastrar Quarto</a></p>
+        <p><a class="brutalist-card__button brutalist-card__button--mark" href='/cadastroIndex'>gerenciar</a></p>
+    </div>
+</div>
 
     <div class="cadastroQuarto border" class="theme">
 
@@ -29,29 +39,8 @@
             <br>
             <button type="submit" class="btn btn-outline-success btn-position" data-bs-dismiss="enviar" name="enviar">
                 Enviar</button>
-                <button id ="togle-theme" class="btn bnt-primary" data-bs-dismiss="enviar" name="enviar">
-                Enviar</button>
                 
-<script>
-      const toggleThemeButton = document.getElementById('toggle-theme');
-const bodyElement = document.getElementById('body');
 
-// Adicionar evento de clique ao botão
-toggleThemeButton.addEventListener('click', () => {
-  // Verificar se o tema atual é light ou dark
-  if (bodyElement.getAttribute('data-bs-theme') === 'light') {
-    // Alterar para tema dark
-    bodyElement.setAttribute('data-bs-theme', 'dark');
-    bodyElement.classList.add('bg-dark');
-    bodyElement.classList.add('text-white');
-  } else {
-    // Alterar para tema light
-    bodyElement.setAttribute('data-bs-theme', 'light');
-    bodyElement.classList.remove('bg-dark');
-    bodyElement.classList.remove('text-white');
-  }
-});
-      </script>
     </div>
 
 @endsection

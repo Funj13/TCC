@@ -33,8 +33,8 @@ class RoomController extends Controller
 
             $room = new Room();
             $room->id = $request->input('');
-            $room->tipagem = $request->input('tipo');
-            $room->preco_por_noite = $request->input('preco');
+            $room->tipo = $request->input('tipo');
+            $room->preco = $request->input('preco');
             $room->disponibilidade = $request->input('dispo');
             $room->nome = $request->input('nome');
 

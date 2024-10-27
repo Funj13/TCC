@@ -36,38 +36,39 @@
     border-left-width: 0px;
     border-bottom-width: 0px;
     border-right-width: 0px;
-    border-radius: 0px;"
->
+    border-radius: 0px;">
       <nav class="navbar navbar-expand-lg">
         <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
         <div class="container-fluid" style=" padding-left: 0px;">
 
-              <ul class=" navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a href="/">
-              <img src="images/pinguem_logo_2.png" alt="icon-logo" class="w-20 h-20 click" style="width:70px;">
-            </a>
-          </li>
+          <ul class=" navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="/">
+                <img src="images/pinguem_logo_2.png" alt="icon-logo" class="w-20 h-20 click" style="width:70px;">
+              </a>
+            </li>
           </ul>
 
           @auth
-          <form method="POST" action="http://127.0.0.1:8000/logout">
-          @csrf
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-            <a class="nav-link" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
-        this.closest('form').submit();">Log Out</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link " href="/profile">
-              <div>{{ Auth::user()->name }}</div>
-            </a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
-            </li>
-          </ul>
-          </form>
+        <form method="POST" action="http://127.0.0.1:8000/logout">
+        @csrf
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+          <a class="nav-link" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
+      this.closest('form').submit();">Log Out</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link " href="/profile">
+            <div>{{ Auth::user()->name }}</div>
+          </a>
+          </li>
+          @can ('admin')
+        <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+      @endcan
+        </ul>
+        </form>
 
       @endauth
           <!-- Login e registro -->
@@ -111,13 +112,22 @@
     border-right-width: 0px;
     border-top-width: 0px;
     border-radius: 0px;">
+
     <div class="container-fluid">
-      <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse"
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon "></span>
-      </button>
+        aria-label="Toggle navigation" >
+        <span class="icon">
+          <svg viewBox="0 0 175 80" width="40" height="40">
+            <rect id="myRect" width="80" height="15" fill="#333" rx="10"></rect>
+            <rect id="myRect2" y="30" width="80" height="15" fill="#333" rx="10"></rect>
+            <rect id="myRect3" y="60" width="80" height="15" fill="#333" rx="10"></rect>
+          </svg>
+        </span>
+        <span class="text"></span>
     </div>
+
   </nav>
 
   </header>

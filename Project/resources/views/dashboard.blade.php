@@ -1,3 +1,4 @@
+@can ('admin')
 
 @extends('layouts.main')
 
@@ -7,8 +8,7 @@
 @section('content')
 @section('topnav')
 @endsection
-@if (auth()->user()->hasRole('admin'))
-    @endif
+
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
     aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">
@@ -49,3 +49,8 @@
 </div>
 <br><br><br><br><br>
 @endsection
+@elsecan('user')
+
+<h1>Usuario Sem Permissão</h1>
+
+@endcan

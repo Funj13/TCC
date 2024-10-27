@@ -133,12 +133,6 @@ use App\Http\Controllers\listaquartosController;
 Route::get('/posts', [listaquartosController::class, 'index']);
 
 
-Route::group(['middleware' => ['auth', 'isAdmin']], function () {
-    // Rotas que somente administradores podem acessar
-    Route::get('/admin', function () {
-        // ...
-    });
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(middleware: ['auth', 'verified'])->name('dashboard');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(middleware: ['auth', 'verified'])->name('dashboard');

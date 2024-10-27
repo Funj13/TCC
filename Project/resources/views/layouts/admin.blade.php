@@ -21,6 +21,8 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
+@can ('admin')
+
 <body  id="body" data-bs-theme="white">
 
   @yield('topnav')
@@ -158,6 +160,12 @@
 
     </footer>
   </div>
+  @elsecan('user')
+
+<h1>Usuario Sem Permissão</h1>
+
+
 </body>
 
 </html>
+@endcan

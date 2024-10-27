@@ -100,7 +100,7 @@ body {
 
 /* Album Quartos Index */
 .div-album {
-    background-color: var(--gray-light);
+    margin-bottom: 10px;
 
 }
 
@@ -719,3 +719,7 @@ tr:nth-child(even) {
     fill: #bebebe;
     transform: scale(1.2);
   } 
+
+
+
+  

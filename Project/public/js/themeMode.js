@@ -15,6 +15,7 @@ toggleThemeButton.addEventListener('click', () => {
     bodyElement.style.menu_food = 'black';
     bodyElement.style.theme = 'black';
     bodyElement.style.collapse = 'black';
+    
   } else {
     // Alterar para tema light
     bodyElement.setAttribute('data-bs-theme', 'white');

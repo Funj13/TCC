@@ -26,45 +26,15 @@ body {
 }
 /*Top Nav*/
 
-.topnav a.btn {
-    width:150px ; /*Tamanho fixo botão*/
-    height: 50px;
-    float: left;
-    color: var(--white);
+.btns {
+    color: var(--black);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    border: solid 1.9px var(--white);
+    border: solid 3px var(--black);
     border-radius: 25% / 75%;
-    margin: 0px 4px 0 auto;
-}
-.topnav a.btn:hover {
-    background-color: var(--white);
-    color: black;
-    border: solid 1px var(--white);
-}
-.topnav a.btn.active:active {
-    background-color: var(--blue);
-    color: var(--white);
-}
-/*Top Nav Right*/
-.topnav-right {
-    float: right;
 }
 
 
-/*Img Logo*/
 
-.topnav img {
-    width: 100px;
-    position: absolute;
-    left: 0%;
-    top: 0;
-}
-.topnav_dashboard img{
-    width: 200px;
-    position: absolute;
-    left: 0%;
-    top: 5;
-}

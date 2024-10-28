@@ -3,12 +3,12 @@
 @section('title', 'Quarto')
 
 
-
-
+@section('content')
 @section('topnav')
 @endsection
-@section('content')
 
+
+ 
 <div class="container">
     <div class="imagem-principal">
         <img src="/images/Quarto_simples_1.jpg" alt="Imagem principal do produto">
@@ -30,7 +30,8 @@
         <h2>Quarto da Paz</h2>
         <p>Descrição detalhada do produto, incluindo suas características, funcionalidades e benefícios.</p>
         <p>Preço: R$ 400,00 Diaria</p>
-        <button id="btnContent" data-bs-target="#meuModal">RESERVAR</button><br>
+        <button id="btnReservar" data-bs-target="#meuModal">RESERVAR</button>
+        <script src="js/modalQuarto.js"></script><br>
     </div>
 
     <!--content modal-->
@@ -75,28 +76,9 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            // Obtém o elemento do botão que aciona o modal
-            const btnContent = document.getElementById('btnContent');
-
-            // Adiciona um evento de clique ao botão
-            btnContent.addEventListener('click', () => {
-                // Obtém o modal e mostra ele
-                const meuModal = new bootstrap.Modal(document.getElementById('meuModal'));
-                meuModal.show();
-            });
-
-            // Em JavaScript
-            btnContent.addEventListener('click', () => {
-                const meuModal = new bootstrap.Modal(document.getElementById('meuModal'));
-                const id = btnContent.dataset.id;
-                // Atualize o conteúdo do modal com o valor de id
-                document.getElementById('modal-conteudo').textContent = `O ID é: ${id}`;
-                meuModal.show();
-            });
-        </script>
-    </div>
+        
+    </div> 
 
 
     @endsection
+   

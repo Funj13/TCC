@@ -1,11 +1,5 @@
-@extends('layouts.main')
+@can ('admin')
 
-@section('title', 'Hotel')
-
-
-@section('content')
-@section('topnav')
-@endsection
 @extends('layouts.main')
 
 @section('title', 'Hotel')
@@ -26,12 +20,11 @@
         <p><a class="brutalist-card__button brutalist-card__button--mark" href='/cadastroIndex'>gerenciar</a></p>
     </div>
 </div>
-<div>
 
-</div>
 
-<div class="container-dashboard">
-<div class="brutalist-card">
+<br>
+<div class="container_dashboard " >
+<div class="brutalist-card ">
   <div class="brutalist-card__header">
     <div class="brutalist-card__icon">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +33,7 @@
         ></path>
       </svg>
     </div>
-    <div class="brutalist-card__alert">Administração</div>
+    <div class="brutalist-card__alert ">Administração</div>
   </div>
   <div class="brutalist-card__actions">
   <button class="brutalist-card__button brutalist-card__button--mark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
@@ -54,4 +47,10 @@
   </div>
 </div>
 </div>
+<br><br><br><br><br>
 @endsection
+@elsecan('user')
+
+<h1>Usuario Sem Permissão</h1>
+
+@endcan

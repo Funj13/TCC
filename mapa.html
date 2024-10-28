@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Pinguim - GPS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            color: #004d40;
+        }
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        #map {
+            height: 50vh; /* Diminuído o tamanho do mapa */
+            width: 100%;
+            border: 1px solid #004d40;
+        }
+        .info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #004d40;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #00796b;
+        }
+        nav {
+            background-color: #004d40;
+            padding: 10px;
+            text-align: center;
+        }
+        nav button {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hotel Pinguim</h1>
+        <p>Seu GPS</p>
+    </header>
+    
+    <nav>
+        <button onclick="alert('Menu 1')">Menu 1</button>
+        <button onclick="alert('Menu 2')">Menu 2</button>
+        <button onclick="alert('Menu 3')">Menu 3</button>
+    </nav>
+
+    <div class="info">
+        <p id="userLocation">Sua localização: aguardando...</p>
+        <button id="getRoute" style="display:none;">Rota para o Hotel</button>
+    </div>
+    
+    <div id="map">
+        <iframe 
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-49.1345%2C-17.7373%2C-49.1325%2C-17.7359&layer=mapnik&marker=-17.7366%2C-49.1335" 
+            width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <script>
+        let userLat, userLng;
+
+        function showLocationButton() {
+            document.getElementById("getRoute").style.display = 'block';
+        }
+
+        document.getElementById("getRoute").addEventListener("click", () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    userLat = position.coords.latitude;
+                    userLng = position.coords.longitude;
+                    window.open(`https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=-17.7366,-49.1335`, '_blank');
+                }, () => {
+                    handleLocationError(true);
+                });
+            } else {
+                handleLocationError(false);
+            }
+        });
+
+        function handleLocationError(browserHasGeolocation) {
+            document.getElementById("userLocation").innerText = browserHasGeolocation ? 
+                "Erro: O serviço de geolocalização falhou." : 
+                "Erro: Seu navegador não suporta geolocalização.";
+        }
+
+        window.onload = function() {
+            document.getElementById("userLocation").innerText = "Descubra como chegar em seu Hotel Favorito!.";
+            showLocationButton();
+        };
+    </script>
+</body>
+</html>

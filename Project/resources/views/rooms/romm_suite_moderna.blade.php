@@ -33,6 +33,25 @@
             <p>Preço: R$ 100,00</p>
             <button id="btnContent" onclick="window.location.href='/'">RESERVAR</button><br>
         </div>
+        <div class="reserva">
+
+                        <form action="{{ route('reserva.enviar') }}" method="POST">
+                            @csrf
+                            <label for="">Nome:</label>
+                            <input type="text" class="form-control" name="nome" />
+
+                            <label for="">CPF:</label>
+                            <input type="number" class="form-control" name="cpf"
+                                data-inputmask="'mask': '999.999.999-99'" />
+                            <label for="">Adicione o Dia em que deseja reservar o quarto:</label>
+                            <input type="date" class="form-control meu-input-data" id="data-evento"
+                                placeholder="DD/MM/AAAA" name="dt-checkin">
+                                <label for="">Adicione o Dia em que deseja fazer check-out do quarto:</label>
+                            <input type="date" class="form-control meu-input-data" id="data-evento"
+                                placeholder="DD/MM/AAAA" name="dt-checkout">
+
+
+                    </div>
     </div>
 
 

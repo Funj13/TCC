@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="light">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,66 +21,116 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
+@can ('admin')
+
 <body  id="body" data-bs-theme="white">
 
   @yield('topnav')
   <header>
-    <!--Top-Nav-->
-    <div id="top-nav">
-      <div class="topnav" style="height: 50px; width: 100%;">
 
-        <!-- Img Logo -->
-        <div class="img-logo" id="logo-id">
-          <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-            aria-controls="offcanvasWithBothOptions"><img src="images/pinguem_logo.png" alt="icon-logo" class="click"></a>
-        </div>
+  <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="white">
+    <div class="card " style="
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-radius: 0px;">
+      <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+        <div class="container-fluid" style=" padding-left: 0px;">
 
-        <div class="topnav-right">
+          <ul class=" navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+              aria-controls="offcanvasWithBothOptions">
+                <img src="images/pinguem_logo_2.png" alt="icon-logo" class="w-20 h-20 click" style="width:70px;">
+              </a>
+            </li>
+          </ul>
 
-          <!-- Opcões Autenticado -->
           @auth
-
-        <!-- Authentication -->
         <form method="POST" action="http://127.0.0.1:8000/logout">
         @csrf
-        <a class="btn btn-outline-light" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
-                this.closest('form').submit();">Log Out</a>
-
-
-        <a class="btn btn-outline-light" href="/dashboard">Dashboard</a>
-
-        <!-- Nome usuario -->
-        <a class="btn" href="/profile">
-          <div>{{ Auth::user()->name }}</div>
-        </a>
-        <input type="checkbox" class="theme-checkbox" id="toggle-theme">
-        <script src="js/themeMode.js"></script>
-
-
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+          <a class="nav-link" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
+      this.closest('form').submit();">Log Out</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link " href="/profile">
+            <div>{{ Auth::user()->name }}</div>
+          </a>
+          </li>
+          @can ('admin')
+        <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+      @endcan
+        </ul>
         </form>
+
       @endauth
           <!-- Login e registro -->
           @guest
+
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+        <li class="nav-item">
           @if (Route::has('login'))
-        <a class="btn" href="{{ route('login') }}"> Login</a>
+        <a class="nav-link" href="{{ route('login') }}"> Login</a>
       @endif
+        </li>
+        @if (Route::has('register'))
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('register') }}">Cadastra-se</a>
+      </li>
+    @endif
+        </ul>
 
-          @if (Route::has('register'))
-        <a class="btn" href="{{ route('register') }}">Cadastra-se</a>
-      @endif
+      @endguest
 
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li>
+              <!-- layout black and white -->
+              <input type="checkbox" class="theme-checkbox" id="toggle-theme" style="width: 60px;height: 30px;">
+              <script src="js/themeMode.js"></script>
+            </li>
+          </ul>
 
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         </div>
-        </div>
-      </div>
+    </div>
+    </nav>
 
-      <!--Título-->
-      <div>
-        <h1 style="text-align: center; font-size: 400%; font-style: oblique; "> Pinguim</h1>
-      </div>
-    @endguest
-    <!--  -->
+  </div>
+  </div>
+  <nav class="navbar navbar-dark card" style="
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-radius: 0px;">
+
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation" >
+        <span class="icon">
+          <svg viewBox="0 0 175 80" width="40" height="40">
+            <rect id="myRect" width="80" height="15" fill="#333" rx="10"></rect>
+            <rect id="myRect2" y="30" width="80" height="15" fill="#333" rx="10"></rect>
+            <rect id="myRect3" y="60" width="80" height="15" fill="#333" rx="10"></rect>
+          </svg>
+        </span>
+        <span class="text"></span>
+    </div>
+
+  </nav>
   </header>
+
+
+  
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
     aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">
@@ -100,16 +149,23 @@
     crossorigin="anonymous"></script>
     @yield('content')
 
-    
+    @yield('footer')<div class="footer">
     <footer>
 
-      <div class="footer">
 
-        <br>
-        <p> Pinguin Hotel &copy; 2024</p>
-      </div>
+
+      <br>
+      <p> Pinguin Hotel &copy; 2024</p>
+
 
     </footer>
+  </div>
+  @elsecan('user')
+
+<h1>Usuario Sem Permissão</h1>
+
+
 </body>
 
 </html>
+@endcan

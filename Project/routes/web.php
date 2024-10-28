@@ -8,9 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 // Profile User
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -52,8 +50,9 @@ Route::get('/icon-pinguem', function (){
 
 
 // Função inserção img quartos index
-// Route::get('/img-quartos', 'ImgQuartosController@show');
-Route::get('/img-quartos', [ImgQuartosController::class, 'show']);
+Route::get('/teste', function () {
+    return view('\roomCadastro\show');
+});
 
 
 // Routes get Rooms
@@ -135,3 +134,6 @@ use App\Http\Controllers\listaquartosController;
 Route::get('/posts', [listaquartosController::class, 'index']);
 
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(middleware: ['auth', 'verified'])->name('dashboard');

@@ -1,7 +1,10 @@
- body{
-    background-image: url('/images/back.gif') ;
+ body {
+     background-image: url("/images/back.gif");
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
  }
- 
+
  .form {
      display: flex;
      flex-direction: column;
@@ -128,8 +131,19 @@
  }
 
  .button:hover {
-     border: 2px solid transparent;/* Faz com que a borda seja transparente para o gradiente se sobrepor */
-     background-image:  linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
-     background-clip: padding-box;/* Confina o gradiente ao interior da caixa */
+     border: 2px solid transparent;
+     /* Faz com que a borda seja transparente para o gradiente se sobrepor */
+     background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+     background-clip: padding-box;
+     /* Confina o gradiente ao interior da caixa */
      /* box-shadow: inset 0px 0px 25px #1479EA; */
  }
+
+ #password_confirmation{
+    -webkit-text-security: disc;
+ }
+ #password{
+    -webkit-text-security: disc;
+ }
+
+

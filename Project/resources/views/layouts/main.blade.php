@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-bs-theme="light" >
+<html lang="pt-br" data-bs-theme="light">
 
 
 <head>
@@ -138,17 +138,21 @@
 
 
  </div>
-  @yield('footer')<div class="footer">
-    <footer>
+  @yield('footer')<div class="footer"><div class="footer">
+      <footer>
 
 
 
       <br>
       <p> Pinguin Hotel &copy; 2024</p>
+    </div>
+      <p> Pinguin Hotel &copy; 2024</p>
+    </div>
 
+  </footer>
+</body>
 
-    </footer>
- 
+  </footer>
 </body>
 
 </html>

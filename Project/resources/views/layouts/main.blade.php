@@ -146,11 +146,6 @@
       <br>
       <p> Pinguin Hotel &copy; 2024</p>
     </div>
-      <p> Pinguin Hotel &copy; 2024</p>
-    </div>
-
-  </footer>
-</body>
 
   </footer>
 </body>

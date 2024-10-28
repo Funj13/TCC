@@ -31,9 +31,25 @@
             <h2>Quarto da Paz</h2>
             <p>Descrição detalhada do produto, incluindo suas características, funcionalidades e benefícios.</p>
             <p>Preço: R$ 100,00</p>
-            <button id="btnContent" onclick="window.location.href='/'">RESERVAR</button><br>
-        </div>
-        <div class="reserva">
+            <button id="btnReservar" data-bs-target="#meuModal">RESERVAR</button>
+        <script src="js/modalQuarto.js"></script><br>
+    </div>
+
+    <!--content modal-->
+    <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Quarto da Paz</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Quarto da Paz.</p>
+                    <p>Detalhes: <br>
+                        2 suites <br>
+                        total 400 reais diaria.
+                    </p>
+                    <div class="reserva">
 
                         <form action="{{ route('reserva.enviar') }}" method="POST">
                             @csrf
@@ -52,7 +68,17 @@
 
 
                     </div>
-    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" name="enviar">
+                            Reservar</button>
+                        <button type="button" class="btn btn-primary">Pagar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div> 
 
 
 @endsection

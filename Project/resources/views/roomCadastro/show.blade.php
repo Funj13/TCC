@@ -1,4 +1,4 @@
-<!-- @extends('layouts.main')
+@extends('layouts.main')
 
 @section('title', 'Hotel')
 
@@ -8,28 +8,35 @@
 @endsection
 
 <div class="editQuarto">
+<style>
+    .btnReservar {
+  background-color: #4CAF50; /* Cor de fundo verde */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
-    <form method="POST" action="{{ route('rooms.update') }}">
-        @csrf
-        @method('PUT')
-
-        @foreach($rooms as $room)
-            <div>
-                <label for="">Tipagem:</label>
-                    <input type="text" class="form-control" name="tipo" value="{{ $room->tipagem }}" />
-                    <label for="">Preço:</label>
-                    <input type="number" class="form-control" name="preco" value="{{ $room->preco_por_noite }}" />
-                    <label for="">Disponibilidade:</label>
-                    <input type="number" min="0" max="1" class="form-control " name="dispo"
-                        value="{{ $room->disponibilidade }}" />
-                    <label for="">Nome:</label>
-                    <input type="name" class="form-control " id="nome" name="nome" value="{{ $room->nome }}">
-
-                    <button type="submit">Salvar alterações</button>
-            </div>
-        @endforeach
-    </form>
+.btnReservar:hover {
+  background-color: #3e8e41; /* Cor de fundo verde mais escuro no hover */
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Botão Comprar Agora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="btn">Comprar agora</button>
+</body>
+</html>
 </div>
 
 
-@endsection -->
+@endsection

@@ -50,8 +50,9 @@ Route::get('/icon-pinguem', function (){
 
 
 // Função inserção img quartos index
-// Route::get('/img-quartos', 'ImgQuartosController@show');
-Route::get('/img-quartos', [ImgQuartosController::class, 'show']);
+Route::get('/teste', function () {
+    return view('\roomCadastro\show');
+});
 
 
 // Routes get Rooms

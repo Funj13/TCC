@@ -136,3 +136,7 @@ Route::get('/posts', [listaquartosController::class, 'index']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(middleware: ['auth', 'verified'])->name('dashboard');
+
+Route::get('/mapa', function () {
+    return view('mapa');
+});

@@ -84,6 +84,11 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ route('register') }}">Cadastra-se</a>
       </li>
+      <li class="nav-item">
+          <a class="nav-link " href="/mapa">
+           Localização
+          </a>
+          </li>
     @endif
         </ul>
 

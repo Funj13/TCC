@@ -81,7 +81,8 @@
         <div class="container">
           <h3 class="text-uppercase font-weight-bold wow-outer"><span class="wow slideInDown">Quartos Populares</span></h3>
           <div class="row row-lg-50 row-35 offset-top-2">
-            <div class="col-md-6 wow-outer">
+
+            <div class="col-md-3 wow-outer">
               <!-- Post Modern-->
               <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="#"><img src="images/img_quart_ang_2.jpeg" alt="" width="571" height="353"/></a>
                 <h4 class="post-modern-title"><a class="post-modern-title" href="#">Suite Elegância Moderna</a></h4>
@@ -93,7 +94,8 @@
                 <p>Quartos Simples e Confortavel.</p>
               </article>
             </div>
-            <div class="col-md-6 wow-outer">
+
+            <div class="col-md-3 wow-outer">
               <!-- Post Modern-->
               <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="#"><img src="images/Quarto_simples_2.jpg" alt="" width="571" height="353"/></a>
                 <h4 class="post-modern-title"><a class="post-modern-title" href="#">Quarto da Paz</a></h4>
@@ -105,7 +107,8 @@
                 <p class="color">Quartos Simples e Confortavel.</p>
               </article>
             </div>
-            <div class="col-md-6 wow-outer">
+
+            <div class="col-md-3 wow-outer">
               <!-- Post Modern-->
               <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="#"><img src="images/Quarto_imperial_2.jpeg" alt="" width="571" height="353"/></a>
                 <h4 class="post-modern-title"><a class="post-modern-title" href="#">Quarto Imperial Moderno</a></h4>
@@ -117,7 +120,8 @@
                 <p class="color">Quartos Simples e Confortavel.</p>
               </article>
             </div>
-            <div class="col-md-6 wow-outer">
+
+            <div class="col-md-3 wow-outer">
               <!-- Post Modern-->
               <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="#"><img src="images/Quarto_Serenidade_1.jpeg" alt="" width="571" height="353"/></a>
                 <h4 class="post-modern-title"><a class="post-modern-title" href="#">Quarto Serenidade</a></h4>
@@ -129,72 +133,70 @@
                 <p class="color">Quartos Simples e Confortavel.</p>
               </article>
             </div>
-            <div class="col-md-12 wow-outer"><a class="button button-primary button-winona button-md" href="/quartos">Veja mais Quartos</a></div>
+
+
+            <!-- linha 2 -->
+
+            <div class="col-md-3 wow-outer">
+              <!-- Post Modern-->
+              <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="#"><img src="/images/suite_eden_1.jpg" alt="" width="571" height="353"/></a>
+                <h4 class="post-modern-title"><a class="post-modern-title" href="#">Suíte do Éden</a></h4>
+                <ul class="post-modern-meta">
+                  <li><a class="button-winona" href="#">R$600/dia</a></li>
+                  <li>5°Andar</li>
+                  <li>2 Quartos</li>
+                </ul>
+                <p class="color">Quartos Simples e Confortavel.</p>
+              </article>
+            </div>
+
+            <div class="col-md-3 wow-outer">
+              <!-- Post Modern-->
+              <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="#"><img src="/images/suite_lua_cheia_1.jpg" alt="" width="571" height="353"/></a>
+                <h4 class="post-modern-title"><a class="post-modern-title" href="#">Suíte Marfim</a></h4>
+                <ul class="post-modern-meta">
+                  <li><a class="button-winona" href="#">R$600/dia</a></li>
+                  <li>5°Andar</li>
+                  <li>2 Quartos</li>
+                </ul>
+                <p class="color">Quartos Simples e Confortavel.</p>
+              </article>
+            </div>
+
+            <div class="col-md-3 wow-outer">
+              <!-- Post Modern-->
+              <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="#"><img src="/images/suite_tropical_1.jpg" alt="" width="571" height="353"/></a>
+                <h4 class="post-modern-title"><a class="post-modern-title" href="#">Suite Tropical</a></h4>
+                <ul class="post-modern-meta">
+                  <li><a class="button-winona" href="#">R$600/dia</a></li>
+                  <li>5°Andar</li>
+                  <li>2 Quartos</li>
+                </ul>
+                <p class="color">Quartos Simples e Confortavel.</p>
+              </article>
+            </div>
+
+            <div class="col-md-3 wow-outer">
+              <!-- Post Modern-->
+              <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="#"><img src="/images/suite_luxo_1.jpg" alt="" width="571" height="353"/></a>
+                <h4 class="post-modern-title"><a class="post-modern-title" href="#">Suite Luxo</a></h4>
+                <ul class="post-modern-meta">
+                  <li><a class="button-winona" href="#">R$600/dia</a></li>
+                  <li>5°Andar</li>
+                  <li>2 Quartos</li>
+                </ul>
+                <p class="color">Quartos Simples e Confortavel.</p>
+              </article>
+            </div>
+
+
+            <!-- linha 3 -->
+             
+            
           </div>
         </div>
       </section>
 
-
-      <!-- Services-->
-      <section class="section novi-background section-lg text-center">
-        <div class="container">
-          <h3 class="text-uppercase">Categorias de Quartos</h3>
-          <p><span class="text-width-1">Em nossa agência trabalhamos com diversos tipos de quartos . Você pode saber mais sobre nossos imóveis navegando em nosso site.</span></p>
-          <div class="row row-35 row-xxl-70 offset-top-2">
-            <div class="col-sm-6 col-lg-3">
-              <!-- Thumbnail Light-->
-              <article class="thumbnail-light"><a class="thumbnail-light-media" href="#"><img class="thumbnail-light-image" src="images/img_suite_wood.jpg" alt="" width="270" height="300"/></a>
-                <h4 class="thumbnail-light-title"><a href="#">Quartos para 1 pessoa</a></h4>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-              <!-- Thumbnail Light-->
-              <article class="thumbnail-light"><a class="thumbnail-light-media" href="#"><img class="thumbnail-light-image" src="images/img_quart_ang_4.jpeg" alt="" width="270" height="300"/></a>
-                <h4 class="thumbnail-light-title"><a href="#">Quarto Casal</a></h4>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-              <!-- Thumbnail Light-->
-              <article class="thumbnail-light"><a class="thumbnail-light-media" href="#"><img class="thumbnail-light-image" src="images/Quarto_imperial_2.jpg" alt="" width="270" height="300"/></a>
-                <h4 class="thumbnail-light-title"><a href="#">Quartos Familia</a></h4>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-              <!-- Thumbnail Light-->
-              <article class="thumbnail-light"><a class="thumbnail-light-media" href="#"><img class="thumbnail-light-image" src="images/Quarto_Serenidade_4.jpg" alt="" width="270" height="300"/></a>
-                <h4 class="thumbnail-light-title"><a href="#">Quartos para Amigos</a></h4>
-              </article>
-            </div>
-            <div class="col-md-12 wow-outer"><a class="button button-primary button-winona button-md" href="#">Veja mais Quartos</a></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- container tcc -->
-      <section class="section novi-background section-lg text-center">
-        <div class="container">
-          <h3 class="text-uppercase wow-outer"><span class="wow slideInUp">Grupo TCC</span></h3>
-          
-          <div class="row row-lg-50 row-35 row-xxl-70 justify-content-center justify-content-lg-start">
-            <div class="col-md-10 col-lg-6 wow-outer">
-              <!-- Profile Creative-->
-              <article class="profile-creative wow slideInLeft">
-                <figure class="profile-creative-figure"><img class="profile-creative-image" src="images/tcc.jpg" alt="" width="270" height="273"/>
-                </figure>
-                <div class="profile-creative-main">
-                  <h5 class="profile-creative-title"><a href="#">a</a></h5>
-                  <p class="profile-creative-position">a</p>
-                  <div class="profile-creative-contacts">
-                    <div class="object-inline"><span class="icon novi-icon icon-md mdi mdi-phone"></span><a href="tel:#">+55-64-90000-0000</a></div>
-                  </div>
-                  <p>Sobre a pessoa.</p>
-                </div>
-              </article>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
 
       <!-- Best offer-->

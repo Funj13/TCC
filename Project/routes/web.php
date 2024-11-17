@@ -141,3 +141,7 @@ Route::get('/dashboard', function () {
 Route::get('/mapa', function () {
     return view('mapa');
 });
+
+Route::get('/quartos', function(){
+    return view('viewquartos');
+});

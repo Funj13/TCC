@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-bs-theme="light">
+<html lang="pt-br" data-bs-theme="light" class="wide wow-animation">
 
 
 <head>
@@ -25,19 +25,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-  <!-- <script>
-     // Get cookie value by name
-     function getCookie (name) {
-        let value = `; ${document.cookie}`;
-        let parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-      }
-      // Set cookie key and value
-      function setCookie (key, value) {
-        document.cookie = `${key}=${value}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Strict; Secure;`;
-      }
-      
-  </script> -->
 </head>
 
 
@@ -158,15 +145,93 @@
 
  </div>
   @yield('footer')<div class="footer"><div class="footer">
-      <footer>
-
-
-
-      <br>
-      <p> Pinguin Hotel &copy; 2024</p>
-    </div>
-
-  </footer>
+  <footer class="section novi-background footer-advanced bg-gray-700">
+        <div class="footer-advanced-main">
+          <div class="container">
+            <div class="row row-50">
+              <div class="col-lg-4">
+                <h5 class="font-weight-bold text-uppercase text-white">Sobre nós</h5>
+                <p class="footer-advanced-text">Bem-vindo ao Hotel Pinguem, um oásis de tranquilidade e conforto no coração da cidade. Nosso hotel boutique oferece uma experiência única e personalizada, com acomodações luxuosas, serviços impecáveis e uma atmosfera acolhedora.</p>
+              </div>
+              <div class="col-sm-7 col-md-5 col-lg-4">
+                <h5 class="font-weight-bold text-uppercase text-white">Postagens recentes do blog</h5>
+                <!-- Post Inline-->
+                <article class="post-inline">
+                  <p class="post-inline-title"><a href="#">Guia Hotelario: 7 dicas importantes para alugar um Hotel</a></p>
+                  <ul class="post-inline-meta">
+                    <li>by Cacique</li>
+                    <li><a href="#">2 dias atrás</a></li>
+                  </ul>
+                </article>
+                <!-- Post Inline-->
+                <article class="post-inline">
+                  <p class="post-inline-title"><a href="#">Casas Unifamiliares como Opção de Habitação para Famílias Jovens</a></p>
+                  <ul class="post-inline-meta"> 
+                    <li>by Cacique</li>
+                    <li><a href="#">2 dias atrás</a></li>
+                  </ul>
+                </article>
+              </div>
+              <div class="col-sm-5 col-md-7 col-lg-4">
+                <h5 class="font-weight-bold text-uppercase text-white">Galeria</h5>
+                <div class="row row-x-10" data-lightgallery="group">
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-1.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-1-85x85.jpg" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-2.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-2-85x85.jpg" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-3.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-3-85x85.jpg" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-4.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-4-85x85.jpg" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-5.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-5-85x85.jpg" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-6.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-6-85x85.jpg" alt=""/>
+                      <div class="thumbnail-minimal-caption"> </div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-7.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-7-85x85.jpg" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-8.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-8-85x85.jpg" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-advanced-aside">
+          <div class="container">
+            <div class="footer-advanced-layout">
+              <div>
+                <ul class="list-nav"> 
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="about-us.html">Sobre</a></li>
+                  <li><a href="#">Proprietario</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="contacts.html">Contato</a></li>
+                </ul>
+              </div>
+              <div>
+                <ul class="foter-social-links list-inline list-inline-md">
+                  <li><a class="icon novi-icon icon-sm link-default mdi mdi-facebook" href="#"></a></li>
+                  <li><a class="icon novi-icon icon-sm link-default mdi mdi-twitter" href="#"></a></li>
+                  <li><a class="icon novi-icon icon-sm link-default mdi mdi-instagram" href="#"></a></li>
+                  <li><a class="icon novi-icon icon-sm link-default mdi mdi-google" href="#"></a></li>
+                  <li><a class="icon novi-icon icon-sm link-default mdi mdi-linkedin" href="#"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <hr/>
+        </div>
+        <div class="footer-advanced-aside">
+          <div class="container">
+            <div class="footer-advanced-layout"><a class="brand" href="index.html"><img src="images/pinguem_logo.png" alt="" width="115" height="34" srcset="images/pinguem_logo.png 2x"/></a>
+              <!-- Rights-->
+              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="#">Penguim</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
 </body>
 
 </html>

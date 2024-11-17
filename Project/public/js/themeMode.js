@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bodyElement.setAttribute('data-bs-theme', 'white');
       bodyElement.style.backgroundColor = 'white';
       bodyElement.style.color = 'black';
+
       rectElement.setAttribute('fill', '#333'); // Cor para o tema escuro
       rectElement2.setAttribute('fill', '#333');
       rectElement3.setAttribute('fill', '#333');

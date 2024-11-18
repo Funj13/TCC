@@ -24,6 +24,17 @@
 @can ('admin')
 
 <body  id="body" data-bs-theme="white">
+  <!-- tela carregamento -->
+  <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-logo"><img src="images/pinguem_logo_2.png" alt="" width="151" height="44" srcset="images/pinguem_logo_2.png 2x"/>
+      </div>
+      <div class="preloader-body">
+        <div id="loadingProgressG">
+          <div class="loadingProgressG" id="loadingProgressG_1"></div>
+        </div>
+      </div>
+    </div>
 
   @yield('topnav')
   <header>

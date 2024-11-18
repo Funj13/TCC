@@ -176,10 +176,11 @@
           <h3 class="text-uppercase wow-outer"><span class="wow slideInUp">Grupo TCC</span></h3>
           
           <div class="row row-lg-50 row-35 row-xxl-70 justify-content-center justify-content-lg-start">
-            <div class="col-md-10 col-lg-6 wow-outer">
+            <div class="col-md-10 col-lg-6 wow-outer " style="
+    width: 900px;">
               <!-- Profile Creative-->
               <article class="profile-creative wow slideInLeft">
-                <figure class="profile-creative-figure"><img class="profile-creative-image" src="images/tcc.jpg" alt="" width="270" height="273"/>
+                <figure class="profile-creative-figure"><img class="profile-creative-image " src="images/tcc.jpg" alt="" width="270" height="273"/>
                 </figure>
                 <div class="profile-creative-main">
                   <h5 class="profile-creative-title"><a href="#">a</a></h5>

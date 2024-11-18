@@ -28,7 +28,9 @@
 </head>
 
 
-<body id="body" data-bs-theme="white">
+<body id="y" data-bs-theme="white">
+  
+    </div>
 
   @yield('topnav')
 

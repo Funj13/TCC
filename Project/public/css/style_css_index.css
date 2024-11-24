@@ -686,3 +686,16 @@ tr:nth-child(even) {
   #btnReservar:hover {
     background-color: #3e8e41; /* Cor de fundo verde mais escuro no hover */
   }
+  .section {
+    position: relative; /* Necessário para o posicionamento do overlay */
+}
+
+.overlay {
+    position: absolute; /* Posiciona o overlay em relação à seção */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Preto com 50% de opacidade */
+    pointer-events: none; /* Permite que cliques passem através do overlay */
+}

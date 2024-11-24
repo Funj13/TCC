@@ -83,12 +83,12 @@
           <div class="row row-lg-50 row-35 offset-top-2">
             <div class="col-md-6 wow-outer">
               <!-- Post Modern-->
-              <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="#"><img src="images/img_quart_ang_2.jpeg" alt="" width="571" height="353"/></a>
-                <h4 class="post-modern-title"><a class="post-modern-title" href="#">Suite Elegância Moderna</a></h4>
+              <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="/Quarto-Suite-Elegancia-Moderna"><img src="images/img_quart_ang_2.jpeg" alt="" width="571" height="353"/></a>
+                <h4 class="post-modern-title"><a class="post-modern-title" href="/Quarto-Suite-Elegancia-Moderna">Suite Elegância Moderna</a></h4>
                 <ul class="post-modern-meta">
                   <li><a class="button-winona" href="#">R$600/dia</a></li>
-                  <li>5°Andar</li>
-                  <li>2 Quartos</li>
+                  <li><a>5°Andar</a></li>
+                  <li><a>2 Quartos</a></li>
                 </ul>
                 <p>Quartos Simples e Confortavel.</p>
               </article>
@@ -99,10 +99,10 @@
                 <h4 class="post-modern-title"><a class="post-modern-title" href="#">Quarto da Paz</a></h4>
                 <ul class="post-modern-meta">
                   <li><a class="button-winona" href="#">R$600/dia</a></li>
-                  <li>5°Andar</li>
-                  <li>2 Quartos</li>
+                  <li><a>5°Andar</a></li>
+                  <li><a>2 Quartos</a></li>
                 </ul>
-                <p class="color">Quartos Simples e Confortavel.</p>
+                <p>Quartos Simples e Confortavel.</p>
               </article>
             </div>
             <div class="col-md-6 wow-outer">
@@ -111,10 +111,10 @@
                 <h4 class="post-modern-title"><a class="post-modern-title" href="#">Quarto Imperial Moderno</a></h4>
                 <ul class="post-modern-meta">
                   <li><a class="button-winona" href="#">R$600/dia</a></li>
-                  <li>5°Andar</li>
-                  <li>2 Quartos</li>
+                  <li><a>5°Andar</a></li>
+                  <li><a>2 Quartos</a></li>
                 </ul>
-                <p class="color">Quartos Simples e Confortavel.</p>
+                <p >Quartos Simples e Confortavel.</p>
               </article>
             </div>
             <div class="col-md-6 wow-outer">
@@ -123,10 +123,10 @@
                 <h4 class="post-modern-title"><a class="post-modern-title" href="#">Quarto Serenidade</a></h4>
                 <ul class="post-modern-meta">
                   <li><a class="button-winona" href="#">R$600/dia</a></li>
-                  <li>5°Andar</li>
-                  <li>2 Quartos</li>
+                  <li><a>5°Andar</a></li>
+                  <li><a>2 Quartos</a></li>
                 </ul>
-                <p class="color">Quartos Simples e Confortavel.</p>
+                <p >Quartos Simples e Confortavel.</p>
               </article>
             </div>
             <div class="col-md-12 wow-outer"><a class="button button-primary button-winona button-md" href="/quartos">Veja mais Quartos</a></div>
@@ -198,19 +198,21 @@
       </section>
 
 
-      <!-- Best offer-->
-      <section class="section novi-background section-1 bg-primary-darker text-center" style="background-image: url(images/img_back_anuncio.jpg);">
-        <div class="container">
-          <div class="row justify-content-center">
+<!-- Best offer-->
+<!-- Best offer-->
+<section class="section novi-background section-1 bg-primary-darker text-center no-theme-change" style="background-image: url(images/img_back_anuncio.jpg); ">
+<div class="overlay"></div>
+    <div class="container" >
+        <div class="row justify-content-center">
             <div class="col-sm-10 col-lg-7 col-xl-6">
-              <h3 class="wow-outer"><span class="wow slideInDown text-uppercase">Melhores ofertas</span></h3>
-              <p class="heading-subtitle">de Novembro</p>
-              <p class="wow-outer offset-top-4"><span class="wow slideInDown" data-wow-delay=".05s">Com uma variedade de quartos disponíveis em nossa hotelaria, você sempre pode escolher aquele que se adapta às suas necessidades pessoais.</span></p>
-              <div class="wow-outer button-outer"><a class="button button-primary-white button-winona wow slideInDown" href="#" data-wow-delay=".1s">Leia Mais</a></div>
+                <h3 class="wow-outer"><span class="wow slideInDown text-uppercase">Melhores ofertas</span></h3>
+                <p class="heading-subtitle" style="color:white;">de Novembro</p>
+                <p class="wow-outer offset-top-4"><span class="wow slideInDown" data-wow-delay=".05s">Com uma variedade de quartos disponíveis em nossa hotelaria, você sempre pode escolher aquele que se adapta às suas necessidades pessoais.</span></p>
+                <div class="wow-outer button-outer"><a class="button button-primary-white button-winona wow slideInDown" href="#" data-wow-delay=".1s">Leia Mais</a></div>
             </div>
-          </div>
         </div>
-      </section>
+    </div>
+</section>
 
 
 

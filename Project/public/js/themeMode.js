@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const bodyElement = document.querySelector("body");
+  const logo = document.getElementById('logo');
 
   // Função para definir o tema com base no valor do cookie
   function setTheme(theme) {
@@ -14,41 +15,90 @@ document.addEventListener('DOMContentLoaded', () => {
       bodyElement.setAttribute('data-bs-theme', 'dark');
       bodyElement.style.backgroundColor = 'black';
       bodyElement.style.color = 'white';
-      
-      // Alterando a cor dos links e parágrafos no tema escuro
+
+      // Trocar a imagem do logo para o tema escuro
+      logo.src = 'images/pinguem_logo.png'; // Imagem para o tema escuro
+
+      // Alterando a cor dos links e parágrafos no tema escuro, exceto na seção com a classe no-theme-change
       const links = document.querySelectorAll('a');
       links.forEach(link => {
-        link.style.color = 'white';  // Cor dos links no tema escuro
+        if (!link.closest('.no-theme-change')) {
+          link.style.color = 'white';  // Cor dos links no tema escuro
+        }
       });
 
       const paragraphs = document.querySelectorAll('p');
       paragraphs.forEach(p => {
-        p.style.color = 'lightgray';  // Cor dos parágrafos no tema escuro
+        if (!p.closest('.no-theme-change')) {
+          p.style.color = 'lightgray';  // Cor dos parágrafos no tema escuro
+        }
       });
 
       const h3s = document.querySelectorAll('h3');
       h3s.forEach(h3 => {
-        h3.style.color = 'white';  // Cor dos h3 no tema escuro
+        if (!h3.closest('.no-theme-change')) {
+          h3.style.color = 'white';  // Cor dos h3 no tema escuro
+        }
       });
+
+      const ths = document.querySelectorAll('th');
+      ths.forEach(th => {
+        if (!th.closest('.no-theme-change')) {
+          th.style.color = 'white';  // Cor dos th no tema escuro
+          th.style.backgroundColor = 'gray';  // Cor de fundo dos th no tema escuro (opcional)
+        }
+      });
+
+      const cites = document.querySelectorAll('cite');
+      cites.forEach(cite => {
+        if (!cite.closest('.no-theme-change')) {
+          cite.style.color = 'white';  // Cor do cite no tema escuro
+        }
+      });
+
     } else {
       bodyElement.setAttribute('data-bs-theme', 'light');
       bodyElement.style.backgroundColor = 'white';
       bodyElement.style.color = 'black';
 
-      // Alterando a cor dos links e parágrafos no tema claro
+      // Trocar a imagem do logo para o tema claro
+      logo.src = 'images/pinguem_logo_2.png'; // Imagem para o tema claro
+
+      // Alterando a cor dos links e parágrafos no tema claro, exceto na seção com a classe no-theme-change
       const links = document.querySelectorAll('a');
       links.forEach(link => {
-        link.style.color = 'black';  // Cor dos links no tema claro
+        if (!link.closest('.no-theme-change')) {
+          link.style.color = 'black';  // Cor dos links no tema claro
+        }
       });
 
       const paragraphs = document.querySelectorAll('p');
       paragraphs.forEach(p => {
-        p.style.color = 'black';  // Cor dos parágrafos no tema claro
+        if (!p.closest('.no-theme-change')) {
+          p.style.color = 'black';  // Cor dos parágrafos no tema claro
+        }
       });
 
       const h3s = document.querySelectorAll('h3');
       h3s.forEach(h3 => {
-        h3.style.color = 'black';  // Cor dos h3 no tema claro
+        if (!h3.closest('.no-theme-change')) {
+          h3.style.color = 'black';  // Cor dos h3 no tema claro
+        }
+      });
+
+      const ths = document.querySelectorAll('th');
+      ths.forEach(th => {
+        if (!th.closest('.no-theme-change')) {
+          th.style.color = 'black';  // Cor dos th no tema claro
+          th.style.backgroundColor = 'white';  // Cor de fundo dos th no tema claro (opcional)
+        }
+      });
+
+      const cites = document.querySelectorAll('cite');
+      cites.forEach(cite => {
+        if (!cite.closest('.no-theme-change')) {
+          cite.style.color = 'black';  // Cor do cite no tema claro
+        }
       });
     }
   }

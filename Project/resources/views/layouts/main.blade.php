@@ -47,7 +47,7 @@
           <ul class=" navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
               <a href="/">
-                <img src="images/pinguem_logo_2.png" alt="icon-logo" class="w-20 h-20 click" style="width:70px;">
+                <img src="images/pinguem_logo_2.png" id="logo" alt="icon-logo" class="w-20 h-20 click" style="width:70px;">
               </a>
             </li>
           </ul>
@@ -154,18 +154,18 @@
             <div class="footer-advanced-layout">
               <div>
                 <ul class="list-nav"> 
-                  <li><a href="index.html">Inicio</a></li>
-                  <li><a href="about-us.html">Sobre</a></li>
+                  <li><a href="/">Inicio</a></li>
+                  <li><a href="#">Sobre</a></li>
                   <li><a href="#">Proprietario</a></li>
                   <li><a href="#">Blog</a></li>
-                  <li><a href="contacts.html">Contato</a></li>
+                  <li><a href="#">Contato</a></li>
                 </ul>
               </div>
               <div>
                 <ul class="foter-social-links list-inline list-inline-md">
                   <li><a class="icon novi-icon icon-sm link-default mdi mdi-facebook" href="#"></a></li>
                   <li><a class="icon novi-icon icon-sm link-default mdi mdi-twitter" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-sm link-default mdi mdi-instagram" href="#"></a></li>
+                  <li><a class="icon novi-icon icon-sm link-default mdi mdi-instagram" href="https://www.instagram.com/hotel_pinguin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="></a></li>
                   <li><a class="icon novi-icon icon-sm link-default mdi mdi-google" href="#"></a></li>
                   <li><a class="icon novi-icon icon-sm link-default mdi mdi-linkedin" href="#"></a></li>
                 </ul>

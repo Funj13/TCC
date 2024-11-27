@@ -3,6 +3,7 @@
 use App\Http\Controllers\ImgQuartosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Room;
 
 Route::get('/', function () {
     return view('welcome');
@@ -118,9 +119,12 @@ Route::post('/roomCadastro/update', [RoomController::class, 'update'])->name('ro
 
 Route::get('/editar', [\App\Http\Controllers\RoomController::class, 'update']) ->name('edit');
 
-Route::get('/editar', function(){
-    return view('roomCadastro/edit');
+Route::get('/editarRoom/{id_room}', function(int $id_room){
+   
+    $room = Room::find($id_room);
+    return view('roomCadastro/edit', compact('room'));
 });
+
 Route::post('/roomCadastro/store', [RoomController::class, 'store'])->name('rooms.store');
 
 // Route::delete('rooms/{id}', 'RoomController@destroy')->name('rooms.destroy');

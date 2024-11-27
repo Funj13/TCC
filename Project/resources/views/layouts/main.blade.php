@@ -69,6 +69,9 @@
         <li class="nav-item">
         <a class="nav-link" href="/dashboard">Dashboard</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/cadastroIndex">Gerenciar</a>
+        </li>
       @endcan
         </ul>
         </form>

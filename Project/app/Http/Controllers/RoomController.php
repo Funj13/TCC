@@ -49,6 +49,7 @@ class RoomController extends Controller
 
     public function update(Request $request)
     {
+        
         $this->validate($request, [
             'quartos_id' => 'required|int',
             'nome' => 'required|string',
@@ -57,13 +58,13 @@ class RoomController extends Controller
             'tipo' => 'required|string',
         ]);
 
-        $rooms = Room::find($request->input('quartos_id'));
-        $rooms->tipagem = $request->input('tipo');
-        $rooms->preco_por_noite = $request->input('preco');
-        $rooms->disponibilidade = $request->input('dispo');
-        $rooms->nome = $request->input('nome');
-        $rooms->save();
-        return view('roomCadastro.edit', compact('rooms'));
+        $room = Room::find(id: $request->input('quartos_id'));
+        $room->tipo = $request->input('tipo');
+        $room->preco = $request->input('preco');
+        $room->disponibilidade = $request->input('dispo');
+        $room->nome = $request->input('nome');
+        $room->save();
+        return view('dashboard', compact('room'));
     }
 
     public function destroy($id)

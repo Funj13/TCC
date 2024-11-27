@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="light">
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title')</title>
@@ -19,22 +20,18 @@
   <!-- Boot strap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Boot strap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </head>
 
 @can ('admin')
 
-<body  id="body" data-bs-theme="white">
-  <!-- tela carregamento -->
-  <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <div class="preloader">
-      <div class="preloader-logo"><img src="images/pinguem_logo_2.png" alt="" width="151" height="44" srcset="images/pinguem_logo_2.png 2x"/>
-      </div>
-      <div class="preloader-body">
-        <div id="loadingProgressG">
-          <div class="loadingProgressG" id="loadingProgressG_1"></div>
-        </div>
-      </div>
-    </div>
 
   @yield('topnav')
   <header>
@@ -53,7 +50,7 @@
             <li class="nav-item">
               <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
               aria-controls="offcanvasWithBothOptions">
-                <img src="images/pinguem_logo_2.png" alt="icon-logo" class="w-20 h-20 click" style="width:70px;">
+                <img src="images/pinguem_logo_2.png" alt="icon-logo" id="logo" class="w-20 h-20 click" style="width:70px;">
               </a>
             </li>
           </ul>
@@ -75,6 +72,10 @@
         <li class="nav-item">
         <a class="nav-link" href="/dashboard">Dashboard</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/cadastroIndex">Gerenciar</a>
+        </li>
+
       @endcan
         </ul>
         </form>

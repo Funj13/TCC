@@ -8,7 +8,7 @@
 @endsection
 
 
-<
+
 
 <div class="editQuarto">
 
@@ -17,11 +17,11 @@
        
         <div>
             <label for="" class="form-label">ID:</label>
-            <input type="number" class="form-control" name="quartos_id" value="" />
+            <input type="number" class="form-control" name="quartos_id" value="{{$room->id}}" />
             <label for="" class="form-label">Tipagem:</label>
-            <input type="text" class="form-control" name="tipo" value="" />
+            <input type="text" class="form-control" name="tipo" value="{{$room->tipo}}" />
             <label for="">Preço:</label>
-            <input type="number" class="form-control" name="preco" value="" />
+            <input type="number" class="form-control" name="preco" value="{{$room->preco}}" />
             <label for="">Disponibilidade:</label>
             <br>
             <INPUT TYPE="RADIO" class="form-check-input border" NAME="dispo" VALUE="1"> sim
@@ -29,7 +29,7 @@
             <INPUT TYPE="RADIO" class="form-check-input border" NAME="dispo" VALUE="0"> não
             <br>
             <label for="">Nome:</label>
-            <input type="name" class="form-control " id="nome" name="nome" value="">
+            <input type="name" class="form-control " id="nome" name="nome" value="{{$room->nome}}">
 <br>
             <button type="submit" class="btn btn-secondary">Salvar alterações</button>
         </div>

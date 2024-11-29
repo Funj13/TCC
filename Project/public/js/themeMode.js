@@ -58,6 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      // Alterar a cor dos retângulos do SVG
+      const rects = document.querySelectorAll('#myRect, #myRect2, #myRect3');
+      rects.forEach(rect => {
+        rect.setAttribute('fill', '#fff'); // Cor dos retângulos no tema escuro
+      });
+
     } else {
       bodyElement.setAttribute('data-bs-theme', 'light');
       bodyElement.style.backgroundColor = 'white';
@@ -85,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const h3s = document.querySelectorAll('h3');
       h3s.forEach(h3 => {
         if (!h3.closest('.no-theme-change')) {
-          h3.style.color = 'black';  // Cor dos h3 no tema claro
+ h3.style.color = 'black';  // Cor dos h3 no tema claro
         }
       });
 
@@ -102,6 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!cite.closest('.no-theme-change')) {
           cite.style.color = 'black';  // Cor do cite no tema claro
         }
+      });
+
+      // Alterar a cor dos retângulos do SVG
+      const rects = document.querySelectorAll('#myRect, #myRect2, #myRect3');
+      rects.forEach(rect => {
+        rect.setAttribute('fill', '#333'); // Cor dos retângulos no tema claro
       });
     }
   }

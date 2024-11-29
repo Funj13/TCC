@@ -206,7 +206,7 @@
         <div class="row justify-content-center">
             <div class="col-sm-10 col-lg-7 col-xl-6">
                 <h3 class="wow-outer"><span class="wow slideInDown text-uppercase">Melhores ofertas</span></h3>
-                <p class="heading-subtitle" style="color:white;">de Novembro</p>
+                <p class="wow-outer" style="color:white;">de Novembro</p>
                 <p class="wow-outer offset-top-4"><span class="wow slideInDown" data-wow-delay=".05s">Com uma variedade de quartos disponíveis em nossa hotelaria, você sempre pode escolher aquele que se adapta às suas necessidades pessoais.</span></p>
                 <div class="wow-outer button-outer"><a class="button button-primary-white button-winona wow slideInDown" href="#" data-wow-delay=".1s">Leia Mais</a></div>
             </div>

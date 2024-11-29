@@ -150,7 +150,7 @@
 
  </div>
   @yield('footer')<div class="footer"><div class="footer">
-  <footer class="section novi-background footer-advanced bg-gray-700">
+  <footer class="section novi-background footer-advanced bg-gray-700 no-theme-change">
    
         <div class="footer-advanced-aside">
           <div class="container">
@@ -159,18 +159,13 @@
                 <ul class="list-nav"> 
                   <li><a href="/">Inicio</a></li>
                   <li><a href="#">Sobre</a></li>
-                  <li><a href="#">Proprietario</a></li>
-                  <li><a href="#">Blog</a></li>
                   <li><a href="#">Contato</a></li>
                 </ul>
               </div>
               <div>
                 <ul class="foter-social-links list-inline list-inline-md">
-                  <li><a class="icon novi-icon icon-sm link-default mdi mdi-facebook" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-sm link-default mdi mdi-twitter" href="#"></a></li>
                   <li><a class="icon novi-icon icon-sm link-default mdi mdi-instagram" href="https://www.instagram.com/hotel_pinguin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="></a></li>
                   <li><a class="icon novi-icon icon-sm link-default mdi mdi-google" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-sm link-default mdi mdi-linkedin" href="#"></a></li>
                 </ul>
               </div>
             </div>
@@ -181,7 +176,7 @@
         </div>
         <div class="footer-advanced-aside">
           <div class="container">
-            <div class="footer-advanced-layout"><a class="brand" href="index.html"><img src="images/pinguem_logo.png" alt="" width="115" height="34" srcset="images/pinguem_logo.png 2x"/></a>
+            <div class="footer-advanced-layout"><a class="brand" href="/"><img src="images/pinguem_logo.png" alt="" width="115" height="34" srcset="images/pinguem_logo.png 2x"/></a>
               <!-- Rights-->
               <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="#">Penguim</a></p>
             </div>

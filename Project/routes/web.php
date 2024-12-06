@@ -138,9 +138,12 @@ use App\Http\Controllers\listaquartosController;
 Route::get('/posts', [listaquartosController::class, 'index']);
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(middleware: ['auth', 'verified'])->name('dashboard');
+use App\Http\Controllers\CamareiraController;
+Route::get('/dashboard', [CamareiraController::class, 'index'])->middleware(middleware: ['auth', 'verified'])->name('dashboard');
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(middleware: ['auth', 'verified'])->name('dashboard');
 
 Route::get('/mapa', function () {
     return view('mapa');

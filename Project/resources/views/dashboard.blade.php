@@ -133,6 +133,43 @@
       </div>
     </div>
     <!-- Row end -->
+    <div class="card mb-3">
+        <div class="card-body">
+        <h5 class="card-title">Autorizar Administradores</h5>
+        <div id="callsByCountry" class="auto-align-graph">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Permissão</th>
+                <th>Alterar</th>
+
+              </tr>
+            </thead>
+        <tbody>
+        @if($users->isEmpty())
+        <p>Nenhum Usuario encontrado.</p>
+      @else
+ 
+      @foreach($users as $user)     
+    <tr>
+      <td> {{ $user->id }} </td>
+      <td> {{ $user->name }} </td>
+      <td> {{ $user->permission_name }} </td>
+      <td><form action="{{ route('users.update', $user) }}" method="POST">
+                @csrf
+                @method('PUT')
+                <button type="submit">Tornar Admin</button>
+            </form></td>
+    </tr>
+      @endforeach
+      @endif  
+    </tbody>
+    </table>
+        </div>
+        </div>
+      </div>
 
 
 
@@ -162,24 +199,25 @@
             <tbody>
             @if($camareiras->isEmpty())
         <p>Nenhuma camareira encontrada.</p>
+      @else
+    @foreach($camareiras as $camareira)
+    <tr>
+      <td> {{ $camareira->id }} </td>
+      <td> {{ $camareira->tipo }} </td>
+      @if($camareira->status == 'Ativa')
+      <td><span class="badge bg-success">{{ $camareira->status }}</span> </td>
     @else
-            @foreach($camareiras as $camareira)
-        <tr>
-          <td> {{ $camareira->id }} </td>
-          <td> {{ $camareira->tipo }} </td>
-          @if($camareira->status == 'Ativa')
-          <td><span class="badge bg-success">{{ $camareira->status }}</span>   </td>
-          @else
-          <td><span class="badge bg-danger">{{ $camareira->status }}</span>  </td>
-          @endif
-          <td> <span class="badge border border-danger text-danger">{{ $camareira->tags }}</span>  </td>
-          <td> <span class="badge border border-danger text-danger">{{ $camareira->prioridade }}</span>  </td>
-          <td> {{ $camareira->area }} </td>
-          <td> {{ $camareira->created_at }} </td>
-          <td> {{ $camareira->updated_at }} </td>
-        </tr>
-      @endforeach
-      @endif
+      <td><span class="badge bg-danger">{{ $camareira->status }}</span> </td>
+    @endif
+      <td> <span class="badge border border-danger text-danger">{{ $camareira->tags }}</span> </td>
+      <td> <span class="badge border border-danger text-danger">{{ $camareira->prioridade }}</span>
+      </td>
+      <td> {{ $camareira->area }} </td>
+      <td> {{ $camareira->created_at }} </td>
+      <td> {{ $camareira->updated_at }} </td>
+    </tr>
+  @endforeach
+  @endif
             </tbody>
           </table>
           </div>

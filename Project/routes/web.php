@@ -136,11 +136,11 @@ Route::get('/cadastroIndex',[\App\Http\Controllers\RoomController::class, 'index
 
 use App\Http\Controllers\listaquartosController;
 Route::get('/posts', [listaquartosController::class, 'index']);
-
-
 use App\Http\Controllers\CamareiraController;
-Route::get('/dashboard', [CamareiraController::class, 'index'])->middleware(middleware: ['auth', 'verified'])->name('dashboard');
+use App\Http\Controllers\GerenciarAcesso;
+Route::get('/dashboard', [GerenciarAcesso::class, 'getDashboardData'])->middleware(middleware: ['auth', 'verified'])->name('dashboard');
 
+Route::put('users/{user}', [GerenciarAcesso::class, 'update'])->name('users.update');
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(middleware: ['auth', 'verified'])->name('dashboard');

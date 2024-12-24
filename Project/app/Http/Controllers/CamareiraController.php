@@ -7,7 +7,6 @@ use App\Models\Camareira;
 
 class CamareiraController extends Controller
 {
-    // listar todos quartos
     public function index()
     {
         $camareiras = Camareira::all(); 

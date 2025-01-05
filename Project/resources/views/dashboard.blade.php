@@ -148,23 +148,7 @@
               </tr>
             </thead>
         <tbody>
-        @if($users->isEmpty())
-        <p>Nenhum Usuario encontrado.</p>
-      @else
- 
-      @foreach($users as $user)     
-    <tr>
-      <td> {{ $user->id }} </td>
-      <td> {{ $user->name }} </td>
-      <td> {{ $user->permission_name }} </td>
-      <td><form action="{{ route('users.update', $user) }}" method="POST">
-                @csrf
-                @method('PUT')
-                <button type="submit">Tornar Admin</button>
-            </form></td>
-    </tr>
-      @endforeach
-      @endif  
+
     </tbody>
     </table>
         </div>

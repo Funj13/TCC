@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Camareira;
 use App\Models\Model_has_permission;
+use App\Models\Permission;
+
 
 class GerenciarAcesso extends Controller
 {
@@ -22,12 +24,20 @@ class GerenciarAcesso extends Controller
     return view('dashboard', compact('users', 'camareiras'));
 }
 
-public function update(User $user)
-{
-    $user->permission_id = '1';
-    $user->save();
+public function updatePermission(User $user, Model_has_permission $permissions)
+    {
+        // Verifica se o usuário já possui a permissão
+        $hasPermission = $user->hasPermissionTo($permissions);
 
-    return redirect()->back()->with('success', 'Tipo de usuário alterado com sucesso!');
-}
+        if ($hasPermission) {
+            // Se já possui, revoga a permissão
+            $user->revokePermissionTo($permissions);
+        } else {
+            // Se não possui, atribui a permissão
+            $user->givePermissionTo($permissions);
+        }
+
+        return redirect()->back()->with('success', 'Permissão atualizada com sucesso!');
+    }
 }
 

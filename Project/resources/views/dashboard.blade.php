@@ -133,6 +133,9 @@
       </div>
     </div>
     <!-- Row end -->
+
+
+
     <div class="card mb-3">
         <div class="card-body">
         <h5 class="card-title">Autorizar Administradores</h5>
@@ -144,8 +147,10 @@
                 <th>Nome</th>
                 <th>Permissão</th>
                 <th>Alterar</th>
-
               </tr>
+            </thead>
+            <br>
+            <tbody>
               @if($users->isEmpty())
         <p>Nenhum Usuario encontrado.</p>
       @else
@@ -158,7 +163,7 @@
         <td>
        
     <!-- Botão para abrir o modal -->
-<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmModal">
+<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmModal" value="{{ $user->id }}"> <?php var_dump($user->id); ?>>
     Alterar
 </button>
 
@@ -171,15 +176,16 @@
                 <button type="button" class="btn-close close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <a> Você tem certeza que deseja alterar as permissões deste usuário?</a>
+              <a> Você tem certeza que deseja alterar as permissões deste usuário? {{$user->name}}</a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <form action="{{ route('users.permissions.update', [$user, $user->permission_name]) }}" method="POST" id="confirmForm">
-                    @csrf
-                    @method('PUT')
-                    <button type="submit" class="btn btn-danger">Confirmar</button>
-                </form>
+                <form action="{{ route('users.permissions.update', [$user->id, $user->permission_name]) }}" method="POST" id="confirmForm">
+  @csrf
+  @method('PUT')
+  <input type="hidden" name="user_id" value="{{ $user->id }}"> <?php var_dump($user->id); ?>
+  <button type="submit" class="btn btn-danger">Confirmar</button>
+</form>
             </div>
         </div>
     </div>
@@ -190,14 +196,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         </td>
-      
-      @endforeach
       </tr>
+      @endforeach
+      
       @endif
-            </thead>
-        <tbody>
-
-    </tbody>
+           </tbody>
     </table>
         </div>
         </div>

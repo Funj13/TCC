@@ -24,20 +24,26 @@ class GerenciarAcesso extends Controller
     return view('dashboard', compact('users', 'camareiras'));
 }
 
-public function updatePermission(User $user, $permissionName)
+public function updatePermission(User $user, $permissionName, $userId)
 {
-
-    
-    if($permissionName = 'user'){
-        $user->revokePermissionTo('user');
-        $user->givePermissionTo('admin');
-        
+    var_dump($userId);
+    if ($user->id != $userId) {
+        // Tratar o erro (por exemplo, redirecionar com mensagem de erro)
+        return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar as permissões.');
     }
+
+
     if($permissionName = 'admin'){
         $user->revokePermissionTo('admin');
         $user->givePermissionTo('user');
        
     }
+    elseif($permissionName = 'user'){
+        $user->revokePermissionTo('user');
+        $user->givePermissionTo('admin');
+        
+    }
+    
     return redirect()->back()->with('success', 'Permissão atualizada com sucesso!');
     
 }

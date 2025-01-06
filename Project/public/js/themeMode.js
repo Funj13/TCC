@@ -43,6 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      const h5s = document.querySelectorAll('h5');
+      h5s.forEach(h5 => {
+        if (!h5.closest('.no-theme-change')) {
+          h5.style.color = 'white';  // Cor dos h5 no tema escuro
+        }
+      });
+
       const ths = document.querySelectorAll('th');
       ths.forEach(th => {
         if (!th.closest('.no-theme-change')) {
@@ -92,6 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
       h3s.forEach(h3 => {
         if (!h3.closest('.no-theme-change')) {
  h3.style.color = 'black';  // Cor dos h3 no tema claro
+        }
+      });
+
+      
+      const h5s = document.querySelectorAll('h5');
+      h5s.forEach(h5 => {
+        if (!h5.closest('.no-theme-change')) {
+          h5.style.color = 'black';  // Cor dos h5 no tema escuro
         }
       });
 

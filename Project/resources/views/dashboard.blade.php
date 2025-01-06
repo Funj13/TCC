@@ -156,11 +156,41 @@
         <td> <a>{{ $user->name }}</a> </td>
         <td><a> {{ $user->permission_name }} </a></td>    
         <td>
-        <form action="{{ route('users.permissions.update', [$user, $user->permission_name]) }}" method="POST">
-    @csrf
-    @method('PUT')
-    <button type="submit">Alterar</button>
-</form>
+       
+    <!-- Botão para abrir o modal -->
+<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmModal">
+    Alterar
+</button>
+
+<!-- Modal de Confirmação -->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">Confirmação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Você tem certeza que deseja alterar as permissões deste usuário?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <form action="{{ route('users.permissions.update', [$user, $user->permission_name]) }}" method="POST" id="confirmForm">
+                    @csrf
+                    @method('PUT')
+                    <button type="submit" class="btn btn-danger">Confirmar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts do Bootstrap (se necessário) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         </td>
       
       @endforeach

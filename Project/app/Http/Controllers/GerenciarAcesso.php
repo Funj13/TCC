@@ -24,20 +24,22 @@ class GerenciarAcesso extends Controller
     return view('dashboard', compact('users', 'camareiras'));
 }
 
-public function updatePermission(User $user, Model_has_permission $permissions)
-    {
-        // Verifica se o usuário já possui a permissão
-        $hasPermission = $user->hasPermissionTo($permissions);
+public function updatePermission(User $user, $permissionName)
+{
 
-        if ($hasPermission) {
-            // Se já possui, revoga a permissão
-            $user->revokePermissionTo($permissions);
-        } else {
-            // Se não possui, atribui a permissão
-            $user->givePermissionTo($permissions);
-        }
-
-        return redirect()->back()->with('success', 'Permissão atualizada com sucesso!');
+    
+    if($permissionName = 'user'){
+        $user->revokePermissionTo('user');
+        $user->givePermissionTo('admin');
+        
     }
+    if($permissionName = 'admin'){
+        $user->revokePermissionTo('admin');
+        $user->givePermissionTo('user');
+       
+    }
+    return redirect()->back()->with('success', 'Permissão atualizada com sucesso!');
+    
+}
 }
 

@@ -146,6 +146,26 @@
                 <th>Alterar</th>
 
               </tr>
+              @if($users->isEmpty())
+        <p>Nenhum Usuario encontrado.</p>
+      @else
+ 
+      @foreach($users as $user)     
+      <tr>
+        <td> <a>{{ $user->id }}</a> </td>
+        <td> <a>{{ $user->name }}</a> </td>
+        <td><a> {{ $user->permission_name }} </a></td>    
+        <td>
+        <form action="{{ route('users.permissions.update', [$user, $user->permission_name]) }}" method="POST">
+    @csrf
+    @method('PUT')
+    <button type="submit">Alterar</button>
+</form>
+        </td>
+      
+      @endforeach
+      </tr>
+      @endif
             </thead>
         <tbody>
 
@@ -186,20 +206,19 @@
       @else
     @foreach($camareiras as $camareira)
     <tr>
-      <td> {{ $camareira->id }} </td>
-      <td> {{ $camareira->tipo }} </td>
-      @if($camareira->status == 'Ativa')
-      <td><span class="badge bg-success">{{ $camareira->status }}</span> </td>
+    <td><a>{{ $camareira->id }}</a></td>
+    <td><a>{{ $camareira->tipo }}</a></td>
+    @if($camareira->status == 'Ativa')
+        <td><a><span class="badge bg-success">{{ $camareira->status }}</span></a></td>
     @else
-      <td><span class="badge bg-danger">{{ $camareira->status }}</span> </td>
+        <td><a><span class="badge bg-danger">{{ $camareira->status }}</span></a></td>
     @endif
-      <td> <span class="badge border border-danger text-danger">{{ $camareira->tags }}</span> </td>
-      <td> <span class="badge border border-danger text-danger">{{ $camareira->prioridade }}</span>
-      </td>
-      <td> {{ $camareira->area }} </td>
-      <td> {{ $camareira->created_at }} </td>
-      <td> {{ $camareira->updated_at }} </td>
-    </tr>
+    <td><a><span class="badge border border-danger text-danger">{{ $camareira->tags }}</span></a></td>
+    <td><a><span class="badge border border-danger text-danger">{{ $camareira->prioridade }}</span></a></td>
+    <td><a>{{ $camareira->area }}</a></td>
+    <td><a>{{ $camareira->created_at }}</a></td>
+    <td><a>{{ $camareira->updated_at }}</a></td>
+</tr>
   @endforeach
   @endif
             </tbody>

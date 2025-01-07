@@ -174,19 +174,21 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="confirmModalLabel">Confirmação</h5>
-                <button type="button" class="btn-close close" data-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close close" data-dismiss="modal" aria-label="Close">
+                </button>
             </div>
             <div class="modal-body">
-              <a> Você tem certeza que deseja alterar as permissões deste usuário? {{$user->name}}</a>
+                Você tem certeza que deseja alterar as permissões deste usuário?
+                <p id="userIdDisplay"></p>
+                <p id="permissionNameDisplay"></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <form action="{{ route('users.permissions.update', [$user->id, $user->permission_name]) }}" method="POST" id="confirmForm">
-  @csrf
-  @method('PUT')
-  <input type="hidden" name="user_id" value="{{ $user->id }}"> 
-  <button type="submit" class="btn btn-danger">Confirmar</button>
-</form>
+                <form action="" method="POST" id="confirmForm">
+                    @csrf
+                    @method('PUT')
+                    <button type="submit" class="btn btn-danger">Confirmar</button>
+                </form>
             </div>
         </div>
     </div>
@@ -194,14 +196,18 @@
 
 <script>
     $('#confirmModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); // Botão que acionou o modal
-        var userId = button.data('user-id'); // Extrai o ID do usuário do atributo data
-        var permissionName = button.data('permission-name'); // Extrai o nome da permissão do atributo data
+        var button = $(event.relatedTarget);
+        var userId = button.data('user-id'); 
+        var permissionName = button.data('permission-name'); 
 
         // Define a ação do formulário com o ID do usuário e o nome da permissão
         var actionUrl = "{{ route('users.permissions.update', ['user' => ':user', 'permission' => ':permission']) }}";
         actionUrl = actionUrl.replace(':user', userId).replace(':permission', permissionName);
         $('#confirmForm').attr('action', actionUrl);
+
+        // Exibe os dados no modal
+        $('#userIdDisplay').text('ID do Usuário: ' + userId);
+        $('#permissionNameDisplay').text('Permissão: ' + permissionName);
     });
 </script>
 <!-- Scripts do Bootstrap -->

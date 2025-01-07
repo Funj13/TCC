@@ -163,7 +163,8 @@
         <td>
        
     <!-- Botão para abrir o modal -->
-<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmModal" value="{{ $user->id }}"> <?php var_dump($user->id); ?>>
+    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmModal" 
+    data-user-id="{{ $user->id }}" data-permission-name="{{ $user->permission_name }}">
     Alterar
 </button>
 
@@ -183,7 +184,7 @@
                 <form action="{{ route('users.permissions.update', [$user->id, $user->permission_name]) }}" method="POST" id="confirmForm">
   @csrf
   @method('PUT')
-  <input type="hidden" name="user_id" value="{{ $user->id }}"> <?php var_dump($user->id); ?>
+  <input type="hidden" name="user_id" value="{{ $user->id }}"> 
   <button type="submit" class="btn btn-danger">Confirmar</button>
 </form>
             </div>
@@ -191,7 +192,19 @@
     </div>
 </div>
 
-<!-- Scripts do Bootstrap (se necessário) -->
+<script>
+    $('#confirmModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Botão que acionou o modal
+        var userId = button.data('user-id'); // Extrai o ID do usuário do atributo data
+        var permissionName = button.data('permission-name'); // Extrai o nome da permissão do atributo data
+
+        // Define a ação do formulário com o ID do usuário e o nome da permissão
+        var actionUrl = "{{ route('users.permissions.update', ['user' => ':user', 'permission' => ':permission']) }}";
+        actionUrl = actionUrl.replace(':user', userId).replace(':permission', permissionName);
+        $('#confirmForm').attr('action', actionUrl);
+    });
+</script>
+<!-- Scripts do Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

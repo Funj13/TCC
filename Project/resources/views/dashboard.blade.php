@@ -178,7 +178,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                Você tem certeza que deseja alterar as permissões deste usuário?
+                <a >Você tem certeza que deseja alterar as permissões deste usuário?</a>
                 <p id="userIdDisplay"></p>
                 <p id="permissionNameDisplay"></p>
             </div>
@@ -199,13 +199,9 @@
         var button = $(event.relatedTarget);
         var userId = button.data('user-id'); 
         var permissionName = button.data('permission-name'); 
-
-        // Define a ação do formulário com o ID do usuário e o nome da permissão
         var actionUrl = "{{ route('users.permissions.update', ['user' => ':user', 'permission' => ':permission']) }}";
         actionUrl = actionUrl.replace(':user', userId).replace(':permission', permissionName);
         $('#confirmForm').attr('action', actionUrl);
-
-        // Exibe os dados no modal
         $('#userIdDisplay').text('ID do Usuário: ' + userId);
         $('#permissionNameDisplay').text('Permissão: ' + permissionName);
     });

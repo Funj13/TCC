@@ -121,7 +121,7 @@
       <div class="col-md-6 wow-outer">
       <!-- Post Modern-->
       <article class="post-modern wow slideInLeft"><a class="post-modern-media"
-        href="/rooms/{{$room->id}}"><img src="images/quartos/{{$room->image}}" alt="" width="571"
+        href="/{{$room->id}}"><img src="images/quartos/{{$room->image1}}" alt="" width="571"
           height="353" /></a>
         <h4 class="post-modern-title"><a class="post-modern-title" href="/Quarto-Suite-Elegancia-Moderna">{{$room->nome}}</a></h4>
         <ul class="post-modern-meta">

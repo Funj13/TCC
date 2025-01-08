@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ImgQuartosController;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Room;
@@ -8,6 +8,8 @@ use App\Http\Controllers\GerenciarAcesso;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\RoomController;
 // use App\Http\Controllers\CamareiraController;
+
+require __DIR__.'/auth.php';
 
 // Welcome
 Route::get('/', [RoomController::class, 'welcome'])->name('welcome');
@@ -21,7 +23,10 @@ Route::get('/cadastroIndex',[\App\Http\Controllers\RoomController::class, 'index
 Route::get('/mapa', function () {
     return view('mapa');
 });
-
+// Tela Formulario Quarto
+Route::get('/cadastroQuarto', function(){
+    return view('roomCadastro/create');
+});
 
 
 // Função Permissão Usuario Updater
@@ -31,7 +36,7 @@ Route::put('/users/{user}/permissions/{permission}', [GerenciarAcesso::class, 'u
 Route::post('/roomCadastro/store', [RoomController::class, 'store'])->name('rooms.store');
 Route::post('/roomCadastro/update', [RoomController::class, 'update'])->name('rooms.update');
 Route::delete('/roomCadastro/{id}', [RoomController::class, 'destroy'])->name('rooms.destroy');
-Route::get('/rooms/{id}', [RoomController::class, 'show']);
+Route::get('{id}', [RoomController::class, 'show']);
 
 
 
@@ -54,7 +59,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
-require __DIR__.'/auth.php';
+
 
 /* função inserção imgs do carrousel  */
 Route::get('/carrousel-image-1', function () {
@@ -111,10 +116,7 @@ Route::get('/pagamento', function(){
 Route::post('/reserva/enviar', [ReservaController::class, 'enviar'])->name('reserva.enviar');
 
 
-// Tela Formulario Quarto
-Route::get('/cadastroQuarto', function(){
-    return view('roomCadastro/create');
-});
+
 
 Route::get('/editarRoom/{id_room}', function(int $id_room){
     $room = Room::find($id_room);

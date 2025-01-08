@@ -27,47 +27,56 @@ class RoomController extends Controller
     // }
 
     public function store(Request $request)
-    {
-        try {
-            // Validar os dados do formulário
-            $this->validate($request, [
-                'nome' => 'required|string',
-                'dispo' => 'required|int',
-                'preco' => 'required|int',
-                'tipo' => 'required|string',
-                'image' => 'nullable|image|max:2048',
-            ]);
+{
+    try {
+        // Validar os dados do formulário
+        $this->validate($request, [
+            'nome' => 'required|string',
+            'dispo' => 'required|int',
+            'preco' => 'required|int',
+            'tipo' => 'required|string',
+            'images.*' => 'nullable|image|max:2048', // Permitir múltiplas imagens
+        ]);
 
-            $room = new Room();
-            $room->id = $request->input('');
-            $room->tipo = $request->input('tipo');
-            $room->preco = $request->input('preco');
-            $room->disponibilidade = $request->input('dispo');
-            $room->nome = $request->input('nome');
+        $room = new Room();
+        $room->tipo = $request->input('tipo');
+        $room->preco = $request->input('preco');
+        $room->disponibilidade = $request->input('dispo');
+        $room->nome = $request->input('nome');
 
-            // uploud Image
+        // Upload das Imagens
+        if ($request->hasFile('images')) {
+            $imageNames = []; // Array para armazenar os nomes das imagens
 
-            if ($request->hasFile('image') && $request->file('image')->isValid()) {
-                $requestImage = $request->file('image');
-            
-                // Obter a extensão da imagem
-                $extension = $requestImage->getClientOriginalExtension();
-            
-                $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . '.' . $extension;
-            
-                $requestImage->move(public_path('images/quartos'), $imageName);
-            
-                $room->image = $imageName;
+            foreach ($request->file('images') as $requestImage) {
+                if ($requestImage->isValid()) {
+                    // Obter a extensão da imagem
+                    $extension = $requestImage->getClientOriginalExtension();
+                    $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . '.' . $extension;
+
+                    // Mover a imagem para o diretório desejado
+                    $requestImage->move(public_path('images/quartos'), $imageName);
+
+                    // Adicionar o nome da imagem ao array
+                    $imageNames[] = $imageName;
+                }
             }
 
-
-            $room->save();
-            return redirect()->route('home')->with('msg', 'Quarto Criado Com Sucesso');
-
-        } catch (\Exception $e) {
-            dd($e->getMessage());
+            // Armazenar as imagens em colunas separadas
+            // Supondo que você tenha colunas image1, image2, image3, image4 na tabela rooms
+            $room->image1 = $imageNames[0] ?? null; // Armazena a primeira imagem
+            $room->image2 = $imageNames[1] ?? null; // Armazena a segunda imagem
+            $room->image3 = $imageNames[2] ?? null; // Armazena a terceira imagem
+            $room->image4 = $imageNames[3] ?? null; // Armazena a quarta imagem
         }
+
+        $room->save();
+        return redirect()->route('home')->with('msg', 'Quarto Criado Com Sucesso');
+
+    } catch (\Exception $e) {
+        dd($e->getMessage());
     }
+}
 
 
     public function update(Request $request)
@@ -104,7 +113,7 @@ class RoomController extends Controller
     public function show($id)
     {
         $room = Room::findOrFail($id);
-        return view('rooms.show', ['room' => $room]);
+        return view('show', ['room' => $room]);
     }
 
 

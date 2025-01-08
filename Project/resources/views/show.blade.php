@@ -6,22 +6,51 @@
 @section('content')
 @section('topnav')
 @endsection
+<head>
+<meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+    content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css" id="main-styles-link">
+    <style>
+    .ie-panel {
+      display: none;
+      background: #212121;
+      padding: 10px 0;
+      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+      clear: both;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    html.ie-10 .ie-panel,
+    html.lt-ie-10 .ie-panel {
+      display: block;
+    }
+    </style>
+</head>
 
 
- 
-<div class="container">
+
+<div class="containerQuarto">
     <div class="imagem-principal">
-        <img src="/images/quartos/$room->image" alt="Imagem principal do produto">
+        <img src="/images/quartos/{{$room->image1}}" alt="Imagem principal do produto">
     </div>
     <div class="imagens-pequenas">
         <div class="imagem-pequena">
-            <img src="/images/" alt="Outro ângulo do produto">
+            <img src="/images/quartos/{{$room->image2}}" alt="Outro ângulo do produto">
         </div>
         <div class="imagem-pequena">
-            <img src="/images/" alt="Detalhe do produto">
+            <img src="/images/quartos/{{$room->image3}}" alt="Detalhe do produto">
         </div>
         <div class="imagem-pequena">
-            <img src="/images/" alt="Produto relacionado">
+            <img src="/images/quartos/{{$room->image4}}" alt="Produto relacionado">
         </div>
 
     </div>
@@ -39,14 +68,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Quarto da Paz</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel">{{$room->nome}}</h5>
+                    <button type="button" class="btn-close close" data-dismiss="modal" aria-label="Close">
+                    </button>
                 </div>
+
                 <div class="modal-body">
-                    <p>Quarto da Paz.</p>
+                    <p>{{$room->nome}}.</p>
                     <p>Detalhes: <br>
                         2 suites <br>
-                        total 400 reais diaria.
+                        total {{$room->preco}} Reais diaria.
                     </p>
                     <div class="reserva">
 
@@ -61,11 +92,9 @@
                             <label for="">Adicione o Dia em que deseja reservar o quarto:</label>
                             <input type="date" class="form-control meu-input-data" id="data-evento"
                                 placeholder="DD/MM/AAAA" name="dt-checkin">
-                                <label for="">Adicione o Dia em que deseja fazer check-out do quarto:</label>
+                            <label for="">Adicione o Dia em que deseja fazer check-out do quarto:</label>
                             <input type="date" class="form-control meu-input-data" id="data-evento"
                                 placeholder="DD/MM/AAAA" name="dt-checkout">
-
-
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" name="enviar">
@@ -76,9 +105,12 @@
                 </div>
             </div>
         </div>
-        
-    </div> 
+    </div>
+<!-- Scripts do Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
-    @endsection
-   
+
+@endsection

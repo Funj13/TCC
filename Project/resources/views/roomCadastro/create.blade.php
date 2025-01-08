@@ -24,7 +24,7 @@
             @csrf
 
             <label for="">Imagem:</label>
-            <input type="file" id="image" name="image" class="from-control-file">
+            <input type="file" id="image" name="images[]" multiple class="from-control-file">
             <br>
 
             <label for="" class="">Tipagem:</label>

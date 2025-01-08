@@ -315,9 +315,11 @@
     <!-- Custom JS files -->
     <script src="js/custom.js"></script>
 
-    @endsection
+    
     @elsecan('user')
 
     <h1>Usuario Sem Permissão</h1>
 
 @endcan
+
+@endsection

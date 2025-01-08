@@ -37,6 +37,9 @@
             <label for="">Nome:</label>
             <input type="name" class="form-control border" id="nome" name="nome">
             <br>
+            <label for="">Imagem:</label>
+            <input type="image">
+            <br>
             <button type="submit" class="btn btn-outline-success btn-position" data-bs-dismiss="enviar" name="enviar">
                 Enviar</button>
                 

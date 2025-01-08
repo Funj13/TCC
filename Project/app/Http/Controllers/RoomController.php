@@ -38,8 +38,23 @@ class RoomController extends Controller
             $room->disponibilidade = $request->input('dispo');
             $room->nome = $request->input('nome');
 
+            if($request->hasFile('image') ** $request->file('image')->isValid()){
+
+                $resquestImage= $request->image;
+
+                $extension =   $resquestImage->extension();
+
+            $imageName = md5($resquestImage->image->getClientOriginalName() . strtotime("now") . "." . $extension);
+
+            $request->image->move(public_path('images/quartos'), $imageName);
+
+            $room->image = $imageName;
+
+            }
+
+
             $room->save();
-            return redirect()->route('home');
+            return redirect()->route('home')->with('msg', 'Quarto Criado Com Sucesso');
 
         } catch (\Exception $e) {
             dd($e->getMessage());

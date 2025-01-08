@@ -29,6 +29,7 @@ class RoomController extends Controller
                 'dispo' => 'required|int',
                 'preco' => 'required|int',
                 'tipo' => 'required|string',
+                'image' => 'nullable|image|max:2048',
             ]);
 
             $room = new Room();
@@ -38,18 +39,19 @@ class RoomController extends Controller
             $room->disponibilidade = $request->input('dispo');
             $room->nome = $request->input('nome');
 
-            if($request->hasFile('image') ** $request->file('image')->isValid()){
+            // uploud Image
 
-                $resquestImage= $request->image;
-
-                $extension =   $resquestImage->extension();
-
-            $imageName = md5($resquestImage->image->getClientOriginalName() . strtotime("now") . "." . $extension);
-
-            $request->image->move(public_path('images/quartos'), $imageName);
-
-            $room->image = $imageName;
-
+            if ($request->hasFile('image') && $request->file('image')->isValid()) {
+                $requestImage = $request->file('image');
+            
+                // Obter a extensão da imagem
+                $extension = $requestImage->getClientOriginalExtension();
+            
+                $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . '.' . $extension;
+            
+                $requestImage->move(public_path('images/quartos'), $imageName);
+            
+                $room->image = $imageName;
             }
 
 

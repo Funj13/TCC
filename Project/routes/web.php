@@ -4,12 +4,48 @@ use App\Http\Controllers\ImgQuartosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Room;
+use App\Http\Controllers\GerenciarAcesso;
+use App\Http\Controllers\ReservaController;
+use App\Http\Controllers\RoomController;
+// use App\Http\Controllers\CamareiraController;
 
-Route::get('/', function () {
-    return view('welcome');
+// Welcome
+Route::get('/', [RoomController::class, 'welcome'])->name('welcome');
+// Welcome Quartos
+Route::get('/quartos', function(){ return view('viewquartos');});
+// Dashboard
+Route::get('/dashboard', [GerenciarAcesso::class, 'getDashboardData'])->middleware(middleware: ['auth', 'verified'])->name('dashboard');
+// Tela Index do Cadastro
+Route::get('/cadastroIndex',[\App\Http\Controllers\RoomController::class, 'index']) ->name('home');
+// Tela Localização
+Route::get('/mapa', function () {
+    return view('mapa');
 });
 
 
+
+// Função Permissão Usuario Updater
+Route::put('/users/{user}/permissions/{permission}', [GerenciarAcesso::class, 'updatePermission'])
+    ->name('users.permissions.update');
+// Funções Cadastro Quartos
+Route::post('/roomCadastro/store', [RoomController::class, 'store'])->name('rooms.store');
+Route::post('/roomCadastro/update', [RoomController::class, 'update'])->name('rooms.update');
+Route::delete('/roomCadastro/{id}', [RoomController::class, 'destroy'])->name('rooms.destroy');
+Route::get('/rooms/{id}', [RoomController::class, 'show']);
+
+
+
+
+
+// Função iserção de img logo
+Route::get('/logo-pinguem', function(){
+    return response()->file(public_path('images/logo.png'));
+});
+
+// Função inserção de img icon
+Route::get('/icon-pinguem', function (){
+    return response()->file(public_path('images/icon.png'));
+});
 // Profile User
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -17,9 +53,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Route::get('/user_name', function (){
-//     ProfileController::class;
-// });
 
 require __DIR__.'/auth.php';
 
@@ -37,124 +70,57 @@ Route::get('/carrousel-image-4', function (){
     return response()->file(public_path('images/suite_eden_1.jpg'));
 });
 
-// Função iserção de img logo
-
-Route::get('/logo-pinguem', function(){
-    return response()->file(public_path('images/logo.png'));
-});
-
-// Função inserção de img icon
-
-Route::get('/icon-pinguem', function (){
-    return response()->file(public_path('images/icon.png'));
-});
-
-
-// Função inserção img quartos index
-Route::get('/teste', function () {
-    return view('\roomCadastro\show');
-});
-
-
 // Routes get Rooms
-
 Route::get('/Quarto-Suite-Elegancia-Moderna', function () {
     return view('\rooms\room_suite_elegant');
 });
-
 Route::get('/Quarto-da-Paz', function () {
     return view('\rooms\romm_Quarto_da_Paz');
 });
-
 Route::get('/Quarto-Imperial', function () {
     return view('\rooms\romm_Quarto_imperial');
 });
-
 Route::get('/Quarto-Serenidade', function () {
     return view('\rooms\room_Quarto_Serenidade');
 });
-
 Route::get('/Suite-Eden', function () {
     return view('\rooms\room_suite_eden');
 });
-
 Route::get('/Suite-Marfim', function () {
     return view('\rooms\room_suite_marfim');
 });
-
 Route::get('/Suite-Lua-Cheia', function () {
     return view('\rooms\room_suite_lua_cheia');
 });
-
 Route::get('/Suite-Tropical', function () {
     return view('\rooms\room_suite_tropical');
 });
-
 Route::get('/Suite-Luxo', function () {
     return view('\rooms\room_suite_luxo');
 });
-// TelaCadarpio
 
+
+// TelaCadarpio
 Route::get('/cadarpio', function () {
     return view('menu');
 });
-
-
+// Tela Pagamento
 Route::get('/pagamento', function(){
     return view('payment');
 });
-
-use App\Http\Controllers\ReservaController;
-
 Route::post('/reserva/enviar', [ReservaController::class, 'enviar'])->name('reserva.enviar');
 
+
+// Tela Formulario Quarto
 Route::get('/cadastroQuarto', function(){
     return view('roomCadastro/create');
 });
 
-
-use App\Http\Controllers\RoomController;
-
-Route::post('/roomCadastro/update', [RoomController::class, 'update'])->name('rooms.update');
-
-Route::get('/editar', [\App\Http\Controllers\RoomController::class, 'update']) ->name('edit');
-
 Route::get('/editarRoom/{id_room}', function(int $id_room){
-   
     $room = Room::find($id_room);
     return view('roomCadastro/edit', compact('room'));
 });
 
-Route::post('/roomCadastro/store', [RoomController::class, 'store'])->name('rooms.store');
 
-// Route::delete('rooms/{id}', 'RoomController@destroy')->name('rooms.destroy');
-
-Route::delete('/roomCadastro/{id}', [RoomController::class, 'destroy'])->name('rooms.destroy');
-
-Route::get('/cadastroIndex',[\App\Http\Controllers\RoomController::class, 'index']) ->name('home');
-
-
-use App\Http\Controllers\listaquartosController;
-Route::get('/posts', [listaquartosController::class, 'index']);
-// use App\Http\Controllers\CamareiraController;
-
-
-use App\Http\Controllers\GerenciarAcesso;
-
-Route::put('/users/{user}/permissions/{permission}', [GerenciarAcesso::class, 'updatePermission'])
-    ->name('users.permissions.update');
-
-Route::get('/dashboard', [GerenciarAcesso::class, 'getDashboardData'])->middleware(middleware: ['auth', 'verified'])->name('dashboard');
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(middleware: ['auth', 'verified'])->name('dashboard');
-
-Route::get('/mapa', function () {
-    return view('mapa');
-});
-
-Route::get('/quartos', function(){
-    return view('viewquartos');
-});
+// ????
+// Route::get('/editar', [\App\Http\Controllers\RoomController::class, 'update']) ->name('edit');

@@ -1,37 +1,36 @@
-
 @extends('layouts.main')
 
-@section('title', 'Quarto')
+@section('title', $room->nome)
 
 
 @section('content')
-
 @section('topnav')
 @endsection
 
 
-    <div class="container">
-        <div class="imagem-principal">
-            <img src="/images/Quarto_imperial_2.jpg" alt="Imagem principal do produto">
+ 
+<div class="container">
+    <div class="imagem-principal">
+        <img src="/images/quartos/$room->image" alt="Imagem principal do produto">
+    </div>
+    <div class="imagens-pequenas">
+        <div class="imagem-pequena">
+            <img src="/images/" alt="Outro ângulo do produto">
         </div>
-        <div class="imagens-pequenas">
-            <div class="imagem-pequena">
-                <img src="/images/Quarto_imperial_1.jpg" alt="Outro ângulo do produto">
-            </div>
-            <div class="imagem-pequena">
-                <img src="/images/Quarto_imperial_3.jpg" alt="Detalhe do produto">
-            </div>
-            <div class="imagem-pequena">
-                <img src="/images/Quarto_imperial_4.jpg" alt="Produto relacionado">
-            </div>
-            
+        <div class="imagem-pequena">
+            <img src="/images/" alt="Detalhe do produto">
+        </div>
+        <div class="imagem-pequena">
+            <img src="/images/" alt="Produto relacionado">
         </div>
 
-        <div class="informacoes-produto">
-            <h2>Quarto Imperial</h2>
-            <p>Descrição detalhada do produto, incluindo suas características, funcionalidades e benefícios.</p>
-            <p>Preço: R$ 100,00</p>
-            <button id="btnReservar" data-bs-target="#meuModal">RESERVAR</button>
+    </div>
+
+    <div class="informacoes-produto">
+        <h2>{{$room->nome}}</h2>
+        <p>Descrição detalhada do produto, incluindo suas características, funcionalidades e benefícios.</p>
+        <p>Preço: R$ {{$room->preco}} Diaria</p>
+        <button id="btnReservar" data-bs-target="#meuModal">RESERVAR</button>
         <script src="js/modalQuarto.js"></script><br>
     </div>
 
@@ -41,8 +40,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Quarto da Paz</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                     aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p>Quarto da Paz.</p>
@@ -81,4 +79,6 @@
         
     </div> 
 
-@endsection
+
+    @endsection
+   

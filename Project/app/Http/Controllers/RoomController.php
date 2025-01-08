@@ -15,6 +15,12 @@ class RoomController extends Controller
         return view('roomCadastro.index', compact('rooms'));
     }
 
+    public function welcome()
+    {
+        $rooms = Room::all();
+        return view('welcome', compact('rooms'));
+    }
+
     // public function create()
     // {
     //     return view('roomCadastro.create');
@@ -94,15 +100,15 @@ class RoomController extends Controller
         return redirect()->route('home');
     }
 
+    // Criar a Tela do Quarto
+    public function show($id)
+    {
+        $room = Room::findOrFail($id);
+        return view('rooms.show', ['room' => $room]);
+    }
 
 
 
-    // listar quartos
-    // public function show($id)
-    // {
-    //     $room = Room::find($id);
-    //     return view('roomCadastro.index', compact('roomCadastro'));
-    // }
 
 
     // public function edit($id)

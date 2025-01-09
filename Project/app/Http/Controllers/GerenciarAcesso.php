@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Camareira;
 use App\Models\Model_has_permission;
 use App\Models\Permission;
+use Carbon\Carbon;
 
 
 class GerenciarAcesso extends Controller
@@ -21,26 +22,38 @@ class GerenciarAcesso extends Controller
     ->get();
 
     $camareiras = Camareira::all();
-    return view('dashboard', compact('users', 'camareiras'));
+
+  
+
+    // Loop pelos dias da semana
+
+    return view('dashboard', compact('users', 'camareiras', ));
 }
 
 public function updatePermission(User $user, $permissionName)
 {
-
-
     if($permissionName == 'admin'){
         $user->revokePermissionTo('admin');
         $user->givePermissionTo('user');
-       
     }
     elseif($permissionName == 'user'){
         $user->revokePermissionTo('user');
         $user->givePermissionTo('admin');
-        
     }
-    
     return redirect()->back()->with('success', 'Permissão atualizada com sucesso!');
-    
 }
+public function getUsuariosPorSemana()
+    {
+        $startOfWeek = Carbon::now()->startOfWeek();
+        $usuariosPorDia = [];
+
+        for ($i = 0; $i < 7; $i++) {
+            $dia = $startOfWeek->copy()->addDays($i);
+            $usuariosPorDia[] = User::whereDate('created_at', $dia)->count();
+        }
+
+        return response()->json($usuariosPorDia);
+    }
+
 }
 

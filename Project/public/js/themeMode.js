@@ -19,7 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Trocar a imagem do logo para o tema escuro
       logo.src = 'images/pinguem_logo.png'; // Imagem para o tema escuro
-      // logo2.src = 'images/pinguem_logo.png'; // Imagem para o tema escuro
+      if (window.location.pathname === '/dashboard') { // Verifica se está na página do dashboard
+        logo2.src = 'images/pinguem_logo.png'; // Imagem para o tema escuro
+      }
 
       // Alterando a cor dos links e parágrafos no tema escuro, exceto na seção com a classe no-theme-change
       const links = document.querySelectorAll('a');
@@ -85,7 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Trocar a imagem do logo para o tema claro
       logo.src = 'images/pinguem_logo_2.png'; // Imagem para o tema claro
-      // logo2.src = 'images/pinguem_logo_2.png'; // Imagem para o tema claro
+      if (window.location.pathname === '/dashboard') { // Verifica se está na página do dashboard
+        logo2.src = 'images/pinguem_logo_2.png'; // Imagem para o tema claro
+      }
+      
 
       // Alterando a cor dos links e parágrafos no tema claro, exceto na seção com a classe no-theme-change
       const links = document.querySelectorAll('a');

@@ -22,6 +22,11 @@
     <link rel="stylesheet" type="text/css"
     href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
     <link rel="stylesheet" href="css/fonts.css">
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts/dist/apexcharts.css">
+
     <link rel="stylesheet" href="css/style.css" id="main-styles-link">
     <style>
     .ie-panel {
@@ -65,10 +70,13 @@
             Ultimos 7 dias:
             <span class="text-success fw-bold">0%</span> a mais de clientes.
           </p>
+          <!-- tickets.js -->
           <div id="tickets"></div>
           </div>
+
           <div class="col-sm-4 col-12">
           <div class="text-end">
+
             <img src="images/pinguem_logo_2.png" id="logo2" class="w-20 h-20" alt="pinguem logo" />
           </div>
           <div class="mt-5 d-flex flex-wrap gap-3">
@@ -123,10 +131,13 @@
         </div>
       </div>
       </div>
+
+     
       <div class="col-xl-3 col-sm-6 col-12">
       <div class="card mb-3">
         <div class="card-body">
         <h5 class="card-title">Pedidos Resolvidos</h5>
+         <!-- heatmap.js -->
         <div id="callsByCountry" class="auto-align-graph"></div>
         </div>
       </div>
@@ -137,89 +148,89 @@
 
 
     <div class="card mb-3">
-        <div class="card-body">
-        <h5 class="card-title">Autorizar Administradores</h5>
-        <div id="callsByCountry" class="auto-align-graph">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Permissão</th>
-                <th>Alterar</th>
-              </tr>
-            </thead>
-            <br>
-            <tbody>
-              @if($users->isEmpty())
+      <div class="card-body">
+      <h5 class="card-title">Autorizar Administradores</h5>
+      <div id="callsByCountry" class="auto-align-graph">
+        <table class="table">
+        <thead>
+          <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Permissão</th>
+          <th>Alterar</th>
+          </tr>
+        </thead>
+        <br>
+        <tbody>
+          @if($users->isEmpty())
         <p>Nenhum Usuario encontrado.</p>
       @else
- 
-      @foreach($users as $user)     
-      <tr>
-        <td> <a>{{ $user->id }}</a> </td>
-        <td> <a>{{ $user->name }}</a> </td>
-        <td><a> {{ $user->permission_name }} </a></td>    
-        <td>
-       
-    <!-- Botão para abrir o modal -->
-    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmModal" 
-    data-user-id="{{ $user->id }}" data-permission-name="{{ $user->permission_name }}">
-    Alterar
-</button>
 
-<!-- Modal de Confirmação -->
-<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="confirmModalLabel">Confirmação</h5>
-                <button type="button" class="btn-close close" data-dismiss="modal" aria-label="Close">
-                </button>
-            </div>
-            <div class="modal-body">
-                <a >Você tem certeza que deseja alterar as permissões deste usuário?</a>
-                <p id="userIdDisplay"></p>
-                <p id="permissionNameDisplay"></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <form action="" method="POST" id="confirmForm">
-                    @csrf
-                    @method('PUT')
-                    <button type="submit" class="btn btn-danger">Confirmar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+      @foreach($users as $user)          <tr>
+      <td> <a>{{ $user->id }}</a> </td>
+      <td> <a>{{ $user->name }}</a> </td>
+      <td><a> {{ $user->permission_name }} </a></td>
+      <td>
 
-<script>
-    $('#confirmModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget);
-        var userId = button.data('user-id'); 
-        var permissionName = button.data('permission-name'); 
-        var actionUrl = "{{ route('users.permissions.update', ['user' => ':user', 'permission' => ':permission']) }}";
-        actionUrl = actionUrl.replace(':user', userId).replace(':permission', permissionName);
-        $('#confirmForm').attr('action', actionUrl);
-        $('#userIdDisplay').text('ID do Usuário: ' + userId);
-        $('#permissionNameDisplay').text('Permissão: ' + permissionName);
-    });
-</script>
-<!-- Scripts do Bootstrap -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        </td>
-      </tr>
-      @endforeach
-      
-      @endif
-           </tbody>
-    </table>
-        </div>
-        </div>
+      <!-- Botão para abrir o modal -->
+      <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmModal"
+      data-user-id="{{ $user->id }}" data-permission-name="{{ $user->permission_name }}">
+      Alterar
+      </button>
+
+      <!-- Modal de Confirmação -->
+      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog"
+      aria-labelledby="confirmModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+      <h5 class="modal-title" id="confirmModalLabel">Confirmação</h5>
+      <button type="button" class="btn-close close" data-dismiss="modal" aria-label="Close">
+      </button>
       </div>
+      <div class="modal-body">
+      <a>Você tem certeza que deseja alterar as permissões deste usuário?</a>
+      <p id="userIdDisplay"></p>
+      <p id="permissionNameDisplay"></p>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+      <form action="" method="POST" id="confirmForm">
+      @csrf
+      @method('PUT')
+      <button type="submit" class="btn btn-danger">Confirmar</button>
+      </form>
+      </div>
+      </div>
+      </div>
+      </div>
+
+      <script>
+      $('#confirmModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget);
+      var userId = button.data('user-id');
+      var permissionName = button.data('permission-name');
+      var actionUrl = "{{ route('users.permissions.update', ['user' => ':user', 'permission' => ':permission']) }}";
+      actionUrl = actionUrl.replace(':user', userId).replace(':permission', permissionName);
+      $('#confirmForm').attr('action', actionUrl);
+      $('#userIdDisplay').text('ID do Usuário: ' + userId);
+      $('#permissionNameDisplay').text('Permissão: ' + permissionName);
+      });
+      </script>
+      <!-- Scripts do Bootstrap -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      </td>
+      </tr>
+    @endforeach
+
+    @endif
+        </tbody>
+        </table>
+      </div>
+      </div>
+    </div>
 
 
 
@@ -252,19 +263,20 @@
       @else
     @foreach($camareiras as $camareira)
     <tr>
-    <td><a>{{ $camareira->id }}</a></td>
-    <td><a>{{ $camareira->tipo }}</a></td>
-    @if($camareira->status == 'Ativa')
-        <td><a><span class="badge bg-success">{{ $camareira->status }}</span></a></td>
+      <td><a>{{ $camareira->id }}</a></td>
+      <td><a>{{ $camareira->tipo }}</a></td>
+      @if($camareira->status == 'Ativa')
+      <td><a><span class="badge bg-success">{{ $camareira->status }}</span></a></td>
     @else
-        <td><a><span class="badge bg-danger">{{ $camareira->status }}</span></a></td>
+      <td><a><span class="badge bg-danger">{{ $camareira->status }}</span></a></td>
     @endif
-    <td><a><span class="badge border border-danger text-danger">{{ $camareira->tags }}</span></a></td>
-    <td><a><span class="badge border border-danger text-danger">{{ $camareira->prioridade }}</span></a></td>
-    <td><a>{{ $camareira->area }}</a></td>
-    <td><a>{{ $camareira->created_at }}</a></td>
-    <td><a>{{ $camareira->updated_at }}</a></td>
-</tr>
+      <td><a><span class="badge border border-danger text-danger">{{ $camareira->tags }}</span></a></td>
+      <td><a><span
+      class="badge border border-danger text-danger">{{ $camareira->prioridade }}</span></a></td>
+      <td><a>{{ $camareira->area }}</a></td>
+      <td><a>{{ $camareira->created_at }}</a></td>
+      <td><a>{{ $camareira->updated_at }}</a></td>
+    </tr>
   @endforeach
   @endif
             </tbody>
@@ -298,28 +310,30 @@
       ************ Vendor Js Files *************
       ************* -->
 
-    <!-- Overlay Scroll JS -->
-    <script src="vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
-    <script src="vendor/overlay-scroll/custom-scrollbar.js"></script>
 
+    <!-- Overlay Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+   <!-- <script src="vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
+    <script src="vendor/overlay-scroll/custom-scrollbar.js"></script>
+  -->
     <!-- Apex Charts -->
     <script src="vendor/apex/apexcharts.min.js"></script>
     <script src="vendor/apex/custom/home/tasks.js"></script>
     <script src="vendor/apex/custom/home/ticketsData.js"></script>
     <script src="vendor/apex/custom/home/tickets.js"></script>
     <script src="vendor/apex/custom/home/calls.js"></script>
-    <script src="vendor/apex/custom/home/callsByCountry.js"></script>
+    
 
 
 
     <!-- Custom JS files -->
     <script src="js/custom.js"></script>
 
-    
+
     @elsecan('user')
 
     <h1>Usuario Sem Permissão</h1>
 
 @endcan
 
-@endsection
+    @endsection

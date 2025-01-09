@@ -7,7 +7,9 @@ use App\Models\Room;
 use App\Http\Controllers\GerenciarAcesso;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\RoomController;
+
 // use App\Http\Controllers\CamareiraController;
+
 
 require __DIR__.'/auth.php';
 
@@ -38,7 +40,18 @@ Route::post('/roomCadastro/update', [RoomController::class, 'update'])->name('ro
 Route::delete('/roomCadastro/{id}', [RoomController::class, 'destroy'])->name('rooms.destroy');
 Route::get('{id}', [RoomController::class, 'show']);
 
+/* função inserção imgs do carrousel  */
+Route::get('/carrouselimage1', function () {
+    return response()->file(public_path('images/img_suite_moderna_4.jpg'));
+});
 
+Route::get('/carrousel-image-2', function () {
+    return response()->file(public_path('images/img_suite_wood.jpg'));
+});
+
+Route::get('/carrousel-image-3', function () {
+    return response()->file(public_path('images/suite_lua_cheia_1.jpg'));
+});
 
 
 
@@ -61,49 +74,10 @@ Route::middleware('auth')->group(function () {
 
 
 
-/* função inserção imgs do carrousel  */
-Route::get('/carrousel-image-1', function () {
-    return response()->file(public_path('images/img_suite_wood.webp'));
-});
-Route::get('/carrousel-image-2', function () {
-    return response()->file(public_path('images/img_suite_moderna_1.jpg'));
-});
-Route::get('/carrousel-image-3', function () {
-    return response()->file(public_path('images/Quarto_Serenidade_4.jpg'));
-});
-Route::get('/carrousel-image-4', function (){
-    return response()->file(public_path('images/suite_eden_1.jpg'));
-});
+
+
 
 // Routes get Rooms
-Route::get('/Quarto-Suite-Elegancia-Moderna', function () {
-    return view('\rooms\room_suite_elegant');
-});
-Route::get('/Quarto-da-Paz', function () {
-    return view('\rooms\romm_Quarto_da_Paz');
-});
-Route::get('/Quarto-Imperial', function () {
-    return view('\rooms\romm_Quarto_imperial');
-});
-Route::get('/Quarto-Serenidade', function () {
-    return view('\rooms\room_Quarto_Serenidade');
-});
-Route::get('/Suite-Eden', function () {
-    return view('\rooms\room_suite_eden');
-});
-Route::get('/Suite-Marfim', function () {
-    return view('\rooms\room_suite_marfim');
-});
-Route::get('/Suite-Lua-Cheia', function () {
-    return view('\rooms\room_suite_lua_cheia');
-});
-Route::get('/Suite-Tropical', function () {
-    return view('\rooms\room_suite_tropical');
-});
-Route::get('/Suite-Luxo', function () {
-    return view('\rooms\room_suite_luxo');
-});
-
 
 // TelaCadarpio
 Route::get('/cadarpio', function () {
@@ -116,8 +90,6 @@ Route::get('/pagamento', function(){
 Route::post('/reserva/enviar', [ReservaController::class, 'enviar'])->name('reserva.enviar');
 
 
-
-
 Route::get('/editarRoom/{id_room}', function(int $id_room){
     $room = Room::find($id_room);
     return view('roomCadastro/edit', compact('room'));
@@ -126,3 +98,7 @@ Route::get('/editarRoom/{id_room}', function(int $id_room){
 
 // ????
 // Route::get('/editar', [\App\Http\Controllers\RoomController::class, 'update']) ->name('edit');
+
+
+
+Route::get('/api/usuarios-semana', [GerenciarAcesso::class, 'getUsuariosPorSemana']);

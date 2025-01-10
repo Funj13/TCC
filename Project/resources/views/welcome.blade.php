@@ -68,7 +68,8 @@
             <h1 class="text-uppercase text-white font-weight-bold wow-outer"><span class="wow slideInDown"
                 data-wow-delay=".2s">Detalhes Minimalistas</span></h1>
             <!-- <p class="text-white wow-outer"><span class="wow slideInDown" data-wow-delay=".35s">.</span></p> -->
-            <div class="wow-outer button-outer"><a class="button button-md button-primary button-winona wow slideInDown"
+            <div class="wow-outer button-outer">
+              <a class="button button-md button-primary button-winona wow slideInDown"
                 href="/quartos" data-wow-delay=".4s">Ver Mais</a></div>
           </div>
         </div>

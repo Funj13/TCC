@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateTextColors(theme) {
     const color = theme === 'dark' ? 'white' : 'black';
     const links = document.querySelectorAll('a');
+    
     links.forEach(link => {
       if (!link.closest('.no-theme-change')) {
         link.style.color = color;

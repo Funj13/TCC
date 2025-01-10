@@ -38,7 +38,10 @@ Route::get('/mapa', function () {
 Route::get('/cadastroQuarto', function(){
     return view('roomCadastro/create');
 });
-
+// TelaCadarpio
+Route::get('/cadarpio', function () {
+    return view('menu');
+});
 
 // Função Permissão Usuario Updater
 Route::put('/users/{user}/permissions/{permission}', [GerenciarAcesso::class, 'updatePermission'])
@@ -77,10 +80,7 @@ Route::middleware('auth')->group(function () {
 
 // Routes get Rooms
 
-// TelaCadarpio
-Route::get('/cadarpio', function () {
-    return view('menu');
-});
+
 // Tela Pagamento
 Route::get('/pagamento', function(){
     return view('payment');

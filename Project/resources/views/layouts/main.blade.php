@@ -12,6 +12,7 @@
   <!-- <link rel="stylesheet" href="{{ asset('php/ThemeMode.php') }}"> -->
 
   <!-- css Local -->
+  <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style_css_index.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style_topnav.css') }}">
 
@@ -78,6 +79,11 @@
         <li class="nav-item">
         <a class="nav-link " href="/mapa">
         Localização
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/cadarpio">
+        Cadarpio
         </a>
       </li>
       @endcan

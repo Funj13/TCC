@@ -74,6 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      const tspans = document.querySelectorAll('tspan');
+      tspans.forEach(tspan => {
+        if (!tspan.closest('.no-theme-change')) {
+          tspan.style.color = 'white';  // Cor do tspan no tema escuro
+        }
+      });
+
+
       // Alterar a cor dos retângulos do SVG
       const rects = document.querySelectorAll('#myRect, #myRect2, #myRect3');
       rects.forEach(rect => {
@@ -141,6 +149,13 @@ document.addEventListener('DOMContentLoaded', () => {
       cites.forEach(cite => {
         if (!cite.closest('.no-theme-change')) {
           cite.style.color = 'black';  // Cor do cite no tema claro
+        }
+      });
+
+      const tspans = document.querySelectorAll('tspan');
+      tspans.forEach(tspan => {
+        if (!tspan.closest('.no-theme-change')) {
+          tspan.style.color = 'black';  // Cor do tspan no tema claro
         }
       });
 

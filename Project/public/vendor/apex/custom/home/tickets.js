@@ -52,6 +52,9 @@ var options = {
 	xaxis: {
 		type: "day",
 		categories: ["Dom", "Seg", "Tuer", "Qua", "Qui", "Sex", "Sab"],
+        ticks: {
+            fontColor: '#007bff' // Altera a cor do texto para azul
+        }
 	},
 	yaxis: {
 		labels: {

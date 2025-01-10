@@ -23,13 +23,19 @@ class GerenciarAcesso extends Controller
 
     $camareiras = Camareira::all();
 
-  
+    $last31Days = Carbon::now()->subDays(31);
+    $newUsersCount = User::where('created_at', '>=', $last31Days)->count();
 
 
+    $anoEspecifico = 2024;
+    $usuariosNoAno2024 = User::whereYear('created_at', $anoEspecifico)->count();
+
+    $anoEspecifico = 2025;
+    $usuariosNoAno2025 = User::whereYear('created_at', $anoEspecifico)->count();
     
   
 
-    return view('dashboard', compact('users', 'camareiras', ));
+    return view('dashboard', compact('users', 'camareiras', 'newUsersCount', 'usuariosNoAno2024', 'usuariosNoAno2025' ));
 }
 
 public function updatePermission(User $user, $permissionName)

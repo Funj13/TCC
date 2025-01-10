@@ -21,6 +21,12 @@ class RoomController extends Controller
         return view('welcome', compact('rooms'));
     }
 
+    public function welcomequartos()
+    {
+        $rooms = Room::all();
+        return view('viewquartos', compact('rooms'));
+    }
+
     // public function create()
     // {
     //     return view('roomCadastro.create');

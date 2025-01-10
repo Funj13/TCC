@@ -182,7 +182,7 @@
             <h4 class="thumbnail-light-title"><a href="#">Quartos para Amigos</a></h4>
           </article>
         </div>
-        <div class="col-md-12 wow-outer"><a class="button button-primary button-winona button-md" href="#">Veja mais
+        <div class="col-md-12 wow-outer"><a class="button button-primary button-winona button-md" href="/quartos">Veja mais
             Quartos</a></div>
       </div>
     </div>

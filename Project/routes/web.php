@@ -16,7 +16,7 @@ require __DIR__.'/auth.php';
 // Welcome
 Route::get('/', [RoomController::class, 'welcome'])->name('welcome');
 // Welcome Quartos
-Route::get('/quartos', function(){ return view('viewquartos');});
+Route::get('/quartos',  [RoomController::class, 'welcomequartos'])->name('viewquartos');
 // Dashboard
 Route::get('/dashboard', [GerenciarAcesso::class, 'getDashboardData'])->middleware(middleware: ['auth', 'verified'])->name('dashboard');
 // Tela Index do Cadastro

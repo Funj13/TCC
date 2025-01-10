@@ -6,6 +6,8 @@
 @section('content')
 @section('topnav')
 @endsection
+<head>
+<link rel="stylesheet" href="css/style.css" id="main-styles-link">
     <style>
 
         .header_map {
@@ -51,7 +53,7 @@
 <body>
     
     <header class="header_map">
-        <h1>Hotel Pinguim</h1>
+        <h2>Hotel Pinguim</h2>
         <p>Seu GPS</p>
 
                 <div class="info">

@@ -69,7 +69,7 @@
                 data-wow-delay=".2s">Detalhes Minimalistas</span></h1>
             <!-- <p class="text-white wow-outer"><span class="wow slideInDown" data-wow-delay=".35s">.</span></p> -->
             <div class="wow-outer button-outer"><a class="button button-md button-primary button-winona wow slideInDown"
-                href="#" data-wow-delay=".4s">Ver Mais</a></div>
+                href="/quartos" data-wow-delay=".4s">Ver Mais</a></div>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@
                 data-wow-delay=".2s">Alta Tecnologia</span></h1>
             <!-- <p class="text-white wow-outer"><span class="wow slideInDown" data-wow-delay=".35s">With the help of our services and property management solutions, you can rent or sell any house or apartment.</span></p> -->
             <div class="wow-outer button-outer"><a class="button button-md button-primary button-winona wow slideInDown"
-                href="#" data-wow-delay=".4s">Ver Mais</a></div>
+                href="/quartos" data-wow-delay=".4s">Ver Mais</a></div>
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@
                 data-wow-delay=".2s">Experiencia Ampliada</span></h1>
             <!-- <p class="text-white wow-outer"><span class="wow slideInDown" data-wow-delay=".35s">Founded in 1989, our company is a team of renowned property management and real estate experts always ready to help you.</span></p> -->
             <div class="wow-outer button-outer"><a class="button button-md button-primary button-winona wow slideInDown"
-                href="#" data-wow-delay=".4s">Ver Mais</a></div>
+                href="/quartos" data-wow-delay=".4s">Ver Mais</a></div>
           </div>
         </div>
       </div>
@@ -111,35 +111,35 @@
 
 
   <!-- quartos -->
-<section class="section novi-background section-md text-center">
-  <div class="container">
-    <h3 class="text-uppercase font-weight-bold wow-outer"><span class="wow slideInDown">Quartos Populares</span></h3>
-    <div class="row row-lg-50 row-35 offset-top-2">
+  <section class="section novi-background section-md text-center">
+    <div class="container">
+      <h3 class="text-uppercase font-weight-bold wow-outer"><span class="wow slideInDown">Quartos Populares</span></h3>
+      <div class="row row-lg-50 row-35 offset-top-2">
 
-      @foreach ($rooms as $room)
+        @foreach ($rooms as $room)
 
       <div class="col-md-6 wow-outer">
-      <!-- Post Modern-->
-      <article class="post-modern wow slideInLeft"><a class="post-modern-media"
-        href="/{{$room->id}}"><img src="images/quartos/{{$room->image1}}" alt="" width="571"
-          height="353" /></a>
-        <h4 class="post-modern-title"><a class="post-modern-title" href="/Quarto-Suite-Elegancia-Moderna">{{$room->nome}}</a></h4>
+        <!-- Post Modern-->
+        <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="/{{$room->id}}"><img
+          src="images/quartos/{{$room->image1}}" alt="" width="571" height="353" /></a>
+        <h4 class="post-modern-title"><a class="post-modern-title"
+          href="/Quarto-Suite-Elegancia-Moderna">{{$room->nome}}</a></h4>
         <ul class="post-modern-meta">
-        <li><a class="button-winona" href="#">R$ {{$room->preco}}</a></li>
-        <li><a>{{$room->tipo}}</a></li>
-        @if ($room->disponibilidade == 1)
+          <li><a class="button-winona" href="#">R$ {{$room->preco}}</a></li>
+          <li><a>{{$room->tipo}}</a></li>
+          @if ($room->disponibilidade == 1)
         <li><a>Disponivel</a></li>
-        @else
-        <li><a>Não Disponivel</a></li>
-        @endif
-        
+      @else
+      <li><a>Não Disponivel</a></li>
+    @endif
+
         </ul>
         <p>Quartos Simples e Confortavel.</p>
-      </article>
+        </article>
       </div>
     @endforeach
-    </div>
-</section>
+      </div>
+  </section>
 
 
 
@@ -182,7 +182,8 @@
             <h4 class="thumbnail-light-title"><a href="#">Quartos para Amigos</a></h4>
           </article>
         </div>
-        <div class="col-md-12 wow-outer"><a class="button button-primary button-winona button-md" href="/quartos">Veja mais
+        <div class="col-md-12 wow-outer"><a class="button button-primary button-winona button-md" href="/quartos">Veja
+            mais
             Quartos</a></div>
       </div>
     </div>

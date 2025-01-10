@@ -9,7 +9,16 @@ use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\RoomController;
 
 // use App\Http\Controllers\CamareiraController;
-
+/* função inserção imgs do carrousel  */
+Route::get('/carrousel-image-1', function () {
+    return response()->file(public_path('images/img_suite_wood.webp'));
+});
+Route::get('/carrousel-image-2', function () {
+    return response()->file(public_path('images/img_suite_moderna_1.jpg'));
+});
+Route::get('/carrousel-image-3', function () {
+    return response()->file(public_path('images/Quarto_Serenidade_4.jpg'));
+});
 
 require __DIR__.'/auth.php';
 
@@ -40,18 +49,7 @@ Route::post('/roomCadastro/update', [RoomController::class, 'update'])->name('ro
 Route::delete('/roomCadastro/{id}', [RoomController::class, 'destroy'])->name('rooms.destroy');
 Route::get('{id}', [RoomController::class, 'show']);
 
-/* função inserção imgs do carrousel  */
-Route::get('/carrouselimage1', function () {
-    return response()->file(public_path('images/img_suite_moderna_4.jpg'));
-});
 
-Route::get('/carrousel-image-2', function () {
-    return response()->file(public_path('images/img_suite_wood.jpg'));
-});
-
-Route::get('/carrousel-image-3', function () {
-    return response()->file(public_path('images/suite_lua_cheia_1.jpg'));
-});
 
 
 

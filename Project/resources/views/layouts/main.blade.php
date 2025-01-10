@@ -17,6 +17,7 @@
 
   <!-- Google Fonts -->
   <link rel="stylesheet" href="">
+  
 
   <!-- Boot strap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -74,6 +75,11 @@
         <li class="nav-item">
         <a class="nav-link" href="/cadastroIndex">Gerenciar</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link " href="/mapa">
+        Localização
+        </a>
+      </li>
       @endcan
           </ul>
           </form>

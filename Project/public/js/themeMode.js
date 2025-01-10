@@ -9,161 +9,102 @@ document.addEventListener('DOMContentLoaded', () => {
   const bodyElement = document.querySelector("body");
   const logo = document.getElementById('logo');
   const logo2 = document.getElementById('logo2');
-
+  const chartElement = document.getElementById("graphic"); // Selecione o elemento do gráfico
   // Função para definir o tema com base no valor do cookie
   function setTheme(theme) {
     if (theme === 'dark') {
-      bodyElement.setAttribute('data-bs-theme', 'dark');
-      bodyElement.style.backgroundColor = 'black';
-      bodyElement.style.color = 'white';
+        bodyElement.setAttribute('data-bs-theme', 'dark');
+        bodyElement.style.backgroundColor = 'black';
+        bodyElement.style.color = 'white';
 
-      // Trocar a imagem do logo para o tema escuro
-      logo.src = 'images/pinguem_logo.png'; // Imagem para o tema escuro
-      if (window.location.pathname === '/dashboard') { // Verifica se está na página do dashboard
-        logo2.src = 'images/pinguem_logo.png'; // Imagem para o tema escuro
-      }
+        // Altera a classe de todos os gráficos para o tema escuro
+        updateAllChartsTheme('dark');
 
-      // Alterando a cor dos links e parágrafos no tema escuro, exceto na seção com a classe no-theme-change
-      const links = document.querySelectorAll('a');
-      links.forEach(link => {
-        if (!link.closest('.no-theme-change')) {
-          link.style.color = 'white';  // Cor dos links no tema escuro
+        // Trocar a imagem do logo para o tema escuro
+        logo.src = 'images/pinguem_logo.png'; // Imagem para o tema escuro
+        if (window.location.pathname === '/dashboard') {
+            logo2.src = 'images/pinguem_logo.png'; // Imagem para o tema escuro
         }
-      });
 
-      const paragraphs = document.querySelectorAll('p');
-      paragraphs.forEach(p => {
-        if (!p.closest('.no-theme-change')) {
-          p.style.color = 'lightgray';  // Cor dos parágrafos no tema escuro
-        }
-      });
+        // Alterando a cor dos links e parágrafos no tema escuro
+        updateTextColors('dark');
 
-      const h2s = document.querySelectorAll('h2');
-      h2s.forEach(h2 => {
-        if (!h2.closest('.no-theme-change')) {
-          h2.style.color = 'white';  // Cor dos h2 no tema escuro
-        }
-      });
+        // Alterar a cor dos retângulos do SVG
+        updateSvgColors('dark');
 
-      const h3s = document.querySelectorAll('h3');
-      h3s.forEach(h3 => {
-        if (!h3.closest('.no-theme-change')) {
-          h3.style.color = 'white';  // Cor dos h3 no tema escuro
-        }
-      });
-
-      const h5s = document.querySelectorAll('h5');
-      h5s.forEach(h5 => {
-        if (!h5.closest('.no-theme-change')) {
-          h5.style.color = 'white';  // Cor dos h5 no tema escuro
-        }
-      });
-
-      const ths = document.querySelectorAll('th');
-      ths.forEach(th => {
-        if (!th.closest('.no-theme-change')) {
-          th.style.color = 'white';  // Cor dos th no tema escuro
-          th.style.backgroundColor = 'gray';  // Cor de fundo dos th no tema escuro (opcional)
-        }
-      });
-
-      const cites = document.querySelectorAll('cite');
-      cites.forEach(cite => {
-        if (!cite.closest('.no-theme-change')) {
-          cite.style.color = 'white';  // Cor do cite no tema escuro
-        }
-      });
-
-      const tspans = document.querySelectorAll('tspan');
-      tspans.forEach(tspan => {
-        if (!tspan.closest('.no-theme-change')) {
-          tspan.style.color = 'white';  // Cor do tspan no tema escuro
-        }
-      });
-
-
-      // Alterar a cor dos retângulos do SVG
-      const rects = document.querySelectorAll('#myRect, #myRect2, #myRect3');
-      rects.forEach(rect => {
-        rect.setAttribute('fill', '#fff'); // Cor dos retângulos no tema escuro
-      });
+        // Atualizar as cores do ApexCharts para o tema escuro
+        updateApexChartsTheme('dark');
 
     } else {
-      bodyElement.setAttribute('data-bs-theme', 'light');
-      bodyElement.style.backgroundColor = 'white';
-      bodyElement.style.color = 'black';
+        bodyElement.setAttribute('data-bs-theme', 'light');
+        bodyElement.style.backgroundColor = 'white';
+        bodyElement.style.color = 'black';
 
-      // Trocar a imagem do logo para o tema claro
-      logo.src = 'images/pinguem_logo_2.png'; // Imagem para o tema claro
-      if (window.location.pathname === '/dashboard') { // Verifica se está na página do dashboard
-        logo2.src = 'images/pinguem_logo_2.png'; // Imagem para o tema claro
+        // Altera a classe de todos os gráficos para o tema claro
+        updateAllChartsTheme('light');
+
+        // Trocar a imagem do logo para o tema claro
+        logo.src = 'images/pinguem_logo_2.png'; // Imagem para o tema claro
+        if (window.location.pathname === '/dashboard') {
+            logo2.src = 'images/pinguem_logo_2.png'; // Imagem para o tema claro
+        }
+
+        // Alterando a cor dos links e parágrafos no tema claro
+        updateTextColors('light');
+
+        // Alterar a cor dos retângulos do SVG
+        updateSvgColors('light');
+
+        // Atualizar as cores do ApexCharts para o tema claro
+        updateApexChartsTheme('light');
+    }
+}
+
+  function updateTextColors(theme) {
+    const color = theme === 'dark' ? 'white' : 'black';
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      if (!link.closest('.no-theme-change')) {
+        link.style.color = color;
       }
-      
+    });
 
-      // Alterando a cor dos links e parágrafos no tema claro, exceto na seção com a classe no-theme-change
-      const links = document.querySelectorAll('a');
-      links.forEach(link => {
-        if (!link.closest('.no-theme-change')) {
-          link.style.color = 'black';  // Cor dos links no tema claro
+    const paragraphs = document.querySelectorAll('p');
+    paragraphs.forEach(p => {
+      if (!p.closest('.no-theme-change')) {
+        p.style.color = color;
+      }
+    });
+
+    const headings = ['h2', 'h3', 'h5', 'th', 'cite', 'tspan'];
+    headings.forEach(tag => {
+      const elements = document.querySelectorAll(tag);
+      elements.forEach(element => {
+        if (!element.closest('.no-theme-change')) {
+          element.style.color = color;
         }
       });
+    });
+  }
 
-      const paragraphs = document.querySelectorAll('p');
-      paragraphs.forEach(p => {
-        if (!p.closest('.no-theme-change')) {
-          p.style.color = 'black';  // Cor dos parágrafos no tema claro
-        }
-      });
+  function updateSvgColors(theme) {
+    const rects = document.querySelectorAll('#myRect, #myRect2, #myRect3');
+    rects.forEach(rect => {
+      rect.setAttribute('fill', theme === 'dark' ? '#fff' : '#333');
+    });
+  }
 
-      const h2s = document.querySelectorAll('h2');
-      h2s.forEach(h2 => {
-        if (!h2.closest('.no-theme-change')) {
-          h2.style.color = 'black';  // Cor dos h2 no tema claro
-        }
-      });
+  function updateApexChartsTheme(theme) {
+    const chartOptions = {
+      theme: {
+        mode: theme === 'dark' ? 'dark' : 'light',
+        palette: theme === 'dark' ? 'palette1' : 'palette2' // Ajuste as paletas conforme necessário
+      }
+    };
 
-      const h3s = document.querySelectorAll('h3');
-      h3s.forEach(h3 => {
-        if (!h3.closest('.no-theme-change')) {
- h3.style.color = 'black';  // Cor dos h3 no tema claro
-        }
-      });
-
-      
-      const h5s = document.querySelectorAll('h5');
-      h5s.forEach(h5 => {
-        if (!h5.closest('.no-theme-change')) {
-          h5.style.color = 'black';  // Cor dos h5 no tema escuro
-        }
-      });
-
-      const ths = document.querySelectorAll('th');
-      ths.forEach(th => {
-        if (!th.closest('.no-theme-change')) {
-          th.style.color = 'black';  // Cor dos th no tema claro
-          th.style.backgroundColor = 'white';  // Cor de fundo dos th no tema claro (opcional)
-        }
-      });
-
-      const cites = document.querySelectorAll('cite');
-      cites.forEach(cite => {
-        if (!cite.closest('.no-theme-change')) {
-          cite.style.color = 'black';  // Cor do cite no tema claro
-        }
-      });
-
-      const tspans = document.querySelectorAll('tspan');
-      tspans.forEach(tspan => {
-        if (!tspan.closest('.no-theme-change')) {
-          tspan.style.color = 'black';  // Cor do tspan no tema claro
-        }
-      });
-
-      // Alterar a cor dos retângulos do SVG
-      const rects = document.querySelectorAll('#myRect, #myRect2, #myRect3');
-      rects.forEach(rect => {
-        rect.setAttribute('fill', '#333'); // Cor dos retângulos no tema claro
-      });
+    // Supondo que você tenha uma instância do gráfico ApexCharts chamada `chart`
+    if (typeof chart !== 'undefined') {
+      chart.updateOptions(chartOptions);
     }
   }
 
@@ -177,11 +118,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // Verificar o cookie ao carregar a página
   const savedTheme = getCookie('theme');
   if (savedTheme) {
-    setTheme(savedTheme);
+ setTheme(savedTheme);
   } else {
     // Define um tema padrão se não houver cookie
     setTheme('light');
   }
+
+  function updateAllChartsTheme(theme) {
+    const chartElements = document.querySelectorAll(".apexcharts-tooltip"); // Selecione todos os gráficos
+    chartElements.forEach(chartElement => {
+        if (theme === 'dark') {
+            chartElement.classList.add('apexcharts-theme-dark');
+            chartElement.classList.remove('apexcharts-theme-light');
+        } else {
+            chartElement.classList.add('apexcharts-theme-light');
+            chartElement.classList.remove('apexcharts-theme-dark');
+        }
+    });
+}
+function updateTooltipTheme(theme) {
+  const tooltipElements = document.querySelectorAll(".apexcharts-tooltip");
+  tooltipElements.forEach(tooltipElement => {
+      if (theme === 'dark') {
+          tooltipElement.classList.add('apexcharts-theme-dark');
+          tooltipElement.classList.remove('apexcharts-theme-light');
+      } else {
+          tooltipElement.classList.add('apexcharts-theme-light');
+          tooltipElement.classList.remove('apexcharts-theme-dark');
+      }
+  });
+}
+
 
   // Adicionar evento de clique ao botão
   toggleThemeButton.addEventListener('click', () => {

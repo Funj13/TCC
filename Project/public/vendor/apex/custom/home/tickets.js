@@ -8,6 +8,8 @@ fetch('/api/usuarios-semana')
     .then(userData => {
         console.log(userData);
 
+
+
 var options = {
 	chart: {
 		height: 200,
@@ -68,6 +70,8 @@ var options = {
 };
 
 var chart = new ApexCharts(document.querySelector("#tickets"), options);
+
+
 
 chart.render();
 })

@@ -1,3 +1,13 @@
+fetch('/api/usuarios-mes') 
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(userData => {
+        console.log(userData);
+
 var options = {
 	chart: {
 		height: 300,
@@ -22,7 +32,7 @@ var options = {
 		{
 			name: "Clientes",
 			type: "column",
-			data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			data: (userData),
 		},
 		{
 			name: "Lucro",
@@ -87,3 +97,5 @@ var options = {
 var chart = new ApexCharts(document.querySelector("#tasks"), options);
 
 chart.render();
+})
+.catch(error => console.error('Erro ao buscar dados:', error));

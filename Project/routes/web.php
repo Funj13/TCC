@@ -102,3 +102,5 @@ Route::get('/editarRoom/{id_room}', function(int $id_room){
 
 
 Route::get('/api/usuarios-semana', [GerenciarAcesso::class, 'getUsuariosPorSemana']);
+
+Route::get('/api/usuarios-mes', [GerenciarAcesso::class, 'getUsuariosPorMes']);

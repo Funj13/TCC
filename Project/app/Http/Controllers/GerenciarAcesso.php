@@ -25,7 +25,9 @@ class GerenciarAcesso extends Controller
 
   
 
-    // Loop pelos dias da semana
+
+    
+  
 
     return view('dashboard', compact('users', 'camareiras', ));
 }
@@ -51,7 +53,8 @@ public function getUsuariosPorSemana()
             $dia = $startOfWeek->copy()->addDays($i);
             $usuariosPorDia[] = User::whereDate('created_at', $dia)->count();
         }
-
+        // dd($usuariosPorDia);
+        // return view("tickets.js", compact("usuariosPorDia"));
         return response()->json($usuariosPorDia);
     }
 

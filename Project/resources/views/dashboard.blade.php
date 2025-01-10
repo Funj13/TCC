@@ -303,12 +303,11 @@
       </div>
     </div>
     <!-- Row end -->
-
-
-
+    
     <!-- *************
       ************ Vendor Js Files *************
       ************* -->
+      
 
 
     <!-- Overlay Scroll JS -->
@@ -316,6 +315,11 @@
    <!-- <script src="vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
     <script src="vendor/overlay-scroll/custom-scrollbar.js"></script>
   -->
+
+
+  <script>
+      
+     </script>
     <!-- Apex Charts -->
     <script src="vendor/apex/apexcharts.min.js"></script>
     <script src="vendor/apex/custom/home/tasks.js"></script>

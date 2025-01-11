@@ -7,6 +7,15 @@
 @section('topnav')
 @endsection
 
+@guest
+<br><br><br>
+<!-- tela usuario sem login -->
+ <div class="card ">
+ <h1 class="text-align"><a >Faça login para visualizar seus pedidos.</a></h1>
+</div>
+
+<br><br><br><br><br><br>
+@endguest
 <head>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport"
@@ -19,6 +28,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css" id="main-styles-link">
     <link rel="stylesheet" href="css/index.css">
+    @auth
     <style>
         .produtos {
 
@@ -77,7 +87,26 @@
     <h2>Historico de Pedidos</h2>
     <div class="card produto">
         <table class="table">
+            @foreach ($reservas as $reserva)
             <tr>
+                <td> <a><img src="images/Quarto_Serenidade_4.jpg" alt="quarto"></a> </td>
+                <td> <a>
+                        <h3>quarto 1</h3>
+                    </a> </td>
+                <td><a>
+                        <p>Status:</p>
+                    </a></td>
+                <td>
+                    <p class="preco">R$ 179,90</p>
+                </td>
+                <td>
+                    <p class="disponibilidade">teste</p>
+                </td>
+                <td><button class="excluir btn btn-danger">Excluir</button></td>
+                <td><button class="comprar btn btn-success">Pagar agora</button></td>
+            </tr>
+            @endforeach
+            <!-- <tr>
                 <td> <a><img src="images/Quarto_Serenidade_4.jpg" alt="quarto"></a> </td>
                 <td> <a>
                         <h3>quarto 1</h3>
@@ -110,7 +139,7 @@
                 </td>
                 <td><button class="excluir btn btn-danger">Excluir</button></td>
                 <td><button class="comprar btn btn-success">Pagar agora</button></td>
-            </tr>   
+            </tr>    -->
         </table>
 
     </div>
@@ -172,4 +201,5 @@
 <!-- Javascript-->
 <script src="js/core.min.js"></script>
 <script src="js/script.js"></script>
+@endauth
 @endsection

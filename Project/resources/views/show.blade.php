@@ -6,33 +6,34 @@
 @section('content')
 @section('topnav')
 @endsection
+
 <head>
-<meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no">
     <meta name="viewport"
-    content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
+        content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css"
-    href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
+        href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css" id="main-styles-link">
     <style>
-    .ie-panel {
-      display: none;
-      background: #212121;
-      padding: 10px 0;
-      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
-      clear: both;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
+        .ie-panel {
+            display: none;
+            background: #212121;
+            padding: 10px 0;
+            box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+            clear: both;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
 
-    html.ie-10 .ie-panel,
-    html.lt-ie-10 .ie-panel {
-      display: block;
-    }
+        html.ie-10 .ie-panel,
+        html.lt-ie-10 .ie-panel {
+            display: block;
+        }
     </style>
 </head>
 
@@ -81,7 +82,7 @@
                     </p>
                     <div class="reserva">
 
-                        <form action="{{ route('reserva.enviar') }}" method="POST">
+                        <form action="/reserva/enviar/{{$room->id}}" method="POST">
                             @csrf
                             <label for="">Nome:</label>
                             <input type="text" class="form-control" name="nome" />
@@ -97,8 +98,7 @@
                                 placeholder="DD/MM/AAAA" name="dt-checkout">
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" name="enviar">
-                            Reservar</button>
+                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" name="enviar">Reservar</button>
                         <button type="button" class="btn btn-primary">Pagar</button>
                         </form>
                     </div>
@@ -106,11 +106,11 @@
             </div>
         </div>
     </div>
-<!-- Scripts do Bootstrap -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Scripts do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
 
-@endsection
+    @endsection

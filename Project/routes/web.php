@@ -43,10 +43,7 @@ Route::get('/cadarpio', function () {
     return view('menu');
 });
 // Tela Pedidos
-// Route::get('/pedidos', )->name('viewpedidos');
-Route::get('/pedidos', function () {
-    return view('viewpedidos');
-});
+Route::get('/pedidos', [ReservaController::class, 'index'])->name('viewpedidos');
 
 
 // Profile User
@@ -93,7 +90,8 @@ Route::get('/icon-pinguem', function (){
 Route::get('/pagamento', function(){
     return view('payment');
 });
-Route::post('/reserva/enviar', [ReservaController::class, 'enviar'])->name('reserva.enviar');
+
+Route::post('/reserva/enviar/{id}', [ReservaController::class, 'enviar'])->name('reserva.enviar');
 
 
 Route::get('/editarRoom/{id_room}', function(int $id_room){

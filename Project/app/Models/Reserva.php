@@ -13,4 +13,11 @@ class Reserva extends Model
         'dt-checkin',
         'dt-checkout',
     ];
+
+
+
+public function reservas(){
+return $this->belongsToMany('App\Models\User');
 }
+}
+

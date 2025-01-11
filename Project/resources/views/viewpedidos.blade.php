@@ -89,20 +89,22 @@
         <table class="table">
             @foreach ($reservas as $reserva)
             <tr>
-                <td> <a><img src="images/Quarto_Serenidade_4.jpg" alt="quarto"></a> </td>
+                <td> <a><img src="images/quartos/{{$reserva->image1}}" alt="quarto"></a> </td>
                 <td> <a>
-                        <h3>quarto 1</h3>
+                        <h5>{{$reserva->nome}}</h5>
                     </a> </td>
                 <td><a>
-                        <p>Status:</p>
+                        <p>Status:pendente</p>
                     </a></td>
                 <td>
-                    <p class="preco">R$ 179,90</p>
+                    <p class="preco">R${{$reserva->preco}}</p>
                 </td>
                 <td>
-                    <p class="disponibilidade">teste</p>
+                    <p class="disponibilidade">{{$reserva->tipo}}</p>
                 </td>
+                
                 <td><button class="excluir btn btn-danger">Excluir</button></td>
+
                 <td><button class="comprar btn btn-success">Pagar agora</button></td>
             </tr>
             @endforeach

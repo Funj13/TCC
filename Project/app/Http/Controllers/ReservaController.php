@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Reserva;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ReservaController extends Controller
 {
     public function index()
     {
 
-        $reservas = Reserva::all();
+        $reservas = User::join('reserva_user', 'users.id', '=', 'reserva_user.user_id')
+            ->join('reservas', 'reserva_user.reserva_id', '=', 'reservas.id')
+            ->join('rooms', 'reserva_user.room_id', '=', 'rooms.id')
+            ->select('users.*', 'reservas.*', 'rooms.*', 'reserva_user.*')
+            ->get();
 
         return view('viewpedidos', compact("reservas"));
     }

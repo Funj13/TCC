@@ -42,6 +42,19 @@ Route::get('/cadastroQuarto', function(){
 Route::get('/cadarpio', function () {
     return view('menu');
 });
+// Tela Pedidos
+// Route::get('/pedidos', )->name('viewpedidos');
+Route::get('/pedidos', function () {
+    return view('viewpedidos');
+});
+
+
+// Profile User
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 // Função Permissão Usuario Updater
 Route::put('/users/{user}/permissions/{permission}', [GerenciarAcesso::class, 'updatePermission'])
@@ -65,12 +78,7 @@ Route::get('/logo-pinguem', function(){
 Route::get('/icon-pinguem', function (){
     return response()->file(public_path('images/icon.png'));
 });
-// Profile User
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+
 
 
 

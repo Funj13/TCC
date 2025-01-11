@@ -1535,105 +1535,67 @@ button {
 }
 
 .button-gray-8.button-outline:hover::before, .button-gray-8.button-outline:active::before {
-	border-color: #ffe745;
+	border-radius: inherit;
+	border: 5px solid rgba(255, 255, 255, 0.35);
 }
 
 .button.button-primary, .button.button-primary:focus {
 	color: #fff;
-	background-color: #007bff;
-	border-color: #007bff;
+	background-color: #007bffd2;
+	border-radius: inherit;
+	border: 5px solid rgba(255, 255, 255, 0.35);
 }
 
 .button.button-primary:hover, .button.button-primary:active {
 	color: #fff;
 	background-color: #232426;
-	border-color: #232426;
+	border-radius: inherit;
+	border: 5px solid rgba(255, 255, 255, 0.35);
 }
 
 html .button.button-primary-lighten, html .button.button-primary-lighten:focus {
 	color: #fff;
-	background-color: #007bff;
-	border-color: #007bff;
+	background-color: #007bffd2;
+	border-radius: inherit;
+	border: 5px solid rgba(255, 255, 255, 0.35);
 }
 
 html .button.button-primary-lighten:hover, html .button.button-primary-lighten:active {
 	color: #fff;
 	background-color: #232426;
-	border-color: #232426;
+	border-radius: inherit;
+	border: 5px solid rgba(255, 255, 255, 0.35);
 }
 .button-primary-outline, .button-primary-outline:focus {
 	color: #151515;
 	background-color: transparent;
-	border-color: #151515;
+	border-radius: inherit;
+	border: 5px solid rgba(255, 255, 255, 0.35);
 }
 
 .button-primary-outline:hover, .button-primary-outline:active {
 	color: #fff;
-	background-color: #007bff;
-	border-color: #007bff;
+	background-color: #007bffd2;
+	border-radius: inherit;
+	border: 5px solid rgba(255, 255, 255, 0.35);
 }
 .button-primary-white, .button-primary-white:focus {
 	color: #111111;
 	background-color: #fff;
-	border-color: transparent;
+	border-radius: inherit;
+	border: 5px solid rgba(255, 255, 255, 0.35);
 }
 
 .button-primary-white:hover, .button-primary-white:active {
 	color: #fff;
-	background-color: #007bff;
-	border-color: #007bff;
+	background-color: #007bffd2;
+	border-radius: inherit;
+	border: 5px solid rgba(255, 255, 255, 0.35);
 }
 .context-dark .button-primary:hover, .bg-gray-700 .button-primary:hover, .bg-gray-800 .button-primary:hover, .bg-primary .button-primary:hover, .bg-primary-darker .button-primary:hover {
 	background: #4854ed;
-	border-color: #4854ed;
-}
-
-.button-secondary, .button-secondary:focus {
-	color: #151515;
-	background-color: #ffe745;
-	border-color: #ffe745;
-}
-
-.button-secondary:hover, .button-secondary:active {
-	color: #ffffff;
-	background-color: #73cca1;
-	border-color: #6046b6;
-}
-
-.button-secondary.button-ujarak::before {
-	background: #73cca1;
-}
-
-.button-secondary.button-outline::before {
-	border-color: #ffe745;
-}
-
-.button-secondary.button-outline:hover::before, .button-secondary.button-outline:active::before {
-	border-color: #6046b6;
-}
-
-.button-secondary-2, .button-secondary-2:focus {
-	color: #ffffff;
-	background-color: #73cca1;
-	border-color: #73cca1;
-}
-
-.button-secondary-2:hover, .button-secondary-2:active {
-	color: #151515;
-	background-color: #ffe745;
-	border-color: #6046b6;
-}
-
-.button-secondary-2.button-ujarak::before {
-	background: #ffe745;
-}
-
-.button-secondary-2.button-outline::before {
-	border-color: #73cca1;
-}
-
-.button-secondary-2.button-outline:hover::before, .button-secondary-2.button-outline:active::before {
-	border-color: #6046b6;
+	border-radius: inherit;
+	border: 5px solid rgba(255, 255, 255, 0.35);
 }
 
 .button-default-outline, .button-default-outline:focus {
@@ -1834,21 +1796,7 @@ html .button.button-primary-lighten:hover, html .button.button-primary-lighten:a
 	overflow: visible;
 }
 
-.button-shadow.button-primary::before {
-	background: #513f7c;
-}
 
-.button-shadow.button-primary:hover::before, .button-shadow.button-primary:active::before {
-	background: #d4c036;
-}
-
-.button-shadow.button-secondary::before {
-	background: #d4c036;
-}
-
-.button-shadow.button-secondary:hover::before, .button-shadow.button-secondary:active::before {
-	background: #513f7c;
-}
 
 .button-shadow:focus, .button-shadow:active {
 	box-shadow: none;
@@ -1959,19 +1907,7 @@ html .button.button-primary-lighten:hover, html .button.button-primary-lighten:a
 	border-width: 1px;
 }
 
-.button-icon-right.button-primary .icon {
-	background: #6a4bd1;
-}
 
-.button-icon-right.button-primary:hover, .button-icon-right.button-primary:active {
-	color: #ffffff;
-	border-color: #6a4bd1;
-	background: #6a4bd1;
-}
-
-.button-icon-right.button-primary:hover .icon, .button-icon-right.button-primary:active .icon {
-	background: #6046b6;
-}
 
 .button-icon-right.button-gray-3 .icon {
 	background: #4f5763;

@@ -220,10 +220,9 @@
   </section>
 
 
-  <!-- Best offer-->
-  <!-- Best offer-->
+  <!-- Melhores Ofertas Card-->
   <section class="section novi-background section-1 bg-primary-darker text-center no-theme-change"
-    style="background-image: url(images/img_back_anuncio.jpg); ">
+    style="background-image: url(images/img_back_anuncio.jpg);">
     <div class="overlay"></div>
     <div class="container">
       <div class="row justify-content-center">
@@ -241,7 +240,7 @@
   </section>
 
 
-
+<!-- criar sistema -->
   <section class="section novi-background section-lg text-center">
     <div class="container">
       <h3 class="wow-outer"><span class="wow slideInDown text-uppercase">Comentários</span></h3>

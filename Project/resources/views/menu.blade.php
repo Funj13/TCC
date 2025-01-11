@@ -17,13 +17,15 @@
 <!-- Carrossel Cadarpio -->
 <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true"
   data-autoplay="5000" data-simulate-touch="false" data-slide-effect="fade">
+  
   <div class="swiper-wrapper text-sm-left">
     <div class="swiper-slide context-dark" data-slide-bg="images/img_coffe.jpeg">
+      <div class="overlay"></div>
       <div class="swiper-slide-caption section-md">
         <div class="container">
           <div class="row">
             <div class="col-sm-9 col-md-8 col-lg-7 col-xl-7 offset-lg-1 offset-xxl-0">
-              <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp"
+              <h1 class="swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp"
                   data-caption-delay="0">Café 5 estrelas</span></h1>
               <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Por trás de uma
                 pessoa feliz, tem sempre uma xícara de café.</p><a
@@ -36,11 +38,12 @@
     </div>
 
     <div class="swiper-slide context-dark" data-slide-bg="images/img_menu_sobremesa.jpeg">
+    <div class="overlay"></div>
       <div class="swiper-slide-caption section-md">
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
-              <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInDown"
+              <h1 class="swiper-title"><span class="d-inline-block" data-caption-animate="slideInDown"
                   data-caption-delay="0">Sobremesas Deliciosas</span></h1>
               <p class="big swiper-text" data-caption-animate="fadeInRight" data-caption-delay="300">Lembre-se: em
                 qualquer doce, o ingrediente mais importante é o amor.</p>
@@ -175,6 +178,7 @@
         <article class="card product wow fadeInLeft" data-wow-delay=".15s">
           <div class="product-figure"><img src="images/img_burger.jpeg" alt="" width="161" height="162" />
           </div>
+          <!-- rating -->
           <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
               class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
               class="mdi mdi-star text-gray-13"></span>

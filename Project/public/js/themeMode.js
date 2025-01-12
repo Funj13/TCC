@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function setTheme(theme) {
     if (theme === 'dark') {
         bodyElement.setAttribute('data-bs-theme', 'dark');
-        bodyElement.style.backgroundColor = 'black';
+        bodyElement.style.backgroundColor = '#343a40';
         bodyElement.style.color = 'white';
 
         // Altera a classe de todos os gráficos para o tema escuro
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     } else {
         bodyElement.setAttribute('data-bs-theme', 'light');
-        bodyElement.style.backgroundColor = 'white';
+        bodyElement.style.backgroundColor = '#ECECEC';
         bodyElement.style.color = 'black';
 
         // Altera a classe de todos os gráficos para o tema claro

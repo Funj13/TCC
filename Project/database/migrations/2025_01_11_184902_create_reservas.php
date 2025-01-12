@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('cpf');
             $table->date('dt_checkin');
             $table->date('dt_checkout');
-            $table->timestamps();
+            $table->string('status');
         });
     }
 

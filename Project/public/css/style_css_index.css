@@ -759,3 +759,17 @@ tr:nth-child(even) {
 .informacoes-produto p {
   font-size: 16px;
 }
+
+
+/* bootstrap */
+
+/* Estilos para o tema escuro */
+body.dark-mode {
+  background-color: #343a40; /* Cor de fundo escura */
+  color: #ffffff; /* Cor do texto */
+}
+/* Estilos para o tema claro */
+body.light-mode {
+  background-color: #ECECEC; /* Cor de fundo clara */
+  color: #000000; /* Cor do texto */
+}

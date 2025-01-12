@@ -77,8 +77,8 @@ Route::get('/icon-pinguem', function (){
 });
 
 
-Route::delete('/reservas/{reservaId}/quartos/{roomId}', [ReservaController::class, 'removerQuartoDaReserva'])->name('reservas.destroy');
-
+Route::delete('/reservas/{reservaId}/quartos/{roomId}', [ReservaController::class, 'destroy'])->name('reservas.destroy');
+Route::post('/reserva/confirmar/{id}', [ReservaController::class, 'update'])->name('reservas.update');
 
 // Routes get Rooms
 

@@ -11,13 +11,14 @@ class ReservaController extends Controller
 {
     public function index()
     {
+        $user = auth()->user()->id;
 
         $reservas = User::join('reserva_user', 'users.id', '=', 'reserva_user.user_id')
             ->join('reservas', 'reserva_user.reserva_id', '=', 'reservas.id')
             ->join('rooms', 'reserva_user.room_id', '=', 'rooms.id')
             ->select('users.*', 'reservas.*', 'rooms.*', 'reserva_user.*')
+            ->where('users.id', $user)
             ->get();
-
         return view('viewpedidos', compact("reservas"));
     }
 
@@ -41,6 +42,8 @@ class ReservaController extends Controller
             $formulario->cpf = $request->input('cpf');
             $formulario->dt_checkin = $request->input('dt-checkin');
             $formulario->dt_checkout = $request->input('dt-checkout');
+            $formulario->status = 'pendente';
+
             // Salvar a reserva
             $formulario->save();
 
@@ -69,6 +72,44 @@ class ReservaController extends Controller
         } else {
             return redirect()->back()->with('error', 'Quarto não encontrado na reserva.');
         }
+    }
+    public function update($id)
+    {
+        // Encontrar a reserva pelo ID
+        $reserva = Reserva::find($id);
+
+
+        $status = DB::table('reservas')
+        ->where('id', $id)
+        ->value('status');
+
+        $statusPadrao = 'pendente';
+        $statusConf = 'confirmado';
+        if (!$reserva) {
+            return redirect()->back()->with('error', 'Reserva não encontrada.');
+        }
+
+        // dd($id, $status);
+
+        if ($statusPadrao == $status) {
+            // Atualizar o campo status
+            $reserva->status = $statusConf;
+            $reserva->save(); // Salvar as alterações
+
+            return redirect()->back()->with('success', 'Status atualizado com sucesso!');
+
+        } else {
+            // Atualizar o campo status
+            $reserva->status = $statusPadrao;
+            $reserva->save(); // Salvar as alterações
+
+            return redirect()->back()->with('success', 'Status atualizado com sucesso!');
+
+        }
+
+
+
+
     }
 }
 

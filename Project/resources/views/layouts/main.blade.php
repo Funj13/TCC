@@ -57,19 +57,19 @@
           </ul>
 
           @auth
-        <form method="POST" action="http://127.0.0.1:8000/logout">
-        @csrf
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
-      this.closest('form').submit();">Log Out</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link " href="/profile">
-            <div>{{ Auth::user()->name }}</div>
-          </a>
-          </li>
-          @can ('admin')
+          <form method="POST" action="http://127.0.0.1:8000/logout">
+          @csrf
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
+        this.closest('form').submit();">Log Out</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link " href="/profile">
+              <div>{{ Auth::user()->name }}</div>
+            </a>
+            </li>
+            @can ('admin')
         <li class="nav-item">
         <a class="nav-link" href="/dashboard">Dashboard</a>
         </li>
@@ -78,18 +78,18 @@
         </li>
         <li class="nav-item">
         <a class="nav-link " href="/mapa">
-        Localização
+          Localização
         </a>
         </li>
         <li class="nav-item">
         <a class="nav-link " href="/cadarpio">
-        Cadarpio
+          Cadarpio
         </a>
         </li>
 
       @endcan
-        </ul>
-        </form>
+          </ul>
+          </form>
 
       @endauth
           <!-- Login e registro -->
@@ -128,12 +128,12 @@
             </li>
           </ul>
           @auth
-          <li class="d-flex">
-            <a class="nav-link " href="/pedidos">
-              Pedidos
-            </a>
-          </li>
-          @endauth
+        <li class="d-flex">
+        <a class="nav-link " href="/pedidos">
+          Pedidos
+        </a>
+        </li>
+      @endauth
 
           <!-- <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -216,6 +216,8 @@
       </div>
     </footer>
   </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

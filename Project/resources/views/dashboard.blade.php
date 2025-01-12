@@ -140,6 +140,7 @@
       <!-- Botão para abrir o modal -->
       <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmModal"
       data-user-id="{{ $user->id }}" data-permission-name="{{ $user->permission_name }}">
+      <ion-icon name="alert-outline"></ion-icon>
       Alterar
       </button>
 

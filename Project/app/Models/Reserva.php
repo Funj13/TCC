@@ -12,6 +12,7 @@ class Reserva extends Model
         'cpf',
         'dt-checkin',
         'dt-checkout',
+        'status',
     ];
 
 

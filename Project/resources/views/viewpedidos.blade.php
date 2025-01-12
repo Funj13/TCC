@@ -139,10 +139,13 @@
                                                     name="checkmark-outline"></ion-icon>Confirmar</button>
                                         </form>
                                     @else
-                                        <form action="" method="post">
-                                            <button disabled class="comprar btn btn-primary"><ion-icon
-                                                    name="checkmark-outline"></ion-icon>Avaliar</button>
-                                        </form>
+
+                                            @csrf
+                                            <a href="{{ url('/AvaliacaoCadastro/store/avaliacao/' . $reserva->user_id . '/quartos/' . $reserva->room_id)}}"
+                                                class="comprar btn btn-primary"><ion-icon
+                                                    name="checkmark-outline"></ion-icon>Avaliar</a>
+
+                                        
                                     @endif
                                 </td>
                             </tr>

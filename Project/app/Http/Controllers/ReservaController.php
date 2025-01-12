@@ -43,7 +43,6 @@ class ReservaController extends Controller
             $formulario->dt_checkin = $request->input('dt-checkin');
             $formulario->dt_checkout = $request->input('dt-checkout');
             $formulario->status = 'pendente';
-
             // Salvar a reserva
             $formulario->save();
 
@@ -106,10 +105,6 @@ class ReservaController extends Controller
             return redirect()->back()->with('success', 'Status atualizado com sucesso!');
 
         }
-
-
-
-
     }
 }
 

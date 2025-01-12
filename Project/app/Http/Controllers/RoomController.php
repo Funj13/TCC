@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Room;
+use App\Models\Avaliacao;
+use App\Http\Controllers\AvaliarController;
 
 class RoomController extends Controller
 {
@@ -19,6 +21,11 @@ class RoomController extends Controller
     {
         $rooms = Room::all();
         return view('welcome', compact('rooms'));
+    }
+    public function comentarios()
+    {
+        $avaliacao = Avaliacao::all();
+        return view('welcome', compact('avaliacao'));
     }
 
     public function welcomequartos()

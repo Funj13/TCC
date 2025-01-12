@@ -103,7 +103,13 @@
                     <p class="disponibilidade">{{$reserva->tipo}}</p>
                 </td>
                 
-                <td><button class="excluir btn btn-danger">Excluir</button></td>
+                <td><a >{{$reserva->id}}</a>
+                <form action="{{ route('reservas.removerQuarto', ['reservaId' => $reserva->reserva_id, 'roomId' => $reserva->room_id]) }}" method="POST" style="display:inline;">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Remover Quarto</button>
+            </form>
+                </td>
 
                 <td><button class="comprar btn btn-success">Pagar agora</button></td>
             </tr>

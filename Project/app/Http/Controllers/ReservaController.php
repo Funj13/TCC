@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reserva;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class ReservaController extends Controller
 {
@@ -53,6 +54,20 @@ class ReservaController extends Controller
             return redirect()->back()->with('success', 'Quarto reservado com sucesso!');
         } catch (\Exception $e) {
             dd($e->getMessage());
+        }
+    }
+    public function destroy($reservaId, $roomId)
+    {
+        // Verificar se a relação existe
+        $deleted = DB::table('reserva_user')
+            ->where('reserva_id', $reservaId)
+            ->where('room_id', $roomId)
+            ->delete();
+
+        if ($deleted) {
+            return redirect()->back()->with('success', 'Quarto removido da reserva com sucesso!');
+        } else {
+            return redirect()->back()->with('error', 'Quarto não encontrado na reserva.');
         }
     }
 }

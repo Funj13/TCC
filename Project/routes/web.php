@@ -24,7 +24,7 @@ Route::get('/carrousel-image-3', function () {
 require __DIR__ . '/auth.php';
 
 // Welcome
-Route::get('/', [RoomController::class, 'welcome', 'comentarios'])->name('welcome');
+Route::get('/', [RoomController::class, 'welcome'])->name('welcome');
 // Welcome Quartos
 Route::get('/quartos', [RoomController::class, 'welcomequartos'])->name('viewquartos');
 // Dashboard

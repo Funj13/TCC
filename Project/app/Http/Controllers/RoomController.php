@@ -14,18 +14,21 @@ class RoomController extends Controller
     public function index()
     {
         $rooms = Room::all();
+      
         return view('roomCadastro.index', compact('rooms'));
     }
 
     public function welcome()
     {
         $rooms = Room::all();
-        return view('welcome', compact('rooms'));
+        $avaliacaos = Avaliacao::all();
+        // dd($avaliacaos);
+        return view('welcome', compact('rooms', 'avaliacaos'));
     }
     public function comentarios()
     {
-        $avaliacao = Avaliacao::all();
-        return view('welcome', compact('avaliacao'));
+        
+        return view('welcome', compact('avaliacaos'));
     }
 
     public function welcomequartos()

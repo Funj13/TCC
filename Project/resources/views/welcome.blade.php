@@ -248,6 +248,7 @@
       <div class="owl-carousel wow fadeIn" data-items="1" data-md-items="2" data-lg-items="3" data-dots="true"
         data-nav="false" data-loop="true" data-autoplay="true" data-autoplay-speed="731" data-autoplay-timeout="4268"
         data-margin="30" data-stage-padding="0" data-mouse-drag="false">
+        @foreach ( $avaliacaos as $avaliacao )
         <blockquote class="quote-classic">
           <div class="quote-classic-meta">
             <div class="quote-classic-avatar"><img src="images/testimonials-person-6-96x96.jpg" alt="" width="96"
@@ -259,11 +260,12 @@
             </div>
           </div>
           <div class="quote-classic-text">
-            <p>O hotel superou todas as minhas expectativas! A equipe é extremamente atenciosa e prestativa, sempre
-              disposta a ajudar. A atmosfera é acolhedora e relaxante, perfeita para uma estadia tranquila.</p>
+            <p>{{$avaliacao->msg}}</p>
           </div>
         </blockquote>
-        <blockquote class="quote-classic">
+        @endforeach
+        
+        <!-- <blockquote class="quote-classic">
           <div class="quote-classic-meta">
             <div class="quote-classic-avatar"><img src="images/testimonials-person-1-96x96.jpg" alt="" width="96"
                 height="96" />
@@ -337,7 +339,7 @@
             <p>A vista do meu quarto era simplesmente deslumbrante! A cada manhã, acordar e ver aquela paisagem era
               mágico.</p>
           </div>
-        </blockquote>
+        </blockquote> -->
       </div>
     </div>
   </section>

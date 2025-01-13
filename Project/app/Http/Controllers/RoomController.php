@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Models\Avaliacao;
+use App\Models\User;
 use App\Http\Controllers\AvaliarController;
 
 class RoomController extends Controller
@@ -21,7 +22,9 @@ class RoomController extends Controller
     public function welcome()
     {
         $rooms = Room::all();
-        $avaliacaos = Avaliacao::all();
+        $avaliacaos = Avaliacao::join('users', 'avaliacaos.userId', '=', 'users.id')
+            ->join('rooms', 'avaliacaos.roomId', '=', 'rooms.id')
+            ->select('avaliacaos.*', 'users.*',  'rooms.*')->get();
         // dd($avaliacaos);
         return view('welcome', compact('rooms', 'avaliacaos'));
     }

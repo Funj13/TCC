@@ -69,8 +69,9 @@
                 data-wow-delay=".2s">Detalhes Minimalistas</span></h1>
             <!-- <p class="text-white wow-outer"><span class="wow slideInDown" data-wow-delay=".35s">.</span></p> -->
             <div class="wow-outer button-outer">
-              <a class="button button-md button-primary button-winona wow slideInDown"
-                href="/quartos" data-wow-delay=".4s">Ver Mais</a></div>
+              <a class="button button-md button-primary button-winona wow slideInDown" href="/quartos"
+                data-wow-delay=".4s">Ver Mais</a>
+            </div>
           </div>
         </div>
       </div>
@@ -240,7 +241,7 @@
   </section>
 
 
-<!-- criar sistema -->
+  <!-- criar sistema -->
   <section class="section novi-background section-lg text-center">
     <div class="container">
       <h3 class="wow-outer"><span class="wow slideInDown text-uppercase">Comentários</span></h3>
@@ -248,52 +249,44 @@
       <div class="owl-carousel wow fadeIn" data-items="1" data-md-items="2" data-lg-items="3" data-dots="true"
         data-nav="false" data-loop="true" data-autoplay="true" data-autoplay-speed="731" data-autoplay-timeout="4268"
         data-margin="30" data-stage-padding="0" data-mouse-drag="false">
-        @foreach ( $avaliacaos as $avaliacao )
-        <blockquote class="quote-classic">
-          <div class="quote-classic-meta">
-            <div class="quote-classic-avatar"><img src="images/testimonials-person-6-96x96.jpg" alt="" width="96"
-                height="96" />
-            </div>
-            <div class="quote-classic-info">
-              <cite class="quote-classic-cite">Cliente 1</cite>
-              <p class="quote-classic-caption">Cliente Regular</p>
-            </div>
+        @foreach ($avaliacaos as $avaliacao)
+      <blockquote class="quote-classic">
+        <div class="quote-classic-meta">
+        <div class="quote-classic-avatar"><img src="images/user-icon.png" alt="" width="96"
+          height="96" />
+        </div>
+        <div class="quote-classic-info">
+          <cite class="quote-classic-cite">{{$avaliacao->nome}}</cite>
+          @if ($avaliacao->rate == 'star1')
+          <div class="product-rating"><span class="mdi mdi-star"></span>
           </div>
-          <div class="quote-classic-text">
-            <p>{{$avaliacao->msg}}</p>
+          @elseif($avaliacao->rate == 'star2')
+          <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
           </div>
-        </blockquote>
-        @endforeach
-        
-        <!-- <blockquote class="quote-classic">
-          <div class="quote-classic-meta">
-            <div class="quote-classic-avatar"><img src="images/testimonials-person-1-96x96.jpg" alt="" width="96"
-                height="96" />
-            </div>
-            <div class="quote-classic-info">
-              <cite class="quote-classic-cite">Cliente 1</cite>
-              <p class="quote-classic-caption">Cliente Regular</p>
-            </div>
+          @elseif($avaliacao->rate == 'star3')
+          <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
+            class="mdi mdi-star"></span>
           </div>
-          <div class="quote-classic-text">
-            <p>A localização do hotel é simplesmente perfeita! Próximo de tudo o que eu precisava e com fácil acesso a
-              transporte público. Amei explorar a cidade a partir daqui.</p>
+          @elseif($avaliacao->rate == 'star4')
+          <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
+            class="mdi mdi-star"></span><span class="mdi mdi-star">
           </div>
-        </blockquote>
-        <blockquote class="quote-classic">
-          <div class="quote-classic-meta">
-            <div class="quote-classic-avatar"><img src="images/testimonials-person-2-96x96.jpg" alt="" width="96"
-                height="96" />
-            </div>
-            <div class="quote-classic-info">
-              <cite class="quote-classic-cite">Cliente 1</cite>
-              <p class="quote-classic-caption">Cliente Regular</p>
-            </div>
+          @else
+          <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
+            class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
           </div>
-          <div class="quote-classic-text">
-            <p>O hotel oferece uma variedade incrível de serviços e comodidades, como piscina, academia e restaurante.
-              Tudo isso sem falar no atendimento impecável!</p>
-          </div>
+          @endif
+
+          <!-- <p class="quote-classic-caption">Cliente Regular</p> -->
+        </div>
+        </div>
+        <div class="quote-classic-text">
+        <p>{{$avaliacao->msg}}</p>
+        </div>
+      </blockquote>
+    @endforeach
+
+        <!--
         </blockquote>
         <blockquote class="quote-classic">
           <div class="quote-classic-meta">

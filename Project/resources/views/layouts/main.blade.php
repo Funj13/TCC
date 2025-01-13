@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="{{ asset('css/style_css_index.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style_topnav.css') }}">
 
+  
   <!-- Google Fonts -->
   <link rel="stylesheet" href="">
 

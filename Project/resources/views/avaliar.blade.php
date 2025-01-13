@@ -11,7 +11,7 @@
     <br><br><br>
     <!-- tela usuario sem login -->
     <div class="card ">
-        <h1 class="text-align"><a>Faça login para visualizar suas Avaliações.</a></h1>
+        <h1 class="text-align"><a>Faça login para visualizar seus pedidos.</a></h1>
     </div>
 
     <br><br><br><br><br><br>
@@ -26,9 +26,9 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css"
         href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css" id="main-styles-link">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="{{ asset('css/fonts.css')}}    ">
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}" id="main-styles-link">
+
     <style>
         .star-rating {
             display: flex;
@@ -52,7 +52,6 @@
         }
     </style>
 </head>
-@auth
 
     <!-- content -->
     <div class="cadastroQuarto border" class="theme">
@@ -87,5 +86,5 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-@endauth
+
 @endsection

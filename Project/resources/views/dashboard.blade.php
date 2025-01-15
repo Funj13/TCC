@@ -72,8 +72,10 @@
             <span class="text-success fw-bold">{{$newUsersCount}}</span> clientes.
           </p>
           <!-- tickets.js -->
-           <div id="graphic"> <div id="tickets" class="mt-5 "></div></div>
-         
+          <div id="graphic">
+            <div id="tickets" class="mt-5 "></div>
+          </div>
+
           </div>
 
           <div class="col-sm-4 col-12">
@@ -265,45 +267,47 @@
           <h5 class="card-title">Clientes</h5>
         </div>
         <div class="card-body">
-        <div id="graphic"><div id="tasks"></div></div>
+          <div id="graphic">
+          <div id="tasks"></div>
+          </div>
         </div>
         </div>
       </div>
       </div>
 
-      </div>
-      </div>
-      </div>
-      
-      <!-- Row end -->
+    </div>
+    </div>
+  </div>
 
-      <!-- *************
+  <!-- Row end -->
+
+  <!-- *************
       ************ Vendor Js Files *************
       ************* -->
 
 
 
-      <!-- Overlay Scroll JS -->
-      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-      <script src="vendor/apex/apexcharts.min.js"></script>
+  <!-- Overlay Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="vendor/apex/apexcharts.min.js"></script>
 
-      <!-- Apex Charts -->
-      <script src="vendor/apex/custom/home/tasks.js"></script>
-      <script src="vendor/apex/custom/home/tickets.js"></script>
-    
-
+  <!-- Apex Charts -->
+  <script src="vendor/apex/custom/home/tasks.js"></script>
+  <script src="vendor/apex/custom/home/tickets.js"></script>
 
 
-      <!-- Custom JS files -->
-      <script src="js/custom.js"></script>
 
 
-      @elsecan('user')
+  <!-- Custom JS files -->
+  <script src="js/custom.js"></script>
 
-      <h1>Usuario Sem Permissão</h1>
 
-  @endcan
-      @section('footer')
+  @elsecan('user')
 
-      @endsection
-      @endsection
+  <h1>Usuario Sem Permissão</h1>
+
+@endcan
+@section('footer')
+
+@endsection
+@endsection

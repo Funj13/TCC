@@ -161,17 +161,48 @@
     crossorigin="anonymous"></script>
     @yield('content')
 
-    @yield('footer')<div class="footer">
-    <footer>
+    @yield('footer')
+  <div class="footer">
+    <footer class="section novi-background footer-advanced bg-gray-700 no-theme-change">
 
-
-
-      <br>
-      <p> Pinguin Hotel &copy; 2024</p>
-
-
+      <div class="footer-advanced-aside">
+        <div class="container">
+          <div class="footer-advanced-layout">
+            <div>
+              <ul class="list-nav">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+              </ul>
+            </div>
+            <div>
+              <ul class="foter-social-links list-inline list-inline-md">
+                <li><a class="icon novi-icon icon-sm link-default mdi mdi-instagram"
+                    href="https://www.instagram.com/hotel_pinguin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="></a>
+                </li>
+                <li><a class="icon novi-icon icon-sm link-default mdi mdi-google" href="#"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <hr />
+      </div>
+      <div class="footer-advanced-aside">
+        <div class="container">
+          <div class="footer-advanced-layout"><a class="brand" href="/"><img src="images/pinguem_logo.png" alt=""
+                width="115" height="34" srcset="images/pinguem_logo.png 2x" /></a>
+            <!-- Rights-->
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design
+              by <a href="#">Penguim</a></p>
+          </div>
+        </div>
+      </div>
     </footer>
   </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   @elsecan('user')
 
 <h1>Usuario Sem Permissão</h1>

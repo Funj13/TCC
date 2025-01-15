@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const logo = document.getElementById('logo');
   const logo2 = document.getElementById('logo2');
   const chartElement = document.getElementById("graphic"); // Selecione o elemento do gráfico
+
   // Função para definir o tema com base no valor do cookie
   function setTheme(theme) {
     if (theme === 'dark') {
@@ -76,8 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
         p.style.color = color;
       }
     });
-
-    const headings = ['h2', 'h3', 'h5', 'th', 'cite', 'tspan'];
+    const a = document.querySelectorAll('a');
+    a.forEach(a => {
+      if (!a.closest('.no-theme-change')) {
+        a.style.color = color;
+      }
+    });
+    const headings = ['h2', 'h3', 'h5', 'th', 'cite', 'tspan', 'a'];
     headings.forEach(tag => {
       const elements = document.querySelectorAll(tag);
       elements.forEach(element => {

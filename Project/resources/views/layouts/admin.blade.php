@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title')</title>
 
-  <link rel="icon" href="{{ asset('images/pinguem_logo.png') }}">
+  <link rel="icon" href="{{ asset('/images/pinguem_logo.png') }}">
   <!-- Theme Mode PHP-->
   <!-- <link rel="stylesheet" href="{{ asset('php/ThemeMode.php') }}"> -->
 

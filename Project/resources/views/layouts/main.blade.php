@@ -8,15 +8,12 @@
   <title>@yield('title')</title>
 
   <link rel="icon" href="{{ asset('images/pinguem_logo.png') }}">
-  <!-- Theme Mode PHP-->
-  <!-- <link rel="stylesheet" href="{{ asset('php/ThemeMode.php') }}"> -->
-
   <!-- css Local -->
   <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style_css_index.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style_topnav.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style.css')}}" id="main-styles-link">
 
-  
   <!-- Google Fonts -->
   <link rel="stylesheet" href="">
 
@@ -58,19 +55,19 @@
           </ul>
 
           @auth
-          <form method="POST" action="http://127.0.0.1:8000/logout">
-          @csrf
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-            <a class="nav-link" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
-        this.closest('form').submit();">Log Out</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link " href="/profile">
-              <div>{{ Auth::user()->name }}</div>
-            </a>
-            </li>
-            @can ('admin')
+        <form method="POST" action="http://127.0.0.1:8000/logout">
+        @csrf
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+          <a class="nav-link" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
+      this.closest('form').submit();">Log Out</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link " href="/profile">
+            <div>{{ Auth::user()->name }}</div>
+          </a>
+          </li>
+          @can ('admin')
         <li class="nav-item">
         <a class="nav-link" href="/dashboard">Dashboard</a>
         </li>
@@ -79,18 +76,18 @@
         </li>
         <li class="nav-item">
         <a class="nav-link " href="/mapa">
-          Localização
+        Localização
         </a>
         </li>
         <li class="nav-item">
         <a class="nav-link " href="/cadarpio">
-          Cadarpio
+        Cadarpio
         </a>
         </li>
 
       @endcan
-          </ul>
-          </form>
+        </ul>
+        </form>
 
       @endauth
           <!-- Login e registro -->
@@ -136,10 +133,7 @@
         </li>
       @endauth
 
-          <!-- <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> -->
+  
         </div>
     </div>
     </nav>

@@ -118,7 +118,7 @@
       <h3 class="text-uppercase font-weight-bold wow-outer"><span class="wow slideInDown">Quartos Populares</span></h3>
       <div class="row row-lg-50 row-35 offset-top-2">
 
-        @foreach ($rooms as $room)
+        @foreach ($rooms->take(4) as $room)
 
       <div class="col-md-6 wow-outer">
         <!-- Post Modern-->

@@ -17,42 +17,6 @@
     <br><br><br><br><br><br>
 @endguest
 
-<head>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport"
-        content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css"
-        href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
-    <link rel="stylesheet" href="{{ asset('css/fonts.css')}}    ">
-    <link rel="stylesheet" href="{{ asset('css/style.css')}}" id="main-styles-link">
-
-    <style>
-        .star-rating {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: center;
-        }
-
-        .star-rating input {
-            display: none;
-        }
-
-        .star-rating label {
-            font-size: 36px;
-            color: #ccc;
-            cursor: pointer;
-        }
-
-        .star-rating label:hover~label,
-        .star-rating label:checked~label {
-            color: #f8c11b;
-        }
-    </style>
-</head>
-
     <!-- content -->
     <div class="cadastroQuarto border" class="theme">
         <h1><a>Avaliação</a></h1>

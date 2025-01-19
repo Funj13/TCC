@@ -13,7 +13,7 @@
   <!-- css Local -->
   <!-- <link rel="stylesheet" href="{{ asset('css/style_css_index.css') }}"> -->
   <link rel="stylesheet" href="{{ asset('css/style_topnav.css') }}">
-
+  <link rel="stylesheet" href="{{ asset('css/style.css')}}" id="main-styles-link">
   <!-- Google Fonts -->
   <link rel="stylesheet" href="">
 

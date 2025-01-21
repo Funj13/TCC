@@ -1,3 +1,4 @@
+/* From Uiverse.io by csemszepp */ 
 .custum-file-upload {
     height: 200px;
     width: 300px;
@@ -12,33 +13,34 @@
     background-color: #212121;
     padding: 1.5rem;
     border-radius: 10px;
-}
-
-.custum-file-upload .icon {
+  }
+  
+  .custum-file-upload .icon {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.custum-file-upload .icon svg {
+  }
+  
+  .custum-file-upload .icon svg {
     height: 80px;
     fill: #e8e8e8;
-}
-
-.custum-file-upload .text {
+  }
+  
+  .custum-file-upload .text {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.custum-file-upload .text span {
+  }
+  
+  .custum-file-upload .text span {
     font-weight: 400;
     color: #e8e8e8;
-}
-
-.custum-file-upload input {
+  }
+  
+  .custum-file-upload input {
     display: none;
-}
+  }
+
 
 
 .label {

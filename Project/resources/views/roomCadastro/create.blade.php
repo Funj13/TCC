@@ -26,8 +26,10 @@
 <div class="cadastroQuarto border theme">
     <form action="{{ route('rooms.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
+
+
         <br>
-        <label class="custum-file-upload" for="file">
+        <label for="file" class="custum-file-upload">
             <div class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24">
                     <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
@@ -42,7 +44,7 @@
             <div class="text">
                 <span>Adicione as Imagens Aqui</span>
             </div>
-            <input type="file" id="image" name="images[]" multiple class="from-control-file">
+            <input type="file" id="file" name="images[]" multiple class="from-control-file">
         </label>
 
         <br>

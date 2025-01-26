@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('dt_checkin');
             $table->date('dt_checkout');
             $table->string('status');
+            $table->timestamps();
         });
     }
 
